@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'themes/show'
+  get 'themes/index'
   get 'cities/show'
   get 'cities/index'
   get 'games/show'
