@@ -10,10 +10,74 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_145130) do
+ActiveRecord::Schema.define(version: 2018_12_03_165700) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "answers", force: :cascade do |t|
+    t.bigint "game_id"
+    t.bigint "user_id"
+    t.bigint "poi_id"
+    t.time "time_to_respond"
+    t.float "latitude"
+    t.float "longitude"
+    t.integer "score"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_answers_on_game_id"
+    t.index ["poi_id"], name: "index_answers_on_poi_id"
+    t.index ["user_id"], name: "index_answers_on_user_id"
+  end
+
+  create_table "cities", force: :cascade do |t|
+    t.string "name"
+    t.string "photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.bigint "theme_id"
+    t.string "user_one"
+    t.string "user_two"
+    t.integer "score_one"
+    t.integer "score_two"
+    t.time "total_time_one"
+    t.time "total_time_two"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["theme_id"], name: "index_games_on_theme_id"
+  end
+
+  create_table "pois", force: :cascade do |t|
+    t.string "name"
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
+    t.string "photo"
+    t.text "description"
+    t.string "scrapping_uri"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "theme_pois", force: :cascade do |t|
+    t.bigint "theme_id"
+    t.bigint "pois_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["pois_id"], name: "index_theme_pois_on_pois_id"
+    t.index ["theme_id"], name: "index_theme_pois_on_theme_id"
+  end
+
+  create_table "themes", force: :cascade do |t|
+    t.string "name"
+    t.bigint "city_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["city_id"], name: "index_themes_on_city_id"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -23,8 +87,20 @@ ActiveRecord::Schema.define(version: 2018_12_03_145130) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "username", null: false
+    t.string "first_name", null: false
+    t.string "last_name", null: false
+    t.string "address", null: false
+    t.string "photo", null: false
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "answers", "games"
+  add_foreign_key "answers", "pois"
+  add_foreign_key "answers", "users"
+  add_foreign_key "games", "themes"
+  add_foreign_key "theme_pois", "pois", column: "pois_id"
+  add_foreign_key "theme_pois", "themes"
+  add_foreign_key "themes", "cities"
 end
