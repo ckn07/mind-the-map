@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'pois/show'
+  get 'pois/index'
   get 'themes/show'
   get 'themes/index'
   get 'cities/show'
