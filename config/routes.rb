@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'users/show'
   get 'pois/show'
   get 'pois/index'
   get 'themes/show'
