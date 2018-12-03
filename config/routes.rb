@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'cities/show'
+  get 'cities/index'
   get 'games/show'
   devise_for :users
   root to: 'pages#home'
