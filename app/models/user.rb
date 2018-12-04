@@ -13,9 +13,7 @@ class User < ApplicationRecord
   # validates :photo, presence: true
   # validates :address, presence: true
 
-
-  # a deccommente quand on aura sette carrier / cloudinary
-  # mount_uploader :photo, PhotoUploader
+  mount_uploader :photo, PhotoUploader
 
   # a decommente quand on aura installe le geocoder
   # geocoded_by :address

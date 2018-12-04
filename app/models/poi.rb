@@ -6,11 +6,5 @@ class Poi < ApplicationRecord
   validates :description, presence: true
 
   geocoded_by :address
-  after_validation :geocode, if: :will_save_change_to_address?
-
-  # a deccommente quand on aura sette carrier / cloudinary
-  # validates :photo, presence: true
-  # mount_uploader :photo, PhotoUploader
-
-
+  mount_uploader :photo, PhotoUploader
 end
