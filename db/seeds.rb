@@ -11,7 +11,7 @@ City.destroy_all
 puts 'Cleaning database of themes...'
 Theme.destroy_all
 puts 'Cleaning database of theme pois...'
-Theme_poi.destroy_all
+ThemePoi.destroy_all
 puts 'Cleaning database of pois...'
 Poi.destroy_all
 puts 'Cleaning database of games...'
@@ -59,16 +59,30 @@ chris = User.new(email: "christophe@noujaim.com",
 chris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543927010/MtM/jeremy.jpg"
 chris.save!
 
+puts "4 users have been created!"
+
 # Cities seed
 puts 'generating cities'
-puts "Paris is coming"
+
 paris = City.new(name: 'Paris')
 paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543927598/MtM/paris.jpg"
+paris.save!
 
-puts "London is coming"
 london = City.new(name: 'London')
 london.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543927737/MtM/london.jpg"
+london.save!
 
-puts "Berlin is coming"
 berlin = City.new(name: 'Berlin')
 berlin.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543927894/MtM/berlin.jpg"
+berlin.save!
+
+puts "3 cities have been created!"
+
+# Themes seed
+puts "generation themes"
+monuments_paris = Theme.new(name: "Monuments")
+monuments_paris.city_id = paris.id
+monuments_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543929617/MtM/louvre.jpg"
+monuments_paris.save!
+
+
