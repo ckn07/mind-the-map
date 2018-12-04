@@ -30,14 +30,14 @@ jeremy = User.new(email: "jeremy.jouffroy@gmail.com",
   last_name: "Jouffroy",
   address: "26 rue Edouard Vaillant, 93140 Bondy, France")
 jeremy.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543927010/MtM/jeremy.jpg"
-jeremy.save!
+jeremy.save
 
 benoit = User.new(email: "benoitdelest@gmail.com",
   password: "123456",
   username: "ben",
   first_name: "Benoit",
   last_name: "Delest",
-  address: "3 rue de la Joncquiere, 75017 Paris, France")
+  address: "3 rue de la Jonquiere, 75017 Paris, France")
 benoit.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543926966/MtM/benoit.png"
 benoit.save!
 
