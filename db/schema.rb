@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_03_175104) do
+ActiveRecord::Schema.define(version: 2018_12_04_163519) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,12 +19,12 @@ ActiveRecord::Schema.define(version: 2018_12_03_175104) do
     t.bigint "game_id"
     t.bigint "user_id"
     t.bigint "poi_id"
-    t.time "time_to_respond"
     t.float "latitude"
     t.float "longitude"
     t.integer "score"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "time_to_respond"
     t.index ["game_id"], name: "index_answers_on_game_id"
     t.index ["poi_id"], name: "index_answers_on_poi_id"
     t.index ["user_id"], name: "index_answers_on_user_id"
@@ -39,14 +39,14 @@ ActiveRecord::Schema.define(version: 2018_12_03_175104) do
 
   create_table "games", force: :cascade do |t|
     t.bigint "theme_id"
-    t.string "user_one"
-    t.string "user_two"
+    t.integer "user_one_id"
+    t.integer "user_two_id"
     t.integer "score_one"
     t.integer "score_two"
-    t.time "total_time_one"
-    t.time "total_time_two"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "total_time_one"
+    t.integer "total_time_two"
     t.index ["theme_id"], name: "index_games_on_theme_id"
   end
 
@@ -101,6 +101,8 @@ ActiveRecord::Schema.define(version: 2018_12_03_175104) do
   add_foreign_key "answers", "pois"
   add_foreign_key "answers", "users"
   add_foreign_key "games", "themes"
+  add_foreign_key "games", "users", column: "user_one_id"
+  add_foreign_key "games", "users", column: "user_two_id"
   add_foreign_key "theme_pois", "pois", column: "pois_id"
   add_foreign_key "theme_pois", "themes"
   add_foreign_key "themes", "cities"
