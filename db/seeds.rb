@@ -5,3 +5,84 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts 'Cleaning database of cities...'
+City.destroy_all
+puts 'Cleaning database of themes...'
+Theme.destroy_all
+puts 'Cleaning database of theme pois...'
+ThemePoi.destroy_all
+puts 'Cleaning database of pois...'
+Poi.destroy_all
+puts 'Cleaning database of games...'
+Game.destroy_all
+puts 'Cleaning database of answers...'
+Answer.destroy_all
+puts 'Cleaning database of users...'
+User.destroy_all
+
+# User seed
+puts 'generating users with password 123456 '
+jeremy = User.new(email: "jeremy.jouffroy@gmail.com",
+  password: "123456",
+  username: "jerem",
+  first_name: "Jeremy",
+  last_name: "Jouffroy",
+  address: "26 rue Edouard Vaillant, 93140 Bondy, France")
+jeremy.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543927010/MtM/jeremy.jpg"
+jeremy.save!
+
+benoit = User.new(email: "benoitdelest@gmail.com",
+  password: "123456",
+  username: "ben",
+  first_name: "Benoit",
+  last_name: "Delest",
+  address: "3 rue de la Joncquiere, 75017 Paris, France")
+benoit.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543926966/MtM/benoit.png"
+benoit.save!
+
+cecile = User.new(email: "cecile.dezy@gmail.com",
+  password: "123456",
+  username: "cec",
+  first_name: "Cécile",
+  last_name: "Dezy",
+  address: "6 rue Euryale Dehaynin, 75019 Paris, France ")
+cecile.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543927335/MtM/cecile.jpg"
+cecile.save!
+
+chris = User.new(email: "christophe@noujaim.com",
+  password: "123456",
+  username: "chris",
+  first_name: "Christophe",
+  last_name: "Noujaim",
+  address: "20 Boulevard de Clichy, 75018 Paris, France")
+chris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543927010/MtM/jeremy.jpg"
+chris.save!
+
+puts "4 users have been created!"
+
+# Cities seed
+puts 'generating cities'
+
+paris = City.new(name: 'Paris')
+paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543927598/MtM/paris.jpg"
+paris.save!
+
+london = City.new(name: 'London')
+london.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543927737/MtM/london.jpg"
+london.save!
+
+berlin = City.new(name: 'Berlin')
+berlin.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543927894/MtM/berlin.jpg"
+berlin.save!
+
+puts "3 cities have been created!"
+
+# Themes seed
+puts "generation themes"
+monuments_paris = Theme.new(name: "Monuments")
+monuments_paris.city_id = paris.id
+monuments_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543929617/MtM/louvre.jpg"
+monuments_paris.save!
+
+
