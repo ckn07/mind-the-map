@@ -79,10 +79,41 @@ berlin.save!
 puts "3 cities have been created!"
 
 # Themes seed
-puts "generation themes"
+puts "generating themes"
 monuments_paris = Theme.new(name: "Monuments")
-monuments_paris.city_id = paris.id
+monuments_paris.city = paris
 monuments_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543929617/MtM/louvre.jpg"
 monuments_paris.save!
 
+# POI seed
+puts "generating pois"
+eiffel_tower = Poi.new(
+  name: "Eiffel Tower",
+  address: "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France",
+  latitude: "48.858373",
+  longitude: "2.29448",
+  description: "Constructed from 1887–1889 as the entrance to the 1889 World's Fair, it was initially criticized by some of France's leading artists and intellectuals for its design, but it has become a global cultural icon of France and one of the most recognisable structures in the world.[3] The Eiffel Tower is the most-visited paid monument in the world; 6.91 million people ascended it in 2015.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Eiffel_Tower")
+tour_eiffel.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543932568/MtM/eiffel-tower.jpg"
+tour_eiffel.save!
+
+arc_triomphe = Poi.new(
+  name: "Arc de Triomphe",
+  address: "Place Charles de Gaulle, 75008 Paris, France",
+  latitude: "48.873804",
+  longitude: "2.295027",
+  description: "The Arc de Triomphe de l'Étoile is one of the most famous monuments in Paris, standing at the western end of the Champs-Élysées at the center of Place Charles de Gaulle, formerly named Place de l'Étoile — the étoile of the juncture formed by its twelve radiating avenues.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Arc_de_Triomphe")
+arc_triomphe.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543932568/MtM/tour-eiffel.jpg"
+arc_triomphe.save!
+
+palais_garnier = Poi.new(
+  name: "Palais Garnier",
+  address: "Place Charles de Gaulle, 75008 Paris, France",
+  latitude: "48.873804",
+  longitude: "2.295027",
+  description: "The Palais Garnier is a 1,979-seat opera house, which was built from 1861 to 1875 for the Paris Opera. It was called the Salle des Capucines, because of its location on the Boulevard des Capucines in the 9th arrondissement of Paris, but soon became known as the Palais Garnier, in recognition of its opulence and its architect, Charles Garnier.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Arc_de_Triomphe")
+palais_garnier.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543932568/MtM/tour-eiffel.jpg"
+palais_garnier.save!
 
