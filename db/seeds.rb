@@ -61,5 +61,14 @@ chris.save!
 
 # Cities seed
 puts 'generating cities'
+puts "Paris is coming"
 paris = City.new(name: 'Paris')
-paris.remote_photo_url =
+paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543927598/MtM/paris.jpg"
+
+puts "London is coming"
+london = City.new(name: 'London')
+london.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543927737/MtM/london.jpg"
+
+puts "Berlin is coming"
+berlin = City.new(name: 'Berlin')
+berlin.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543927894/MtM/berlin.jpg"
