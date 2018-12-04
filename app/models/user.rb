@@ -6,6 +6,7 @@ class User < ApplicationRecord
   has_many :answers
   has_many :games
   validates :username, presence: true, uniqueness: true
+  validates :photo, presence: true
 
   # a discute ensemble avant de decommente.. veux t on rendre ces champs obligatoires
   # validates :first_name, presence: true
@@ -13,9 +14,7 @@ class User < ApplicationRecord
   # validates :photo, presence: true
   # validates :address, presence: true
 
-
-  # a deccommente quand on aura sette carrier / cloudinary
-  # mount_uploader :photo, PhotoUploader
+  mount_uploader :photo, PhotoUploader
 
   # a decommente quand on aura installe le geocoder
   # geocoded_by :address

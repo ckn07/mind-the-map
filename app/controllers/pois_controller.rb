@@ -12,4 +12,8 @@ class PoisController < ApplicationController
   def index
 
   end
+
+  def poi_params
+    params.require(:poi).permit(:photo)
+  end
 end

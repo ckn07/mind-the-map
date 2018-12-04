@@ -4,4 +4,8 @@ class ThemesController < ApplicationController
 
   def index
   end
+
+  def theme_params
+    params.require(:city).permit(:photo)
+  end
 end
