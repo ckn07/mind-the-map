@@ -16,7 +16,6 @@ class User < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
 
-  # a decommente quand on aura installe le geocoder
-  # geocoded_by :address
-  # after_validation :geocode, if: :will_save_change_to_address?
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
 end
