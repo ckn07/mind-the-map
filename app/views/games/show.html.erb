@@ -1,19 +1,46 @@
 <div class="container">
+
   <div class="title">
     <%= image_tag("rocket.svg") %>
     <h1>CONGRATS</h1>
     <%= image_tag("rocket.svg") %>
   </div>
+
   <div class="score title">
     <h2>Your score:</h2>
   </div>
-  <div class="buttons">
+
+  <div class="container-main">
     <div class="row">
-      <div class="col-xs-12">
+      <div class="col-xs-12 col-md-6 text-center">
+        <div class="map">
+          <p>Here we put the map w/ all the POI</p>
+        </div>
+      </div>
+      <div class="col-xs-12 col-md-6 text-center">
+
+        <div class="POI-list">
+          <ul>
+            <h3>List of the <%= @game.theme.name %> you discovered: </h2>
+            <%# @game.each do |poi| %>
+              <%#  %>
+            <% end %>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-xs-12 col-md-4 text-center">
         <button class="btn btn-primary">Play again</button>
+      </div>
+      <div class="col-xs-12 col-md-4 text-center">
         <button class="btn btn-primary">Challenge a friend</button>
+      </div>
+      <div class="col-xs-12 col-md-4 text-center">
         <button class="btn btn-primary">Share on Facebook</button>
       </div>
     </div>
+
   </div>
 </div>

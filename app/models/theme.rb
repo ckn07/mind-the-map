@@ -6,3 +6,5 @@ class Theme < ApplicationRecord
   validates :photo, presence: true
   mount_uploader :photo, PhotoUploader
 end
+
+# has_many :pois, through: :theme_pois
