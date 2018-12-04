@@ -28,9 +28,10 @@
       <% @game = Game.find(1) %>
       <%= link_to "GAME 1 (games_url(@game))", game_url(@game) %>
     </li>
-    <% @poi = Poi.find(1) %>
-    <%= link_to "GAME 1 POI 1 ( game_poi(@game, @poi) )" ,game_poi(@game, @poi)  %>
-
+    <li>
+      <% @poi = Poi.find(1) %>
+      <%= link_to "GAME 1 POI 1 ( game_poi(@game, @poi) )" ,game_poi(@game, @poi)  %>
+    </li>
 
   </ul>
 </div>
