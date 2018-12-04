@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :answers
-  has_many :games, dependent: :destroy
+  has_many :games
   validates :username, presence: true, uniqueness: true
 
   # a discute ensemble avant de decommente.. veux t on rendre ces champs obligatoires
