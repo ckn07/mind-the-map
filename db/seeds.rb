@@ -6,18 +6,18 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-puts 'Cleaning database of cities...'
-City.destroy_all
-puts 'Cleaning database of themes...'
-Theme.destroy_all
 puts 'Cleaning database of theme pois...'
 ThemePoi.destroy_all
+puts 'Cleaning database of themes...'
+Theme.destroy_all
+puts 'Cleaning database of cities...'
+City.destroy_all
 puts 'Cleaning database of pois...'
 Poi.destroy_all
-puts 'Cleaning database of games...'
-Game.destroy_all
 puts 'Cleaning database of answers...'
 Answer.destroy_all
+puts 'Cleaning database of games...'
+Game.destroy_all
 puts 'Cleaning database of users...'
 User.destroy_all
 
@@ -121,10 +121,20 @@ palais_garnier.save!
 
 puts "--> 3 pois have been created!"
 
+# Games seed
+puts "generating games"
+game1 = Game.new(
+  user_one: chris,
+  score_one: "1900",
+  total_time_one: "11 seconds")
+game1.theme = monuments_paris
+
+puts "--> 1 game has been created!"
+
 # Answers seed
 puts "generating answers"
 answer1 = Answer.new(
-  time_to_respond: "3 seconds",
+  time_to_respond: 4,
   latitude: "48.868213",
   longitude: "2.30448",
   score: "600")
@@ -134,7 +144,7 @@ answer1.user = chris
 answer1.save!
 
 answer2 = Answer.new(
-  time_to_respond: "2 seconds",
+  time_to_respond: 2,
   latitude: "48.873804",
   longitude: "2.295027",
   score: "800")
@@ -144,7 +154,7 @@ answer2.user = chris
 answer2.save!
 
 answer3 = Answer.new(
-  time_to_respond: "6 seconds",
+  time_to_respond: 3,
   latitude: "48.871234",
   longitude: "2.3322457999199692",
   score: "500")
@@ -155,16 +165,4 @@ answer3.save!
 
 puts "--> 3 answers have been created!"
 
-# Games seed
-puts "generating games"
-game1 = Game.new(
-  user_one: "chris",
-  user_two: "",
-  score_one: "1900",
-  score_two: "",
-  total_time_one: "11 seconds",
-  total_time_two: "")
-game1.theme = monuments_paris
-
-puts "--> 1 game has been created!"
 
