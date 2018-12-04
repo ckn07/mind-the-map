@@ -4,6 +4,7 @@ class Poi < ApplicationRecord
   validates :name, presence: true
   validates :address, presence: true
   validates :description, presence: true
+  validates :photo, presence: true
 
   geocoded_by :address
   mount_uploader :photo, PhotoUploader
