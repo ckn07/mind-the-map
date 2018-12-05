@@ -1,0 +1,46 @@
+.modal-backdrop {
+
+}
+
+.btn-close {
+  height: 25px;
+  margin-right: -50px;
+  margin-top: -50px;
+}
+
+.btn-close:hover {
+  color: $purple;
+}
+
+.close {
+  color: $purple;
+  opacity: 1;
+}
+
+.m-h {
+  // top: 15px;
+  // left: 34px;
+  border-bottom: 1px solid $purple;
+}
+
+.m-c {
+  background-image: image-url("card_modal.svg");
+  background-size: 100% 100%;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  background-clip: padding-box;
+  outline: 0;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 20px;
+}
+
+.m-b {
+  position: relative;
+  // bottom: 88px;
+  padding: 15px;
+}
+
+.POI-mod-header {
+  background-image: image_tag("rocket.svg");
+}
