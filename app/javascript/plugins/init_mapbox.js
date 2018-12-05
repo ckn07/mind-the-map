@@ -11,13 +11,20 @@ const initMapbox = () => {
       center: [2.3522, 48.8566 ],
       zoom: 12
     });
-
-    map.style.stylesheet.layers.forEach(function(layer) {
-      if (layer.type !== null) {
-        map.removeLayer(layer.id);
-      }
+    //fetch click coordinates
+    map.once('click', function (e) {
+      let coordinates = e.lngLat;
+      let click_lng = coordinates.lng
+      let click_lat = coordinates.lat
+      console.log(click_lng)
+      console.log(click_lat)
+      //add marker
+      new mapboxgl.Marker()
+      .setLngLat([ click_lng, click_lat ])
+      .addTo(map);
     });
   }
+};
 
 
   // // ADD MARKER
@@ -30,9 +37,11 @@ const initMapbox = () => {
 //       .addTo(map);
 //   });
 // }
-};
-
-
+    // map.style.stylesheet.layers.forEach(function(layer) {
+    //   if (layer.type !== null) {
+    //     map.removeLayer(layer.id);
+    //   }
+    // });
 
 export { initMapbox };
 
