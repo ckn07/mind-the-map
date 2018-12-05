@@ -1,6 +1,7 @@
 class Poi < ApplicationRecord
   has_many :anwsers
   has_many :theme_pois
+  has_many :themes, through: :theme_pois
   validates :name, presence: true
   validates :address, presence: true
   validates :description, presence: true

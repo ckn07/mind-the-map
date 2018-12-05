@@ -6,14 +6,15 @@
     <%= image_tag("rocket.svg") %>
   </div>
 
-  <div class="score title">
+  <div class="score-title text-center">
     <h2>Your score:</h2>
+    <h4><%= @game.score_one %> points</h4>
   </div>
 
   <div class="container-main">
     <div class="row">
       <div class="col-xs-12 col-md-6 text-center">
-        <div class="map">
+        <div class="map map-container">
           <p>Here we put the map w/ all the POI</p>
         </div>
       </div>
@@ -21,10 +22,12 @@
 
         <div class="POI-list">
           <ul>
-            <h3>List of the <%= @game.theme.name %> you discovered: </h2>
-            <%# @game.each do |poi| %>
-              <%#  %>
+            <h4>List of the <%= @game.theme.name %> you discovered: </h2>
+
+            <% @theme_pois.each do |poi| %>
+              <li><%= poi.name %></li>
             <% end %>
+
           </ul>
         </div>
       </div>

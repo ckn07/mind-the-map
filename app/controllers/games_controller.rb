@@ -4,6 +4,8 @@ class GamesController < ApplicationController
   def show
     @user = current_user
     @game = Game.find(params[:id])
+    @theme = @game.theme
+    @pois = @theme.pois
   end
 
   def create

@@ -13,8 +13,17 @@
 
 .container-main {
   margin: 70px 0px;
+
+  .row {
+    margin-bottom: 30px;
+  }
 }
 
 .container {
   height: 100vh;
+}
+
+.map-container {
+  height: 150px;
+  background-color: $gray;
 }

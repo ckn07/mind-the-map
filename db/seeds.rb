@@ -87,6 +87,7 @@ monuments_paris.save!
 
 puts "--> 1 theme has been created!"
 
+
 # POI seed
 puts "generating pois"
 eiffel_tower = Poi.new(
@@ -118,7 +119,6 @@ palais_garnier = Poi.new(
   scrapping_uri: "https://en.wikipedia.org/wiki/Palais_Garnier")
 palais_garnier.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543933607/MtM/palais-garnier.jpg"
 palais_garnier.save!
-
 puts "--> 3 pois have been created!"
 
 # Answers seed
