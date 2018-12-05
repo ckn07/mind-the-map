@@ -1,9 +1,8 @@
 class PoisController < ApplicationController
   def show
     @poi = Poi.find(params[:id])
-  end
-
-  def index
+    @game = Game.find(params[:game_id])
+    @answer = Answer.new
   end
 
   def poi_params

@@ -8,11 +8,15 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
   </head>
   <body>
-    <%= render 'shared/flashes' %>
+    <% unless (params[:controller] == 'pois' && params[:action] == 'show') %>
+      <%= render 'shared/navbar' %>
+      <%= render 'shared/flashes' %>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
+    <% end %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>

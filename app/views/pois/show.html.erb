@@ -1,10 +1,23 @@
+<div>
+  <h2> <%= "Can you find the #{@poi.name}?" %></h2>
+</div>
+
 <div
   id="map"
   style="width: 100vw;
   height: 100vh;"
-
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
 ></div>
-
+  <div style="display: none;">
+      <%= simple_form_for [@game, @poi, @answer] do |f| %>
+        <%= f.input :latitude %>
+        <%= f.input :longitude %>
+        <%= f.submit class: "btn btn-form"%>
+      <% end %>
+  </div>
 <!--
  data-marker="<%= @marker.to_json %>" -->
+<script type="text/javascript">
+
+
+</script>

@@ -11,13 +11,33 @@ const initMapbox = () => {
       center: [2.3522, 48.8566 ],
       zoom: 12
     });
+    //fetch click coordinates
+    map.once('click', function (e) {
+      let coordinates = e.lngLat;
+      let click_lng = coordinates.lng
+      let click_lat = coordinates.lat
+      console.log(click_lng)
+      console.log(click_lat)
+      //add marker
+      new mapboxgl.Marker()
+      .setLngLat([ click_lng, click_lat ])
+      .addTo(map);
+      document.getElementById('answer_longitude').value = click_lng;
+      document.getElementById('answer_latitude').value = click_lat;
+      const form = document.getElementById('new_answer');
+      form.submit();
 
-    map.style.stylesheet.layers.forEach(function(layer) {
-      if (layer.type !== null) {
-        map.removeLayer(layer.id);
-      }
+      // const poiLat = document.getElementById('latpoi');
+      // const poiLong = document.getElementById('longpoi');
+      //  new mapboxgl.Marker()
+      // .setLngLat([ poiLong, poiLat ])
+      // .addTo(map);
+
+
     });
   }
+};
+
 
   // // ADD MARKER
 //   if (mapElement) { // only build a map if there's a div#map to inject into
@@ -29,8 +49,12 @@ const initMapbox = () => {
 //       .addTo(map);
 //   });
 // }
-};
-
-
+    // map.style.stylesheet.layers.forEach(function(layer) {
+    //   if (layer.type !== null) {
+    //     map.removeLayer(layer.id);
+    //   }
+    // });
 
 export { initMapbox };
+
+
