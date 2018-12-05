@@ -16,7 +16,7 @@ Rails.application.routes.draw do
 
   resources :games, only: [] do
     resources :pois, only: [:show] do
-      resources :answers, only: [:create]
+      resources :answers, only: [:create, :show]
     end
   end
 
