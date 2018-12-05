@@ -95,9 +95,9 @@ eiffel_tower = Poi.new(
   address: "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France",
   latitude: 48.858373,
   longitude: 2.29448,
-  photo: "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543932568/MtM/eiffel-tower.jpg",
-  description: "Constructed from 1887–1889 as the entrance to the 1889 World's Fair, it was initially criticized by some of France's leading artists and intellectuals for its design, but it has become a global cultural icon of France and one of the most recognisable structures in the world.[3] The Eiffel Tower is the most-visited paid monument in the world; 6.91 million people ascended it in 2015.",
+  description: "Constructed from 1887–1889 as the entrance to the 1889 World's Fair, it was initially criticized by some of France's leading artists and intellectuals for its design, but it has become a global cultural icon of France and one of the most recognisable structures in the world. The Eiffel Tower is the most-visited paid monument in the world; 6.91 million people ascended it in 2015.",
   scrapping_uri: "https://en.wikipedia.org/wiki/Eiffel_Tower")
+eiffel_tower.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543932568/MtM/eiffel-tower.jpg"
 eiffel_tower.save
 
 arc_triomphe = Poi.new(
@@ -157,7 +157,7 @@ hotel_invalides = Poi.new(
   longitude: 2.312811199999942,
   description: "Les Invalides, formally the Hôtel national des Invalides (The National Residence of the Invalids), or also as Hôtel des Invalides, is a complex of buildings in the 7th arrondissement of Paris, France, containing museums and monuments, all relating to the military history of France, as well as a hospital and a retirement home for war veterans, the building's original purpose",
   scrapping_uri: "https://en.wikipedia.org/wiki/Les_Invalides")
-hotel_invalides = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020951/MtM/hotel-invalides.jpg"
+hotel_invalides.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020951/MtM/hotel-invalides.jpg"
 hotel_invalides.save!
 
 pantheon = Poi.new(
@@ -261,7 +261,7 @@ answer6 = Answer.new(
   longitude: 2.3322222,
   score: 600)
 answer6.game = game1
-answer6.poi = notre_dame
+answer6.poi = sacre_coeur
 answer6.user = chris
 answer6.save!
 
