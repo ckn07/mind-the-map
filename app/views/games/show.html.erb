@@ -25,9 +25,14 @@
           <div class="POI-list-container">
             <div class="row">
               <% @pois.each do |poi| %>
-                <div class="col-xs-12 col-md-6 text-center">
+                <div class="col-xs-12 col-md-6 game-card-col text-center">
                   <!-- Button trigger modal -->
-                  <div class="game-card" style="background-image: url(<%= cl_image_path(poi.photo)%>)" data-toggle="modal" data-target="#poiModal<%= poi.id %>"><%= poi.name %></div>
+                  <div class="game-card" data-toggle="modal" data-target="#poiModal<%= poi.id %>">
+                    <div class="game-card-pic" style="background-image: url(<%= cl_image_path(poi.photo)%>)"></div>
+                    <div class="game-card-title">
+                      <%= poi.name %>
+                    </div>
+                  </div>
                 </div>
               <% end %>
             </div>
