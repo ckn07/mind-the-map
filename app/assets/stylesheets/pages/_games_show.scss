@@ -27,3 +27,23 @@
   height: 150px;
   background-color: $gray;
 }
+
+.POI-list {
+  li {
+    text-decoration: none;
+  }
+
+  p {
+    font-size: 20px;
+    font-weight: bold;
+  }
+}
+
+.btn-fw {
+  width: 100%;
+}
+
+
+.POI-img {
+  width: 500px;
+}

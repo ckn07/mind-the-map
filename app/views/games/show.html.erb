@@ -21,29 +21,56 @@
       <div class="col-xs-12 col-md-6 text-center">
 
         <div class="POI-list">
-          <ul>
-            <h4>List of the <%= @game.theme.name %> you discovered: </h2>
-
-            <% @theme_pois.each do |poi| %>
-              <li><%= poi.name %></li>
-            <% end %>
-
-          </ul>
+          <p>The <%= @game.theme.name %> you discovered: </p>
+          <div class="POI-list-container">
+            <div class="row">
+              <% @pois.each do |poi| %>
+                <div class="col-xs-12 col-md-4 text-center">
+                  <!-- Button trigger modal -->
+                  <button type="button" class="btn btn-primary btn-fw" data-toggle="modal" data-target="#poiModal<%= poi.id %>"><%= poi.name %></button>
+                </div>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <div class="row">
       <div class="col-xs-12 col-md-4 text-center">
-        <button class="btn btn-primary">Play again</button>
+        <button class="btn btn-primary btn-fw">Play again</button>
       </div>
       <div class="col-xs-12 col-md-4 text-center">
-        <button class="btn btn-primary">Challenge a friend</button>
+        <button class="btn btn-primary btn-fw">Challenge a friend</button>
       </div>
       <div class="col-xs-12 col-md-4 text-center">
-        <button class="btn btn-primary">Share on Facebook</button>
+        <button class="btn btn-primary btn-fw">Share on Facebook</button>
       </div>
     </div>
 
   </div>
 </div>
+
+<!-- MUST STAY AT THE END -->
+<% @pois.each do |poi| %>
+    <!-- Modal -->
+    <div class="modal fade" id="poiModal<%= poi.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content m-c">
+            <div class="modal-header m-h">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <%= image_tag(("close.svg"), class: "btn-close") %>
+              </button>
+              <h2 class="modal-title text-center" id="exampleModalLabel"><%= poi.name  %></h2>
+              <div class="POI-mod-header" style="background-image: url(<%= cl_image_path(poi.photo)%>)">
+<!--                 <%= cl_image_tag((poi.photo), class: "POI-img") %>
+ -->              </div>
+            </div>
+            <div class="modal-body">
+              <p><%= poi.description %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<% end %>
