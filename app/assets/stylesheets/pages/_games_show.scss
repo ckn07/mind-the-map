@@ -1,0 +1,29 @@
+.title {
+  font-size: 30px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+
+  img {
+    height: 50px;
+    margin: 10px;
+  }
+}
+
+.container-main {
+  margin: 70px 0px;
+
+  .row {
+    margin-bottom: 30px;
+  }
+}
+
+.container {
+  height: 100vh;
+}
+
+.map-container {
+  height: 150px;
+  background-color: $gray;
+}
