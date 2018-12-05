@@ -1,2 +1,16 @@
 <h1>Answers#show</h1>
 <p>Find me in app/views/answers/show.html.erb</p>
+<div
+  id="map"
+  style="width: 100vw;
+  height: 80vh;"`
+  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+  data-marker="<%= @markers.to_json %>"
+
+></div>
+<!-- @poi.latitude <%= @poi.latitude  %> <br>
+@poi.longitude<%= @poi.longitude  %><br>
+@answer.longitude<%= @answer.longitude  %><br>
+@answer.latitude<%= @answer.latitude  %><br>
+
+ -->
