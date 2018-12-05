@@ -4,12 +4,8 @@
 
 .btn-close {
   height: 25px;
-  margin-right: -50px;
-  margin-top: -50px;
-}
-
-.btn-close:hover {
-  color: $purple;
+  margin-right: -46px;
+  margin-top: -57px;
 }
 
 .close {
@@ -20,7 +16,11 @@
 .m-h {
   // top: 15px;
   // left: 34px;
-  border-bottom: 1px solid $purple;
+  border-bottom: none;
+
+  h2 {
+    margin-bottom: 5px;
+  }
 }
 
 .m-c {
@@ -32,15 +32,17 @@
   background-clip: padding-box;
   outline: 0;
   background-color: rgba(255, 255, 255, 0);
-  padding: 20px;
+  padding: 40px;
 }
 
 .m-b {
-  position: relative;
   // bottom: 88px;
   padding: 15px;
 }
 
 .POI-mod-header {
-  background-image: image_tag("rocket.svg");
+  width: 100%;
+  height: 300px;
+  background-size: cover;
+  border-radius: 4px;
 }
