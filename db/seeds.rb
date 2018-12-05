@@ -90,15 +90,15 @@ puts "--> 1 theme has been created!"
 
 # POI seed
 puts "generating pois"
-eiffel_tower = Poi.new(
-  name: "Eiffel Tower",
+tour_eiffel = Poi.new(
+  name: "Tour Eiffel",
   address: "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France",
   latitude: 48.858373,
   longitude: 2.29448,
   description: "Constructed from 1887–1889 as the entrance to the 1889 World's Fair, it was initially criticized by some of France's leading artists and intellectuals for its design, but it has become a global cultural icon of France and one of the most recognisable structures in the world. The Eiffel Tower is the most-visited paid monument in the world; 6.91 million people ascended it in 2015.",
   scrapping_uri: "https://en.wikipedia.org/wiki/Eiffel_Tower")
-eiffel_tower.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543932568/MtM/eiffel-tower.jpg"
-eiffel_tower.save
+tour_eiffel.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543932568/MtM/eiffel-tower.jpg"
+tour_eiffel.save
 
 arc_triomphe = Poi.new(
   name: "Arc de Triomphe",
@@ -197,7 +197,7 @@ puts "--> 10 pois have been created!"
 puts "generating theme pois"
 tp1 = ThemePoi.new(
   theme_id: monuments_paris.id,
-  poi_id: eiffel_tower.id)
+  poi_id: tour_eiffel.id)
 tp1.save!
 
 tp2 = ThemePoi.new(
@@ -209,6 +209,41 @@ tp3 = ThemePoi.new(
   theme_id: monuments_paris.id,
   poi_id: palais_garnier.id)
 tp3.save!
+
+tp4 = ThemePoi.new(
+  theme_id: monuments_paris.id,
+  poi_id: grand_palais.id)
+tp4.save!
+
+tp5 = ThemePoi.new(
+  theme_id: monuments_paris.id,
+  poi_id: notre_dame.id)
+tp5.save!
+
+tp6 = ThemePoi.new(
+  theme_id: monuments_paris.id,
+  poi_id: sacre_coeur.id)
+tp6.save!
+
+tp7 = ThemePoi.new(
+  theme_id: monuments_paris.id,
+  poi_id: hotel_invalides.id)
+tp7.save!
+
+tp8 = ThemePoi.new(
+  theme_id: monuments_paris.id,
+  poi_id: pantheon.id)
+tp8.save!
+
+tp9 = ThemePoi.new(
+  theme_id: monuments_paris.id,
+  poi_id: louvre.id)
+tp9.save!
+
+tp10 = ThemePoi.new(
+  theme_id: monuments_paris.id,
+  poi_id: palais_luxembourg.id)
+tp10.save!
 puts "--> 3 theme pois have been created!"
 
 # Games seed
@@ -229,7 +264,7 @@ answer1 = Answer.new(
   longitude: 2.30448,
   score: 100)
 answer1.game = game1
-answer1.poi = eiffel_tower
+answer1.poi = tour_eiffel
 answer1.user = chris
 answer1.save!
 
