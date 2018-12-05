@@ -125,8 +125,8 @@ puts "--> 3 pois have been created!"
 puts "generating games"
 game1 = Game.new(
   user_one: chris,
-  score_one: "1900",
-  total_time_one: "11 seconds")
+  score_one: 1900,
+  total_time_one: 44322)
 game1.theme = monuments_paris
 
 puts "--> 1 game has been created!"
@@ -134,30 +134,30 @@ puts "--> 1 game has been created!"
 # Answers seed
 puts "generating answers"
 answer1 = Answer.new(
-  time_to_respond: 4,
-  latitude: "48.868213",
-  longitude: "2.30448",
-  score: "600")
+  time_to_respond: 4000,
+  latitude: 48.868213,
+  longitude: 2.30448,
+  score: 600)
 answer1.game = game1
 answer1.poi = eiffel_tower
 answer1.user = chris
 answer1.save!
 
 answer2 = Answer.new(
-  time_to_respond: 2,
-  latitude: "48.873804",
-  longitude: "2.295027",
-  score: "800")
+  time_to_respond: 2503,
+  latitude: 48.873804,
+  longitude: 2.295027,
+  score: 800)
 answer2.game = game1
 answer2.poi = arc_triomphe
 answer2.user = chris
 answer2.save!
 
 answer3 = Answer.new(
-  time_to_respond: 3,
-  latitude: "48.871234",
-  longitude: "2.3322457999199692",
-  score: "500")
+  time_to_respond: 33333,
+  latitude: 48.871234,
+  longitude: 2.332242,
+  score: 500)
 answer3.game = game1
 answer3.poi = palais_garnier
 answer3.user = chris
