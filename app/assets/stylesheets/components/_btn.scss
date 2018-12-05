@@ -1,6 +1,6 @@
 .btn-form {
-  background-color: #860CE6;
-  border-color: #860CE6;
+  background-color: $purple;
+  border-color: $purple;
   color: white;
   margin: 10px;
   font-size: 22px;
@@ -9,7 +9,7 @@
 }
 
 .btn-form:hover {
-  background-color: #860CE6;
+  background-color: $purple;
   color: white;
   margin: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -49,3 +49,36 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
+.btn-pimp {
+  background-image: image-url("btn.svg");
+  background-size: 100% 100%;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  background-clip: padding-box;
+  outline: 0;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 10px;
+}
+
+.btn-pimp:hover {
+  fill: #6a09b6;
+  background-image: image-url("btn.svg");
+  background-size: 100% 100%;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  background-clip: padding-box;
+  outline: 0;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 10px;
+}
+
+// .st0-btn {
+
+//   svg path:hover {
+//     fill: #6a09b6;
+//   }
+// }
+
+.st0-btn:hover{fill:#6a09b6;}
