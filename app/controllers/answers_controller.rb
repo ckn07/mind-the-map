@@ -31,7 +31,7 @@ class AnswersController < ApplicationController
   end
   def calcul_score(inputuser, poicoordinates)
     # caclul de la distance
-    Geocoder::Calculations.distance_between(inputuser,poicoordinates) ""
+    # distance_between(inputuser,poicoordinates) ""
     # calcul du temps de reponse
 
     # multiplication des pains et retour

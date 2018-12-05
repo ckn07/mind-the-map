@@ -22,6 +22,18 @@ const initMapbox = () => {
       new mapboxgl.Marker()
       .setLngLat([ click_lng, click_lat ])
       .addTo(map);
+      document.getElementById('answer_longitude').value = click_lng;
+      document.getElementById('answer_latitude').value = click_lat;
+      const form = document.getElementById('new_answer');
+      form.submit();
+
+      // const poiLat = document.getElementById('latpoi');
+      // const poiLong = document.getElementById('longpoi');
+      //  new mapboxgl.Marker()
+      // .setLngLat([ poiLong, poiLat ])
+      // .addTo(map);
+
+
     });
   }
 };
