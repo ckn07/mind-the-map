@@ -27,3 +27,30 @@
   height: 150px;
   background-color: $gray;
 }
+
+.POI-list {
+
+  li {
+    text-decoration: none;
+  }
+
+  p {
+    font-size: 20px;
+  }
+}
+
+.close {
+  color: $purple;
+  opacity: 1;
+}
+
+.btn-close {
+  height: 20px;
+  margin-left: 600px;
+  margin-top: -80px;
+}
+
+
+.POI-img {
+  width: 550px;
+}

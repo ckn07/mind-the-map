@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_04_163519) do
+ActiveRecord::Schema.define(version: 2018_12_05_105404) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,10 +64,10 @@ ActiveRecord::Schema.define(version: 2018_12_04_163519) do
 
   create_table "theme_pois", force: :cascade do |t|
     t.bigint "theme_id"
-    t.bigint "pois_id"
+    t.bigint "poi_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["pois_id"], name: "index_theme_pois_on_pois_id"
+    t.index ["poi_id"], name: "index_theme_pois_on_poi_id"
     t.index ["theme_id"], name: "index_theme_pois_on_theme_id"
   end
 
@@ -103,7 +103,7 @@ ActiveRecord::Schema.define(version: 2018_12_04_163519) do
   add_foreign_key "games", "themes"
   add_foreign_key "games", "users", column: "user_one_id"
   add_foreign_key "games", "users", column: "user_two_id"
-  add_foreign_key "theme_pois", "pois", column: "pois_id"
+  add_foreign_key "theme_pois", "pois"
   add_foreign_key "theme_pois", "themes"
   add_foreign_key "themes", "cities"
 end

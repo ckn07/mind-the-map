@@ -121,6 +121,24 @@ palais_garnier.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/ima
 palais_garnier.save!
 puts "--> 3 pois have been created!"
 
+# ThemePoi seed
+puts "generating theme pois"
+tp1 = ThemePoi.new(
+  theme_id: monuments_paris.id,
+  poi_id: eiffel_tower.id)
+tp1.save!
+
+tp2 = ThemePoi.new(
+  theme_id: monuments_paris.id,
+  poi_id: arc_triomphe.id)
+tp2.save!
+
+tp3 = ThemePoi.new(
+  theme_id: monuments_paris.id,
+  poi_id: palais_garnier.id)
+tp3.save!
+puts "--> 3 theme pois have been created!"
+
 # Games seed
 puts "generating games"
 game1 = Game.new(
