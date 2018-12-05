@@ -26,7 +26,7 @@
             <div class="row">
               <% @pois.each do |poi| %>
                 <div class="col-xs-12 col-md-4 text-center">
-                <!-- Button trigger modal -->
+                  <!-- Button trigger modal -->
                   <button type="button" class="btn btn-primary btn-fw" data-toggle="modal" data-target="#poiModal<%= poi.id %>"><%= poi.name %></button>
                 </div>
               <% end %>
@@ -37,14 +37,14 @@
     </div>
 
     <div class="row">
-      <div class="col-xs-12 col-md-4 text-center btn-fw">
-        <button class="btn btn-primary">Play again</button>
+      <div class="col-xs-12 col-md-4 text-center">
+        <button class="btn btn-primary btn-fw">Play again</button>
       </div>
-      <div class="col-xs-12 col-md-4 text-center btn-fw">
-        <button class="btn btn-primary">Challenge a friend</button>
+      <div class="col-xs-12 col-md-4 text-center">
+        <button class="btn btn-primary btn-fw">Challenge a friend</button>
       </div>
-      <div class="col-xs-12 col-md-4 text-center btn-fw">
-        <button class="btn btn-primary">Share on Facebook</button>
+      <div class="col-xs-12 col-md-4 text-center">
+        <button class="btn btn-primary btn-fw">Share on Facebook</button>
       </div>
     </div>
 
@@ -57,18 +57,16 @@
     <div class="modal fade" id="poiModal<%= poi.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog .modal-dialog-centered" role="document">
           <div class="modal-content m-c">
-            <%= render 'shared/modal_frame' %>
-              <%#= image_tag(("card_modal.svg"), class: "card_modal") %>
             <div class="modal-header m-h">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <%= image_tag(("close.svg"), class: "btn-close") %>
               </button>
               <div class="POI-mod-header">
-                <%= cl_image_tag((poi.photo), class: "POI-img") %>
                 <h2 class="modal-title text-center" id="exampleModalLabel"><%= poi.name  %></h2>
+                <%= cl_image_tag((poi.photo), class: "POI-img") %>
               </div>
             </div>
-            <div class="modal-body">
+            <div class="modal-body POI-mod-body">
               <p><%= poi.description %></p>
             </div>
           </div>
