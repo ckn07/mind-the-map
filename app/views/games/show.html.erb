@@ -23,31 +23,27 @@
         <div class="POI-list">
           <p>The <%= @game.theme.name %> you discovered: </p>
           <div class="POI-list-container">
-            <row>
+            <div class="row">
               <% @pois.each do |poi| %>
+                <div class="col-xs-12 col-md-4 text-center">
                 <!-- Button trigger modal -->
-                <li>
-                  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#poiModal<%= poi.id %>"><%= poi.name %></button>
-                </li>
+                  <button type="button" class="btn btn-primary btn-fw" data-toggle="modal" data-target="#poiModal<%= poi.id %>"><%= poi.name %></button>
+                </div>
               <% end %>
-
+            </div>
           </div>
         </div>
-
       </div>
     </div>
 
-
-
-
     <div class="row">
-      <div class="col-xs-12 col-md-4 text-center">
+      <div class="col-xs-12 col-md-4 text-center btn-fw">
         <button class="btn btn-primary">Play again</button>
       </div>
-      <div class="col-xs-12 col-md-4 text-center">
+      <div class="col-xs-12 col-md-4 text-center btn-fw">
         <button class="btn btn-primary">Challenge a friend</button>
       </div>
-      <div class="col-xs-12 col-md-4 text-center">
+      <div class="col-xs-12 col-md-4 text-center btn-fw">
         <button class="btn btn-primary">Share on Facebook</button>
       </div>
     </div>
@@ -59,20 +55,22 @@
 <% @pois.each do |poi| %>
     <!-- Modal -->
     <div class="modal fade" id="poiModal<%= poi.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <%= image_tag(("close.svg"), class: "btn-close") %>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-            <div class="POI-mod-header">
-              <%= cl_image_tag((poi.photo), class: "POI-img") %>
-              <h2 class="modal-title text-center" id="exampleModalLabel"><%= poi.name  %></h2>
+      <div class="modal-dialog .modal-dialog-centered" role="document">
+          <div class="modal-content m-c">
+            <%= render 'shared/modal_frame' %>
+              <%#= image_tag(("card_modal.svg"), class: "card_modal") %>
+            <div class="modal-header m-h">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <%= image_tag(("close.svg"), class: "btn-close") %>
+              </button>
+              <div class="POI-mod-header">
+                <%= cl_image_tag((poi.photo), class: "POI-img") %>
+                <h2 class="modal-title text-center" id="exampleModalLabel"><%= poi.name  %></h2>
+              </div>
             </div>
-          </div>
-          <div class="modal-body">
-          <p><%= poi.description %></p>
+            <div class="modal-body">
+              <p><%= poi.description %></p>
+            </div>
           </div>
         </div>
       </div>

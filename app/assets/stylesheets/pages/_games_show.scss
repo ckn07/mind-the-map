@@ -29,28 +29,21 @@
 }
 
 .POI-list {
-
   li {
     text-decoration: none;
   }
 
   p {
     font-size: 20px;
+    font-weight: bold;
   }
 }
 
-.close {
-  color: $purple;
-  opacity: 1;
-}
-
-.btn-close {
-  height: 20px;
-  margin-left: 600px;
-  margin-top: -80px;
+.btn-fw {
+  width: 100%;
 }
 
 
 .POI-img {
-  width: 550px;
+  width: 500px;
 }

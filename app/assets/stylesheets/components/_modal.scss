@@ -1,0 +1,40 @@
+.modal-backdrop {
+
+}
+
+.btn-close {
+  height: 25px;
+  margin-right: -20px;
+  margin-top: -20px;
+}
+
+.btn-hover {
+  color: $purple;
+}
+
+.close {
+  color: $purple;
+  opacity: 1;
+}
+
+.m-h {
+  position: absolute;
+  top: 0;
+  border-bottom: 1px solid $purple;
+}
+
+.m-c {
+  position: relative;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  background-clip: padding-box;
+  outline: 0;
+  background-color: rgba(255, 255, 255, 0.0)
+}
+
+.m-b {
+  position: absolute;
+  bottom: 88px;
+  padding: 15px;
+}
