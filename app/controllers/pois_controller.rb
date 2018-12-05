@@ -3,9 +3,6 @@ class PoisController < ApplicationController
     @poi = Poi.find(params[:id])
   end
 
-  def index
-  end
-
   def poi_params
     params.require(:poi).permit(:photo)
   end
