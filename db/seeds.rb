@@ -82,10 +82,50 @@ puts "--> 3 cities have been created!"
 puts "generating themes"
 monuments_paris = Theme.new(name: "Monuments")
 monuments_paris.city = paris
-monuments_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543929617/MtM/louvre.jpg"
+monuments_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020952/MtM/sacre-coeur.jpg"
 monuments_paris.save!
 
-puts "--> 1 theme has been created!"
+districts_paris = Theme.new(name: "Districts")
+districts_paris.city = paris
+districts_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544094011/MtM/themes_paris/districts_paris.jpg"
+districts_paris.save!
+
+streets_paris = Theme.new(name: "Streets")
+streets_paris.city = paris
+streets_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544094011/MtM/themes_paris/streets_paris.jpg"
+streets_paris.save!
+
+shops_paris = Theme.new(name: "Shops")
+shops_paris.city = paris
+shops_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544094011/MtM/themes_paris/shops_paris.jpg"
+shops_paris.save!
+
+restaurants_paris = Theme.new(name: "Restaurants")
+restaurants_paris.city = paris
+restaurants_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544094011/MtM/themes_paris/restaurants_paris.jpg"
+restaurants_paris.save!
+
+concerts_paris = Theme.new(name: "Concerts")
+concerts_paris.city = paris
+concerts_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544094011/MtM/themes_paris/concerts_paris.jpg"
+concerts_paris.save!
+
+parks_paris = Theme.new(name: "Parks")
+parks_paris.city = paris
+parks_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544094011/MtM/themes_paris/parks_paris.jpg"
+parks_paris.save!
+
+museums_paris = Theme.new(name: "Museums")
+museums_paris.city = paris
+museums_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543929617/MtM/louvre.jpg"
+museums_paris.save!
+
+amelie_paris = Theme.new(name: "Find Amelie")
+amelie_paris.city = paris
+amelie_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544094431/MtM/themes_paris/amelie_paris.jpg"
+amelie_paris.save!
+
+puts "--> 9 themes has been created!"
 
 
 # POI seed

@@ -1,29 +1,42 @@
-<h1>Themes#index</h1>
-<p>Find me in app/views/themes/index.html.erb</p>
-<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= asset_path 'Banner-mind-the-map.png' %>);">
+<div class="banner" style="background-image: linear-gradient(180.49deg, rgba(0, 0, 0, 0) 1.06%, #FFFFFF 72.86%), url(<%= asset_path 'Banner-mind-the-map.png' %>);">
   <div class="banner-content">
-    <h1>Mind the Map</h1>
+    <div class="banner-content-h1">
+      <h1>Mind the Map</h1>
+    </div>
     <p>Can you locate places on an unlabeled map ?</p>
     <!-- Lien du bouton passer sur une URL absolu pour permettre de revenir à une page sans search -->
-    <a class="btn btn-form btn-lg" href="<%="#{root_path}#cards-from-paris"%>">Play now</a>
+    <a class="btn btn-form btn-lg btn-white" href="<%="#{root_path}#cards-from-paris"%>">Play now</a>
   </div>
 </div>
 
 <div class="container" id="cards-from-paris">
-  <div class="row">
-    <div class="col-xs-12 col-sm-4">
-      <% @themes.each do |theme| %>
-      <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path theme.photo%>');">
-        <div class="card-description">
-          <%= theme.name %>
-          <% end %>
-        </div>
-        <a class="card-link" href="#" > <%= link_to ''%> </a>
-      </div>
-    </div>
-  </div>
-</div>
 
+  <h2 align="center">Pick a quiz</h2>
+  <div class="row">
+
+    <% @themes.each do |theme| %>
+    <div class="col-xs-12 col-sm-4">
+
+      <div class="card-theme">
+
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path theme.photo%>');">
+          <a class="card-link"> <%= link_to ''%> </a>
+
+          <div class="card-footer">
+            <p><%= theme.name %></p>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+    <% end %>
+
+  </div>
+
+</div>
+<div class="container">
   <h2>Liste des pages path </h2>
   <ul>
     <li>
