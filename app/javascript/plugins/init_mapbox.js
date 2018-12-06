@@ -1,4 +1,10 @@
 import mapboxgl from 'mapbox-gl';
+import { startTimer } from "../components/bar_timer";
+
+function onMapRenderComplete (map, fn) {
+  if (map.loaded()) return process.nextTick(fn)
+  map.once('render', () => onMapRenderComplete(map, fn))
+}
 
 const initMapbox = () => {
   const mapElement = document.getElementById('map');
@@ -11,6 +17,11 @@ const initMapbox = () => {
       center: [2.3522, 48.8566 ],
       zoom: 12
     });
+
+    onMapRenderComplete(map, function () {
+      startTimer();
+    });
+
     const start = Date.now();
     //fetch click coordinates
     map.once('click', function (e) {
