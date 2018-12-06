@@ -1,4 +1,4 @@
-<div class="wrapper_map ">
+<div class="wrapper_map">
   <div
     id="map"
     style="width: 100vw;
@@ -14,9 +14,6 @@
     <div class="score-card" style="background-image: url(<%= image_path("card_score.svg")%>)">
       <div class="POI_name text-center">
         <h1><%= @poi.name %></h1>
-      </div>
-      <div class="POI_distance text-center">
-        <h2><%= @answer.distance %> meters</h2>
       </div>
       <div class="row-pin">
         <div class="icon-pin">
@@ -56,9 +53,3 @@
   </div>
 </div>
 
-=======
-<% if @next_poi.nil? %>
-<%= link_to "See your score" , game_url(@game), class: "btn btn-primary btn-fw btn-pimp btn-center-bottom" %>
-<% else %>
-<%= link_to "Next" , game_poi_url(@game,@next_poi), class: "btn btn-primary btn-fw btn-pimp btn-center-bottom" %>
-<% end %>
