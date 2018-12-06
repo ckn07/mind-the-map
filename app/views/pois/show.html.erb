@@ -7,14 +7,15 @@
   style="width: 100vw;
   height: 80vh;"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-game="off"
+
 ></div>
-<!--   <div style="display: none;">
- -->      <%= simple_form_for [@game, @poi, @answer] do |f| %>
+ <div style="display: none;">
+     <%= simple_form_for [@game, @poi, @answer] do |f| %>
         <%= f.input :latitude %>
         <%= f.input :longitude %>
         <%= f.input :time_to_respond %>
         <%= f.submit class: "btn btn-form"%>
       <% end %>
-<!--   </div>
- --><!--
- data-marker="<%= @marker.to_json %>" -->
+ </div>
+

@@ -38,20 +38,20 @@ const initMapbox = () => {
 
 
     });
+      if (mapElement) { // only build a map if there's a div#map to inject into
+        mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+      const markers = JSON.parse(mapElement.dataset.markers);
+      markers.forEach((marker) => {
+        new mapboxgl.Marker({color: marker.color})
+          .setLngLat([ marker.lng, marker.lat ])
+          .addTo(map);
+      });
+    }
   }
 };
 
 
  //ADD MARKER
-//   if (mapElement) { // only build a map if there's a div#map to inject into
-//     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-//   const markers = JSON.parse(mapElement.dataset.markers);
-//   markers.forEach((marker) => {
-//     new mapboxgl.Marker()
-//       .setLngLat([ marker.lng, marker.lat ])
-//       .addTo(map);
-//   });
-// }
     // map.style.stylesheet.layers.forEach(function(layer) {
     //   if (layer.type !== null) {
     //     map.removeLayer(layer.id);
