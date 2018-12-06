@@ -15,7 +15,7 @@ class GamesController < ApplicationController
     @game.user_one = @user
     @theme = Theme.find(params[:theme_id])
     @game.theme = @theme
-    @poi = pick_a_random_poi_of_the_them
+    @poi = pick_a_random_poi_of_the_theme
     if @game.save
       redirect_to game_poi_path(@game,@poi)
     else
@@ -26,7 +26,7 @@ class GamesController < ApplicationController
   end
 
   private
-  def pick_a_random_poi_of_the_them
+  def pick_a_random_poi_of_the_theme
     @pois = @theme.theme_pois
     @list_poi_on_going_game = []
     @pois.each do |poi|
