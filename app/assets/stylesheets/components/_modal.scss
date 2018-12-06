@@ -1,7 +1,3 @@
-.modal-backdrop {
-
-}
-
 .btn-close {
   height: 25px;
   margin-right: -46px;
@@ -14,8 +10,6 @@
 }
 
 .m-h {
-  // top: 15px;
-  // left: 34px;
   border-bottom: none;
 
   h2 {
@@ -36,7 +30,6 @@
 }
 
 .m-b {
-  // bottom: 88px;
   padding: 15px;
 }
 
@@ -45,4 +38,18 @@
   height: 300px;
   background-size: cover;
   border-radius: 4px;
+}
+
+.c-game {
+  display: block;
+  width: 200px;
+}
+
+.theme-card-pic {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  border-radius: 4px;
+  padding: 10px;
+  margin-bottom: 10px;
 }

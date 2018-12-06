@@ -1,22 +1,16 @@
-<div
-  id="map"
-  style="width: 100vw;
-  height: 100vh;"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-  data-markers="<%= @markers.to_json %>"
-  data-game="off"
-
-
-></div>
-<%= @next_poi %>
+<div class="wrapper_map">
+  <div
+    id="map"
+    style="width: 100vw;
+    height: 100vh;"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-markers="<%= @markers.to_json %>"
+    data-game="off"
+  ></div>
+</div>
 <% if @next_poi.nil? %>
-<%= link_to "see score" , game_url(@game) %>
+<%= link_to "see score" , game_url(@game), class: "btn btn-primary btn-fw btn-pimp btn-center-bottom" %>
 <% else %>
-<%= link_to "next POI" , game_poi_url(@game,@next_poi) %>
+<%= link_to "next POI" , game_poi_url(@game,@next_poi), class: "btn btn-primary btn-fw btn-pimp btn-center-bottom" %>
 <% end %>
-<!-- @poi.latitude <%= @poi.latitude  %> <br>
-@poi.longitude<%= @poi.longitude  %><br>
-@answer.longitude<%= @answer.longitude  %><br>
-@answer.latitude<%= @answer.latitude  %><br>
 
- -->

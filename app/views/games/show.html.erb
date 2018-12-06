@@ -1,8 +1,6 @@
 <div class="container">
 
-  <div class="test">
-    <%= render 'shared/bar_timer' %>
-  </div>
+
 
   <div class="title">
     <%= image_tag("rocket.svg") %>
@@ -58,8 +56,8 @@
     </div>
 
   </div>
-</div>
 
+</div>
 <!-- MUST STAY AT THE END -->
 <% @pois.each do |poi| %>
     <!-- Modal -->
@@ -72,8 +70,7 @@
             </button>
             <h2 class="modal-title text-center" id="exampleModalLabel"><%= poi.name  %></h2>
             <div class="POI-mod-header" style="background-image: url(<%= cl_image_path(poi.photo)%>)">
-<!--                 <%= cl_image_tag((poi.photo), class: "POI-img") %>
--->              </div>
+            </div>
           </div>
           <div class="modal-body">
             <p><%= poi.description %></p>
