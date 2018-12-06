@@ -6,6 +6,13 @@ class GamesController < ApplicationController
     @game = Game.find(params[:id])
     @theme = @game.theme
     @pois = @theme.pois
+    @markers = @pois.map do |poi|
+      {
+        lng: poi.longitude,
+        lat: poi.latitude,
+        color: "#08c299"
+      }
+    end
   end
 
   def create
