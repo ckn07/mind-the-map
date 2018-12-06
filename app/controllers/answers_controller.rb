@@ -1,4 +1,5 @@
 class AnswersController < ApplicationController
+  before_action :set_game, only: [:show, :create]
   def show
     @answer = Answer.find(params[:id])
     @poi = Poi.find(params[:poi_id])
@@ -11,6 +12,9 @@ class AnswersController < ApplicationController
         lat: @answer.latitude,
         color:  "#860CE6"
       }]
+    @remaining_poi = whats_pois_are_left
+    @next_poi = @remaining_poi.sample
+
   end
 
   # def index
@@ -18,7 +22,6 @@ class AnswersController < ApplicationController
 
   def create
     @answer = Answer.new
-    @game = Game.find(params[:game_id])
     @poi = Poi.find(params[:poi_id])
     @latitude_user = params[:answer][:latitude]
     @longitude_user = params[:answer][:longitude]
@@ -41,6 +44,11 @@ class AnswersController < ApplicationController
   end
 
 private
+  def set_game
+    @game = Game.find(params[:game_id])
+  end
+
+
 
   def answer_params
     params.require(:answer).permit(:latitude, :longitude, :score, :time_to_respond)
@@ -57,5 +65,21 @@ private
       return 0
     end
   end
+
+  def whats_pois_are_left
+    @theme = @game.theme
+    @pois = @theme.theme_pois
+    @list_poi_on_going_game = []
+    @pois.each do |poi|
+      @list_poi_on_going_game << (poi.poi_id)
+    end
+    @pois_already_answered = []
+    @list_answers = Answer.where(:game_id == @game.id)
+    @list_answers.each do |poi|
+      @pois_already_answered << (poi.poi_id)
+    end
+    remaining_poi = @list_poi_on_going_game - @pois_already_answered
+  end
+
 
 end

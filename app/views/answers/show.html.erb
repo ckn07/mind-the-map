@@ -1,5 +1,3 @@
-<h1>Answers#show</h1>
-<p>Find me in app/views/answers/show.html.erb</p>
 <div
   id="map"
   style="width: 100vw;
@@ -8,7 +6,14 @@
   data-markers="<%= @markers.to_json %>"
   data-game="off"
 
+
 ></div>
+<%= @next_poi %>
+<% if @next_poi.nil? %>
+<%= link_to "see score" , game_url(@game) %>
+<% else %>
+<%= link_to "next POI" , game_poi_url(@game,@next_poi) %>
+<% end %>
 <!-- @poi.latitude <%= @poi.latitude  %> <br>
 @poi.longitude<%= @poi.longitude  %><br>
 @answer.longitude<%= @answer.longitude  %><br>
