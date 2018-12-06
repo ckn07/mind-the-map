@@ -18,9 +18,9 @@ update = function() {
   }
 };
 
-startTimer = function() {
+const startTimer = () => {
   if ($('.bar').length > 0);
   setInterval(update, 10);
 };
 
-startTimer();
+export { startTimer };
