@@ -5,7 +5,7 @@
     </div>
     <p>Can you locate places on an unlabeled map ?</p>
     <!-- Lien du bouton passer sur une URL absolu pour permettre de revenir à une page sans search -->
-    <a class="btn btn-form btn-lg btn-white" href="<%="#{root_path}#cards-from-paris"%>">Play now</a>
+    <a class="btn btn-form btn-lg btn-white btn-pimp" href="<%="#{root_path}#cards-from-paris"%>">Play now</a>
   </div>
 </div>
 
@@ -15,28 +15,24 @@
   <div class="row">
 
     <% @themes.each do |theme| %>
-    <div class="col-xs-12 col-sm-4">
+      <div class="col-xs-12 col-sm-4">
+        <div class="game-card" data-toggle="modal" data-target="#themeModal<%= theme.id %>">
+          <div class="card-theme">
 
-      <div class="card-theme">
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path theme.photo%>');">
+              <div class="card-footer">
+                <p><%= theme.name %></p>
+              </div>
 
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path theme.photo%>');">
-          <a class="card-link"> <%= link_to ''%> </a>
-
-          <div class="card-footer">
-            <p><%= theme.name %></p>
+            </div>
           </div>
-
         </div>
-
       </div>
-
-    </div>
     <% end %>
-
   </div>
-
 </div>
-<div class="container">
+
+<div class="container-2">
   <h2>Liste des pages path </h2>
   <ul>
     <li>
@@ -61,4 +57,32 @@
     </li>
   </ul>
 </div>
+
+<!-- MUST STAY AT THE END -->
+<% @themes.each do |theme| %>
+    <!-- Modal -->
+  <div class="modal fade" id="themeModal<%= theme.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content m-c">
+          <div class="modal-header m-h">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <%= image_tag(("close.svg"), class: "btn-close") %>
+            </button>
+            <div class="theme-card-pic" style="background-image: url(<%= cl_image_path(theme.photo)%>)"></div>
+            <h1 class="modal-title text-center" id="exampleModalLabel"><%= @city.name  %> - <%= theme.name %> </h1>
+            <p class="text-center">Time to play:</p>
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 text-center">
+                <%= link_to "Duo", "#", class: "btn-pimp btn-fw text-center c-game" %>
+              </div>
+              <div class="col-xs-12 col-sm-6 text-center">
+                <%= link_to "Solo", "#", class: "btn-pimp btn-fw text-center c-game" %>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
 
