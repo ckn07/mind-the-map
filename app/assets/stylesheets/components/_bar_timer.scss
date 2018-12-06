@@ -1,16 +1,22 @@
+.position-right {
+  position: absolute;
+  right: 30px;
+  z-index: 1000;
+}
+
 .bar {
   width: 2em;
-  height: 20em;
+  height: 80vh;
   // border-radius: 0.5em;
   position: relative;
-  background: #f2f2f2;
+  background: $purple;
   box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
 }
 
 .bar .percentage {
   position: relative;
   font-size: 1em;
-  background: $purple;
+  background: #f2f2f2;
   height: 1em;
   // border-radius: 0.5em;
 }
