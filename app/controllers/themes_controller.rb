@@ -2,7 +2,7 @@ class ThemesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
 
   def index
-    @city = City.find(params[:city_id])
+    @city = City.find(params[:id])
     @themes = @city.themes
   end
 
