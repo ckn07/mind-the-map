@@ -1,6 +1,12 @@
+.position-right {
+  position: absolute;
+  right: 30px;
+  z-index: 1000;
+}
+
 .bar {
   width: 2em;
-  height: 20em;
+  height: 80vh;
   // border-radius: 0.5em;
   position: relative;
   background: $purple;
