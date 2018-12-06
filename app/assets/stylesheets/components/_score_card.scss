@@ -1,3 +1,14 @@
+.menu-map {
+  height: 650px;
+  width: 350px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-around;
+  align-items: center;
 
 .score-card {
   height: 600px;
@@ -9,17 +20,6 @@
   align-items: center;
 }
 
-.menu-map {
-  height: 550px;
-  width: 350px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  z-index: 3000;
-  display: flex;
-  flex-direction: column;
-  // justify-content: space-around;
-  align-items: center;
 
   .icon {
     height :50px;
