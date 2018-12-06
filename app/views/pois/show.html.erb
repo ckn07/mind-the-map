@@ -2,14 +2,21 @@
   <h2> <%= "Can you find the #{@poi.name}?" %></h2>
 </div>
 
-<div
-  id="map"
-  style="width: 100vw;
-  height: 100vh;"
-  data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    data-game="off"
+<div class="wrapper-map">
+  <div
+    id="map"
+    style="width: 100vw;
+    height: 100vh;"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+      data-game="off">
+    <div class="position-right">
+      <%= render 'shared/bar_timer' %>
+    </div>
+  </div>
 
-></div>
+
+</div>
+
  <div style="display: none;">
      <%= simple_form_for [@game, @poi, @answer] do |f| %>
         <%= f.input :latitude %>

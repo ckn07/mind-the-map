@@ -1,7 +1,7 @@
 <div
   id="map"
   style="width: 100vw;
-  height: 100vh;"
+  height: 90vh;"
   data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
   data-markers="<%= @markers.to_json %>"
   data-game="off"
@@ -10,9 +10,9 @@
 ></div>
 <%= @next_poi %>
 <% if @next_poi.nil? %>
-<%= link_to "see score" , game_url(@game) %>
+<%= link_to "see score" , game_url(@game), class: "btn btn-primary btn-fw btn-pimp" %>
 <% else %>
-<%= link_to "next POI" , game_poi_url(@game,@next_poi) %>
+<%= link_to "next POI" , game_poi_url(@game,@next_poi), class: "btn btn-primary btn-fw btn-pimp" %>
 <% end %>
 <!-- @poi.latitude <%= @poi.latitude  %> <br>
 @poi.longitude<%= @poi.longitude  %><br>
