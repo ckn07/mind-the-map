@@ -20,8 +20,7 @@
       <div class="card-theme">
 
         <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path theme.photo%>');">
-          <a class="card-link"> <%= link_to ''%> </a>
-
+          <%= link_to '', theme_games_url(theme.id) , method: :post,  class: 'card-link' %>
           <div class="card-footer">
             <p><%= theme.name %></p>
           </div>
@@ -32,7 +31,6 @@
 
     </div>
     <% end %>
-
   </div>
 
 </div>
