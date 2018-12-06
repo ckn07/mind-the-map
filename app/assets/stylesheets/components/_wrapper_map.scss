@@ -1,3 +1,7 @@
 .wrapper-map {
   position: relative;
 }
+
+#map canvas {
+  cursor: crosshair;
+}

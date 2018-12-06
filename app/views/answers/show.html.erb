@@ -1,4 +1,4 @@
-<div class="wrapper_map">
+<div class="wrapper_map ">
   <div
     id="map"
     style="width: 100vw;
@@ -9,8 +9,8 @@
   ></div>
 </div>
 <% if @next_poi.nil? %>
-<%= link_to "see score" , game_url(@game), class: "btn btn-primary btn-fw btn-pimp btn-center-bottom" %>
+<%= link_to "See your score" , game_url(@game), class: "btn btn-primary btn-fw btn-pimp btn-center-bottom" %>
 <% else %>
-<%= link_to "next POI" , game_poi_url(@game,@next_poi), class: "btn btn-primary btn-fw btn-pimp btn-center-bottom" %>
+<%= link_to "Next" , game_poi_url(@game,@next_poi), class: "btn btn-primary btn-fw btn-pimp btn-center-bottom" %>
 <% end %>
 
