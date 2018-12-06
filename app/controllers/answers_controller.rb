@@ -1,41 +1,60 @@
 class AnswersController < ApplicationController
-  # def show
-  # end
+  def show
+    @answer = Answer.find(params[:id])
+    @poi = Poi.find(params[:poi_id])
+    @markers = [{
+        lng: @poi.longitude,
+        lat: @poi.latitude,
+                },
+                {
+        lng: @answer.longitude,
+        lat: @answer.latitude,
+              }]
+  end
 
   # def index
   # end
 
   def create
-
-    @answer = Answer.new(answer_params)
+    @answer = Answer.new
     @game = Game.find(params[:game_id])
     @poi = Poi.find(params[:poi_id])
-    @poicoordinates = "[#{@poi.latitude},#{@poi.longitude}]"
-    @inputuser = ""
-    @score = calculate_score(@inputuser, @poicoordinates)
-    @answer.game = @game
-    # a voir au niveau de la view pour remonter les coordonnées
-    @answer.coordinate = @poi
-    @answer.user = current_user
-    if @answer.save
-      redirect_to game_poi
-    else
-
-    end
+    @latitude_user = params[:answer][:latitude]
+    @longitude_user = params[:answer][:longitude]
+    @time_to_respond = params[:answer][:time_to_respond].to_i
+    @poi_coordinates = "[#{@poi.latitude},#{@poi.longitude}]"
+    @user_coordinates = "[#{@latitude_user},#{@longitude_user}]"
+    @distance = methode_calcul_distance
+    @score = score_calculation
+    @answer.game_id = @game.id
+    # # a voir au niveau de la view pour remonter les coordonnées
+    @answer.poi_id = @poi.id
+    @answer.user_id = current_user.id
+    @answer.score = @score
+    @answer.longitude = @longitude_user
+    @answer.latitude = @latitude_user
+    @answer.distance = @distance
+    @answer.time_to_respond = @time_to_respond
+    @answer.save!
+    redirect_to game_poi_answer_path(@game.id,@poi.id,@answer.id)
   end
 
-  private
+private
 
   def answer_params
     params.require(:answer).permit(:latitude, :longitude, :score, :time_to_respond)
   end
-  def calcul_score(inputuser, poicoordinates)
-    # caclul de la distance
-    # distance_between(inputuser,poicoordinates) ""
-    # calcul du temps de reponse
 
-    # multiplication des pains et retour
+  def methode_calcul_distance
+     (Geocoder::Calculations.distance_between(@poi_coordinates, @user_coordinates)*1000).to_i
+  end
 
+  def score_calculation
+    if @distance < 3000
+      (5000 - @time_to_respond) * @distance
+    else
+      return 0
+    end
   end
 
 end

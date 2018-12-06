@@ -1,5 +1,9 @@
 <div class="container">
 
+  <div class="test">
+    <%= render 'shared/bar_timer' %>
+  </div>
+
   <div class="title">
     <%= image_tag("rocket.svg") %>
     <h1>CONGRATS</h1>
@@ -25,9 +29,14 @@
           <div class="POI-list-container">
             <div class="row">
               <% @pois.each do |poi| %>
-                <div class="col-xs-12 col-md-4 text-center">
+                <div class="col-xs-12 col-md-6 game-card-col text-center">
                   <!-- Button trigger modal -->
-                  <button type="button" class="btn btn-primary btn-fw" data-toggle="modal" data-target="#poiModal<%= poi.id %>"><%= poi.name %></button>
+                  <div class="game-card" data-toggle="modal" data-target="#poiModal<%= poi.id %>">
+                    <div class="game-card-pic" style="background-image: url(<%= cl_image_path(poi.photo)%>)"></div>
+                    <div class="game-card-title">
+                      <%= poi.name %>
+                    </div>
+                  </div>
                 </div>
               <% end %>
             </div>
@@ -38,13 +47,13 @@
 
     <div class="row">
       <div class="col-xs-12 col-md-4 text-center">
-        <button class="btn btn-primary btn-fw">Play again</button>
+        <button class="btn btn-primary btn-fw btn-pimp">Play again</button>
+      </div>
+      <div class="col-xs-12 col-md-4 text-center ">
+        <button class="btn btn-primary btn-fw btn-pimp">Challenge a friend</button>
       </div>
       <div class="col-xs-12 col-md-4 text-center">
-        <button class="btn btn-primary btn-fw">Challenge a friend</button>
-      </div>
-      <div class="col-xs-12 col-md-4 text-center">
-        <button class="btn btn-primary btn-fw">Share on Facebook</button>
+        <button class="btn btn-primary btn-fw btn-pimp">Share on Facebook</button>
       </div>
     </div>
 
@@ -55,18 +64,18 @@
 <% @pois.each do |poi| %>
     <!-- Modal -->
     <div class="modal fade" id="poiModal<%= poi.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog .modal-dialog-centered" role="document">
+      <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content m-c">
             <div class="modal-header m-h">
               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                 <%= image_tag(("close.svg"), class: "btn-close") %>
               </button>
-              <div class="POI-mod-header">
-                <h2 class="modal-title text-center" id="exampleModalLabel"><%= poi.name  %></h2>
-                <%= cl_image_tag((poi.photo), class: "POI-img") %>
-              </div>
+              <h2 class="modal-title text-center" id="exampleModalLabel"><%= poi.name  %></h2>
+              <div class="POI-mod-header" style="background-image: url(<%= cl_image_path(poi.photo)%>)">
+<!--                 <%= cl_image_tag((poi.photo), class: "POI-img") %>
+ -->              </div>
             </div>
-            <div class="modal-body POI-mod-body">
+            <div class="modal-body">
               <p><%= poi.description %></p>
             </div>
           </div>
