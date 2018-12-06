@@ -49,6 +49,11 @@
   box-shadow: 0 0 10px rgba(0,0,0,0.3);
 }
 
+.btn-answer {
+  width: 100%;
+  z-index: 3000;
+}
+
 .btn-pimp {
   background-image: image-url("btn.svg");
   background-size: 100% 100%;
@@ -60,6 +65,12 @@
   background-color: rgba(255, 255, 255, 0);
   padding: 10px;
   color: white;
+}
+
+.btn-fw-2 {
+  width: 95%;
+  margin-top: 15px;
+  margin-left: 6px;
 }
 
 .btn-pimp:hover {
@@ -80,5 +91,6 @@
   position: absolute;
   text-align: center;
   bottom: 30px;
+  right: 30px;
 }
 
