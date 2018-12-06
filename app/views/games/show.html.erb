@@ -11,18 +11,17 @@
     <h4><%= @game.score_one %> points</h4>
   </div>
 
-  <div class="container-main">
+  <div class="container">
     <div class="row">
       <div class="col-xs-12 col-md-6 text-center">
-        <div class="map map-container">
+        <div class="the-map">
           <div id="map"  style="height: 100vh;" data-markers="<%= @markers.to_json %>"
           data-game="off"
-          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"><!-- debut map jeremy -->
-            </div>
+          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+          </div>
         </div>
       </div>
       <div class="col-xs-12 col-md-6 text-center">
-
         <div class="POI-list">
           <p>The <%= @game.theme.name %> you discovered: </p>
           <div class="POI-list-container">
@@ -45,20 +44,20 @@
     </div>
 
     <div class="row">
-      <div class="col-xs-12 col-md-4 text-center">
+      <div class="col-xs-12 col-md-4 text-center watch-footer">
         <button class="btn btn-primary btn-fw btn-pimp">Play again</button>
       </div>
-      <div class="col-xs-12 col-md-4 text-center ">
+      <div class="col-xs-12 col-md-4 text-center watch-footer">
         <button class="btn btn-primary btn-fw btn-pimp">Challenge a friend</button>
       </div>
-      <div class="col-xs-12 col-md-4 text-center">
+      <div class="col-xs-12 col-md-4 text-center watch-footer">
         <button class="btn btn-primary btn-fw btn-pimp">Share on Facebook</button>
       </div>
     </div>
-
   </div>
 
 </div>
+
 <!-- MUST STAY AT THE END -->
 <% @pois.each do |poi| %>
     <!-- Modal -->
