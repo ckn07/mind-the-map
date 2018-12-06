@@ -19,7 +19,6 @@ class GamesController < ApplicationController
     if @game.save
       redirect_to game_poi_path(@game,@poi)
     else
-      raise
       redirect_to root_path
     end
 
