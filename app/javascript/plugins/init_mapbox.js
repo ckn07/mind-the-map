@@ -42,7 +42,7 @@ const initMapbox = () => {
         mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
       const markers = JSON.parse(mapElement.dataset.markers);
       markers.forEach((marker) => {
-        new mapboxgl.Marker()
+        new mapboxgl.Marker({color: marker.color})
           .setLngLat([ marker.lng, marker.lat ])
           .addTo(map);
       });

@@ -5,11 +5,12 @@ class AnswersController < ApplicationController
     @markers = [{
         lng: @poi.longitude,
         lat: @poi.latitude,
-                },
+        color: "#08c299" },
                 {
         lng: @answer.longitude,
         lat: @answer.latitude,
-              }]
+        color:  "#860CE6"
+      }]
   end
 
   # def index
