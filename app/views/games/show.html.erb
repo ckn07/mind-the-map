@@ -63,23 +63,23 @@
 <!-- MUST STAY AT THE END -->
 <% @pois.each do |poi| %>
     <!-- Modal -->
-    <div class="modal fade" id="poiModal<%= poi.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content m-c">
-            <div class="modal-header m-h">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <%= image_tag(("close.svg"), class: "btn-close") %>
-              </button>
-              <h2 class="modal-title text-center" id="exampleModalLabel"><%= poi.name  %></h2>
-              <div class="POI-mod-header" style="background-image: url(<%= cl_image_path(poi.photo)%>)">
+  <div class="modal fade" id="poiModal<%= poi.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content m-c">
+          <div class="modal-header m-h">
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <%= image_tag(("close.svg"), class: "btn-close") %>
+            </button>
+            <h2 class="modal-title text-center" id="exampleModalLabel"><%= poi.name  %></h2>
+            <div class="POI-mod-header" style="background-image: url(<%= cl_image_path(poi.photo)%>)">
 <!--                 <%= cl_image_tag((poi.photo), class: "POI-img") %>
- -->              </div>
-            </div>
-            <div class="modal-body">
-              <p><%= poi.description %></p>
-            </div>
+-->              </div>
+          </div>
+          <div class="modal-body">
+            <p><%= poi.description %></p>
           </div>
         </div>
       </div>
     </div>
+  </div>
 <% end %>
