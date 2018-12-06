@@ -1,0 +1,27 @@
+.score-card {
+  height: 600px;
+  width: 350px;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  z-index: 3000;
+
+  .icon {
+    height :50px;
+    width: 50px;
+
+  }
+  .icon-pin {
+    height: 25px;
+    width: 25px;
+  }
+
+  h1, h2, h3, h4, h5 {
+    color: #fff;
+  }
+
+  p {
+    color: #fff;
+    font-size: 20px;
+  }
+}
