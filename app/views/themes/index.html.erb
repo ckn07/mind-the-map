@@ -24,6 +24,7 @@
                 <p><%= theme.name %></p>
               </div>
 
+
             </div>
           </div>
         </div>
@@ -76,8 +77,7 @@
                 <%= link_to "Duo", "#", class: "btn-pimp btn-fw text-center c-game" %>
               </div>
               <div class="col-xs-12 col-sm-6 text-center">
-                <%= link_to "Solo", "#", class: "btn-pimp btn-fw text-center c-game" %>
-              </div>
+                <%= link_to "Solo", theme_games_url(theme.id) , method: :post,  class: "btn-pimp btn-fw text-center c-game" %>              </div>
             </div>
           </div>
         </div>
