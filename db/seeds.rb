@@ -284,7 +284,7 @@ tp10 = ThemePoi.new(
   theme_id: monuments_paris.id,
   poi_id: palais_luxembourg.id)
 tp10.save!
-puts "--> 3 theme pois have been created!"
+puts "--> 10 theme pois have been created!"
 
 # Games seed
 puts "generating games"
@@ -293,6 +293,7 @@ game1 = Game.new(
   score_one: 1900,
   total_time_one: 44322)
 game1.theme = monuments_paris
+game1.save!
 
 puts "--> 1 game has been created!"
 

@@ -1,0 +1,61 @@
+.scores-array{
+  border: 1px solid #C4C4C4;
+}
+
+.scores {
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  border-radius: 3px;
+  transition: all 0.15s ease;
+}
+
+/* Body design */
+.scores-body {
+  flex: 1 1 auto;
+}
+.scores-body h3 {
+  font-weight: bold;
+  font-size: 23px;
+  margin-top: 0;
+}
+.scores-body p {
+  font-weight: lighter;
+  color: #999999;
+  margin-bottom: 0;
+}
+
+/* scores image */
+.scores-image {
+  border-radius: 10px;
+  margin-right: 20px;
+  width: 175px;
+}
+
+/* Controls design */
+.scores-controls {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  margin: 0px;
+}
+.scores-controls a {
+  padding: 0 20px;
+  font-size: 17px;
+  color: #E6E6E6;
+}
+.scores-controls a:hover {
+  color: #D3473C !important
+}
+.scores-controls-hidden a {
+  color: transparent;
+  font-size: 15px;
+  transition: all 0.15s ease;
+  border-color: transparent;
+}
+
+/* Hover effects */
+.scores:hover {
+  background: #f7f7fa;
+  cursor: pointer;
+}
