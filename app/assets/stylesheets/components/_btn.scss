@@ -55,7 +55,7 @@
 }
 
 .btn-pimp {
-  background-image: image-url("btn.svg");
+  background-image: url("btn.svg");
   background-size: 100% 100%;
   border: none;
   border-radius: 0px;
@@ -76,7 +76,7 @@
 
 .btn-pimp:hover {
   fill: #6a09b6;
-  background-image: image-url("btn.svg");
+  background-image: url("btn.svg");
   background-size: 100% 100%;
   border: none;
   border-radius: 0px;
