@@ -20,7 +20,7 @@
     <% end %>
     <%= yield %>
     <% unless (params[:controller] == 'pois' && params[:action] == 'show')|| (params[:controller] == 'answers' && params[:action] == 'show') %>
-      <%= render 'shared/footer' %>
+    <%= render 'shared/footer' %>
     <% end %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
