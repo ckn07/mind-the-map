@@ -41,7 +41,7 @@
 
 <div class="cta toto">
   <div class="col-md-4 watch-footer">
-    <%= link_to 'Play again', theme_games_url(@game), class: "btn btn-pimp btn-fw" %>
+    <%= link_to 'Play again', theme_games_url(@theme.id) , method: :post, class: "btn btn-pimp btn-fw" %>
    </div>
   <div class="col-md-4 text-center watch-footer">
     <button class="btn btn-primary btn-fw btn-pimp">Challenge a friend</button>
