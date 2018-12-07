@@ -14,6 +14,9 @@ class AnswersController < ApplicationController
       }]
     @remaining_poi = whats_pois_are_left
     @next_poi = @remaining_poi.sample
+    @counter_total = @list_poi_on_going_game.count
+    @counter_remaining = @counter_total - @remaining_poi.count
+
 
   end
 
