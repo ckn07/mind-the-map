@@ -65,6 +65,7 @@
   background-color: rgba(255, 255, 255, 0);
   padding: 10px;
   color: white;
+  transition: all 0.7s ease-out;
 }
 
 .btn-pimp-w {
@@ -90,7 +91,7 @@
 }
 
 .btn-pimp:hover {
-  fill: #6a09b6;
+  filter: grayscale(40%);
   background-image: url("btn.svg");
   background-size: 100% 100%;
   border: none;
@@ -101,6 +102,7 @@
   background-color: rgba(255, 255, 255, 0);
   padding: 10px;
   color: white;
+  transition: all 0.7s ease-out;
 }
 
 .btn-center-bottom {
@@ -108,4 +110,8 @@
   text-align: center;
   bottom: 30px;
   right: 30px;
+}
+
+.play-now {
+  width: 30px;
 }

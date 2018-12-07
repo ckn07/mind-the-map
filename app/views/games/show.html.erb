@@ -10,6 +10,7 @@
     <h2>Your score:</h2>
     <h4><%= @total_score %> points</h4>
   </div>
+
   <div class="container-main">
     <div class="row">
       <div class="col-xs-12 col-md-6 text-center">
@@ -20,8 +21,8 @@
             </div>
         </div>
       </div>
-      <div class="col-xs-12 col-md-6 text-center">
 
+      <div class="col-xs-12 col-md-6 text-center">
         <div class="POI-list">
           <p>The <%= @game.theme.name %> you discovered: </p>
           <div class="POI-list-container">
@@ -43,21 +44,24 @@
       </div>
     </div>
 
-    <div class="row">
-      <div class="col-xs-12 col-md-4 text-center">
-        <button class="btn btn-primary btn-fw btn-pimp">Play again</button>
+    <div class="buttons">
+
+      <div class="btn-fw btn-pimp btn-play">
+        <div>
+          <%= image_tag(("play_now.svg"), class: "play_now") %>
+          <div>play again</div>
+        </div>
+        <%= link_to '', theme_games_url(@game) %>
       </div>
-      <div class="col-xs-12 col-md-4 text-center ">
-        <button class="btn btn-primary btn-fw btn-pimp">Challenge a friend</button>
-      </div>
+
       <div class="col-xs-12 col-md-4 text-center">
         <button class="btn btn-primary btn-fw btn-pimp">Share on Facebook</button>
       </div>
     </div>
-
   </div>
-
 </div>
+
+
 <!-- MUST STAY AT THE END -->
 <% @pois.each do |poi| %>
     <!-- Modal -->
