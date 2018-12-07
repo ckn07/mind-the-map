@@ -10,12 +10,17 @@ const initMapbox = () => {
   const mapElement = document.getElementById('map');
 
   if (mapElement) { // only build a map if there's a div#map to inject into
+    // let zoom
+    const zoom = parseInt(mapElement.dataset.zoom) || 12;
+
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
+
+
     const map = new mapboxgl.Map({
       container: 'map',
       style: 'mapbox://styles/jeangabin/cjp9ylha104s42rqw3jfl9ekk',
-      center: [2.3522, 48.8566 ],
-      zoom: 12
+      center: [2.3522, 48.8566],
+      zoom: zoom
     });
 
       onMapRenderComplete(map, function () {
