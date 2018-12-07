@@ -64,7 +64,6 @@ class AnswersController < ApplicationController
   end
 
   def score_calculation
-    return 0 if @user_coordinates == 0
     max_score = 10_000 # per criteria
     distance_limit = 3_000 # meters
     time_limit = 10 # seconds
