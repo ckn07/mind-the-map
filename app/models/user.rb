@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   has_many :answers
-  has_many :games
+  # has_many :games
   validates :username, presence: true, uniqueness: true
   validates :photo, presence: true
 
@@ -18,4 +18,8 @@ class User < ApplicationRecord
 
   # geocoded_by :address
   # after_validation :geocode, if: :will_save_change_to_address?
+
+  def games
+    Game.where("user_one_id = :id OR user_two_id = :id", id: id)
+  end
 end
