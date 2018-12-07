@@ -63,7 +63,7 @@ class AnswersController < ApplicationController
     max_score = 10_000 # per criteria
     distance_limit = 3_000 # meters
     time_limit = 10 # seconds
-    10_000 - (@distance * max_score / distance_limit) + 10_000 - (@time_to_respond * max_score / time_limit)
+    max_score - (@distance * max_score / distance_limit) + max_score - (@time_to_respond * max_score / time_limit)
   end
 
   def whats_pois_are_left
