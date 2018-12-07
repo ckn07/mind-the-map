@@ -29,8 +29,8 @@ class AnswersController < ApplicationController
     # @time_to_respond_formatted = (@time_to_respond / 1000).round(2)
     @poi_coordinates = "[#{@poi.latitude},#{@poi.longitude}]"
     @user_coordinates = "[#{@latitude_user},#{@longitude_user}]"
-    @distance = methode_calcul_distance
-    @score = score_calculation
+    @distance = methode_calcul_distance if @latitude_user.present? && @longitude_user.present?
+    @score = score_calculation if @distance.present?
     @answer.game_id = @game.id
     # # a voir au niveau de la view pour remonter les coordonnées
     @answer.poi_id = @poi.id
@@ -40,8 +40,12 @@ class AnswersController < ApplicationController
     @answer.latitude = @latitude_user
     @answer.distance = @distance
     @answer.time_to_respond = @time_to_respond
-    @answer.save!
-    redirect_to game_poi_answer_path(@game.id,@poi.id,@answer.id)
+    if @answer.save
+      redirect_to game_poi_answer_path(@game.id,@poi.id,@answer.id)
+    else
+      @answer = Answer.create(poi: @poi, user: current_user, game: @game, longitude: @poi.longitude, latitude: @poi.latitude, distance: 0, time_to_respond: 10, score: 0)
+      redirect_to game_poi_answer_path(@game.id,@poi.id,@answer.id)
+    end
 
   end
 
@@ -60,6 +64,7 @@ class AnswersController < ApplicationController
   end
 
   def score_calculation
+    return 0 if @user_coordinates == 0
     max_score = 10_000 # per criteria
     distance_limit = 3_000 # meters
     time_limit = 10 # seconds
