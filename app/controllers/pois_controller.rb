@@ -3,8 +3,9 @@ class PoisController < ApplicationController
     @poi = Poi.find(params[:id])
     @game = Game.find(params[:game_id])
     @answer = Answer.new
-    @counter_left = how_many_pois_are_left
+    @counter_what_is_left = how_many_pois_are_left
     @counter_total = @list_poi_on_going_game.count
+    @counter_left = @counter_total - @counter_what_is_left + 1
   end
 
   def poi_params
