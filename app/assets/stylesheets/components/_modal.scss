@@ -1,7 +1,13 @@
 .btn-close {
   height: 25px;
-  margin-right: -46px;
-  margin-top: -57px;
+  margin-right: -25px;
+  margin-top: -10px;
+}
+
+.btn-close-home {
+  height: 25px;
+  margin-right: -25px;
+  margin-top: -40px;
 }
 
 .close {
@@ -29,6 +35,19 @@
   padding: 40px;
 }
 
+.m-c-h {
+  background-image: image-url("card_modal.svg");
+  background-size: 100% 100%;
+  border: none;
+  border-radius: 0px;
+  box-shadow: none;
+  background-clip: padding-box;
+  outline: 0;
+  background-color: rgba(255, 255, 255, 0);
+  padding: 40px;
+  margin-top: 150px;
+}
+
 .m-b {
   padding: 15px;
 }
@@ -51,5 +70,5 @@
   background-size: cover;
   border-radius: 4px;
   padding: 10px;
-  margin-bottom: 10px;
+  margin: 15px 0px;
 }

@@ -32,7 +32,7 @@ const initMapbox = () => {
             console.log(click_lng)
             console.log(click_lat)
             //add marker
-            new mapboxgl.Marker()
+            new mapboxgl.Marker({color: "#860CE6"})
             .setLngLat([ click_lng, click_lat ])
             .addTo(map);
             document.getElementById('answer_longitude').value = click_lng;

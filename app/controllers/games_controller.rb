@@ -2,10 +2,12 @@ class GamesController < ApplicationController
 
   # affichage de la page finale du jeu
   def show
-    @user = current_user
     @game = Game.find(params[:id])
+    @user = current_user
     @theme = @game.theme
     @pois = @theme.pois
+    @answers = Answer.where(game_id: @game)
+    @total_score = total_score_calculation
     @markers = @pois.map do |poi|
       {
         lng: poi.longitude,
@@ -39,6 +41,14 @@ class GamesController < ApplicationController
       @list_poi_on_going_game << (poi.poi_id)
     end
     first_poi = @list_poi_on_going_game.sample
+  end
+
+  def total_score_calculation
+    total_score = 0
+    @answers.each do |answer|
+      total_score += answer.score
+    end
+    return total_score
   end
 
 

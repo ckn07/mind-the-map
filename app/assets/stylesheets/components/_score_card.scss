@@ -1,10 +1,29 @@
+.menu-map {
+  height: 650px;
+  width: 350px;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  // justify-content: space-around;
+  align-items: center;
+
 .score-card {
   height: 600px;
   width: 350px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
   z-index: 3000;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 20px;
+}
+
+  .POI_name {
+    padding: 0px 5px;
+  }
 
   .icon {
     height :50px;
@@ -23,5 +42,21 @@
   p {
     color: #fff;
     font-size: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .row-pin {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .row-time {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
   }
 }

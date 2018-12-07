@@ -1,9 +1,9 @@
 <div class="banner" style="background-image: linear-gradient(180.49deg, rgba(0, 0, 0, 0) 1.06%, #FFFFFF 72.86%), url(<%= asset_path 'Banner-mind-the-map.png' %>);">
   <div class="banner-content">
-    <div class="banner-content-h1">
-      <h1>Mind the Map</h1>
+    <div class="logo-big">
+      <%= image_tag("logo-big.svg") %>
     </div>
-    <p>Can you locate places on an unlabeled map ?</p>
+    <p>Can you locate places <br> on an unlabeled map ?</p>
     <!-- Lien du bouton passer sur une URL absolu pour permettre de revenir à une page sans search -->
     <a class="btn btn-form btn-lg btn-white btn-pimp" href="<%="#{root_path}#cards-from-paris"%>">Play now</a>
   </div>
@@ -23,9 +23,8 @@
               <div class="card-footer">
                 <p><%= theme.name %></p>
               </div>
-
-
             </div>
+
           </div>
         </div>
       </div>
@@ -33,51 +32,26 @@
   </div>
 </div>
 
-<div class="container-2">
-  <h2>Liste des pages path </h2>
-  <ul>
-    <li>
-        <%= link_to "NEW USER (new_user_registration_url)",  new_user_registration_url%>
-    </li>
-    <li>
-      <%= link_to "SIGNIN (new_user_session_url)", new_user_session_url  %>
-    </li>
-    <li>
-      <%= link_to "SIGNOUT (destroy_user_session_url)" , destroy_user_session_url %>
-    </li>
-    <li>
-     <%= link_to "CITIES ALL (cities_url)", cities_url  %>
-    </li>
-    <li>
-      <% @city = City.find(1) %>
-      <%= link_to "SHOW LES THEMES DE LA CITY 1 ( city_themes_url(@city) )", city_themes_url(@city)  %>
-    </li>
-
-    <li>
-      <%= link_to "GAMES (games_url)", games_url %>
-    </li>
-  </ul>
-</div>
-
 <!-- MUST STAY AT THE END -->
 <% @themes.each do |theme| %>
     <!-- Modal -->
   <div class="modal fade" id="themeModal<%= theme.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content m-c">
-          <div class="modal-header m-h">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <%= image_tag(("close.svg"), class: "btn-close") %>
-            </button>
-            <div class="theme-card-pic" style="background-image: url(<%= cl_image_path(theme.photo)%>)"></div>
-            <h1 class="modal-title text-center" id="exampleModalLabel"><%= @city.name  %> - <%= theme.name %> </h1>
-            <p class="text-center">Time to play:</p>
-            <div class="row">
-              <div class="col-xs-12 col-sm-6 text-center">
-                <%= link_to "Duo", "#", class: "btn-pimp btn-fw text-center c-game" %>
-              </div>
-              <div class="col-xs-12 col-sm-6 text-center">
-                <%= link_to "Solo", theme_games_url(theme.id) , method: :post,  class: "btn-pimp btn-fw text-center c-game" %>              </div>
+      <div class="modal-content m-c-h">
+        <div class="modal-header m-h">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <%= image_tag(("close.svg"), class: "btn-close-home") %>
+          </button>
+          <div class="theme-card-pic" style="background-image: url(<%= cl_image_path(theme.photo)%>)">
+          </div>
+          <h1 class="modal-title text-center" id="exampleModalLabel"><%= @city.name  %> - <%= theme.name %> </h1>
+          <p class="text-center">Time to play:</p>
+          <div class="row">
+            <div class="col-xs-12 col-sm-6 text-center">
+              <%= link_to "Duo", "#", class: "btn-pimp btn-fw text-center c-game" %>
+            </div>
+            <div class="col-xs-12 col-sm-6 text-center">
+              <%= link_to "Solo", theme_games_url(theme.id) , method: :post,  class: "btn-pimp btn-fw text-center c-game" %>
             </div>
           </div>
         </div>
