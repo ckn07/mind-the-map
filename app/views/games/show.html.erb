@@ -6,10 +6,9 @@
   </div>
 
   <div class="score-title text-center">
-    <h2>Your score:</h2>
-    <h4><%= @total_score %> points</h4>
+    <h2>Your score: <%= @total_score %> points</h2>
   </div>
-  
+
 </div>
 
 <div>
@@ -42,8 +41,8 @@
 
 <div class="cta toto">
   <div class="col-md-4 watch-footer">
-    <button class="btn btn-primary btn-fw btn-pimp">Play again</button>
-  </div>
+    <%= link_to 'Play again', theme_games_url(@game), class: "btn btn-pimp btn-fw" %>
+   </div>
   <div class="col-md-4 text-center watch-footer">
     <button class="btn btn-primary btn-fw btn-pimp">Challenge a friend</button>
   </div>
@@ -51,6 +50,7 @@
     <button class="btn btn-primary btn-fw btn-pimp">Share on Facebook</button>
   </div>
 </div>
+
 
 <!-- MUST STAY AT THE END -->
 <div class="modals">
