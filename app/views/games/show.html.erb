@@ -1,76 +1,55 @@
 <div class="container-banner">
-
   <div class="title">
     <%= image_tag("rocket.svg") %>
     <h1>CONGRATS</h1>
     <%= image_tag("rocket.svg") %>
-  </div> <!-- fin de title-->
+  </div>
 
   <div class="score-title text-center">
     <h2>Your score:</h2>
     <h4><%= @game.score_one %> points</h4>
-  </div><!-- fin de score title -->
-</div> <!-- fin de container-banner -->
+  </div>
+</div>
 
-<div class="container results-listing">
+<div>
+  <div class="results-listing">
 
-  <div class="row">
-
-    <div class="the-map col-xs-12 col-md-6">
-
-      <div id="map"  style="height: 100vh;" data-markers="<%= @markers.to_json %>" data-game="off" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-      </div>
-
-    </div> <!-- fin de the-map-->
+    <div id="map"  style="height: 100vh;" data-markers="<%= @markers.to_json %>" data-game="off" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
+    </div>
 
 
-    <div class="POI-list col-xs-12 col-md-6" >
+    <div class="POI-list" >
       <p>The <%= @game.theme.name %> you discovered: </p>
       <div class="row">
         <div class="POI-list-container">
           <% @pois.each do |poi| %>
 
             <div class="game-card-col col-sm-6 text-center">
-
               <!-- Button trigger modal -->
               <div class="game-card" data-toggle="modal" data-target="#poiModal<%= poi.id %>">
-
-                <div class="game-card-pic" style="background-image: url(<%= cl_image_path(poi.photo)%>)">
-                </div>
-
-                <div class="game-card-title">
-                  <%= poi.name %>
-                </div> <!-- fin de game-title-->
-
+                <div class="game-card-pic" style="background-image: url(<%= cl_image_path(poi.photo)%>)"></div>
+                <div class="game-card-title"><%= poi.name %></div> <!-- fin de game-title-->
               </div> <!-- fin de game-card-->
-
             </div> <!-- fin de game-card-col -->
-
           <% end %>
-
         </div> <!-- fin de POI-list-container-->
-
       </div> <!-- fin de row POI-list-->
-
     </div> <!-- fin de POI-list-->
 
-  </div> <!-- fin de row -->
 
-  <div class="row">
-    <div class="col-xs-12 col-md-4 text-center watch-footer">
-      <button class="btn btn-primary btn-fw btn-pimp">Play again</button>
-    </div>
-    <div class="col-xs-12 col-md-4 text-center watch-footer">
-      <button class="btn btn-primary btn-fw btn-pimp">Challenge a friend</button>
-    </div>
-    <div class="col-xs-12 col-md-4 text-center watch-footer">
-      <button class="btn btn-primary btn-fw btn-pimp">Share on Facebook</button>
-    </div>
+  </div> <!-- fin de result -->
+
+<div class="cta toto">
+  <div class="col-md-4 watch-footer">
+    <button class="btn btn-primary btn-fw btn-pimp">Play again</button>
   </div>
-
-</div> <!-- fin de container -->
-
-
+  <div class="col-md-4 text-center watch-footer">
+    <button class="btn btn-primary btn-fw btn-pimp">Challenge a friend</button>
+  </div>
+  <div class="col-md-4 text-center watch-footer">
+    <button class="btn btn-primary btn-fw btn-pimp">Share on Facebook</button>
+  </div>
+</div>
 
 
 
@@ -93,10 +72,8 @@
           <div class="modal-body">
             <p><%= poi.description %></p>
           </div> <!-- fin de modal-body-->
-
         </div> <!-- fin de modal-content -->
       </div> <!-- fin de modal-dialog -->
     </div><!-- fin de modal-fade -->
   <% end %>
-</div> <!-- fin de modals-->
-
+</div>
