@@ -25,7 +25,8 @@ class AnswersController < ApplicationController
     @poi = Poi.find(params[:poi_id])
     @latitude_user = params[:answer][:latitude]
     @longitude_user = params[:answer][:longitude]
-    @time_to_respond = params[:answer][:time_to_respond].to_i
+    @time_to_respond = params[:answer][:time_to_respond].to_f / 1000
+    # @time_to_respond_formatted = (@time_to_respond / 1000).round(2)
     @poi_coordinates = "[#{@poi.latitude},#{@poi.longitude}]"
     @user_coordinates = "[#{@latitude_user},#{@longitude_user}]"
     @distance = methode_calcul_distance
@@ -41,29 +42,28 @@ class AnswersController < ApplicationController
     @answer.time_to_respond = @time_to_respond
     @answer.save!
     redirect_to game_poi_answer_path(@game.id,@poi.id,@answer.id)
+
   end
 
-private
+  private
+
   def set_game
     @game = Game.find(params[:game_id])
   end
-
-
 
   def answer_params
     params.require(:answer).permit(:latitude, :longitude, :score, :time_to_respond)
   end
 
   def methode_calcul_distance
-     (Geocoder::Calculations.distance_between(@poi_coordinates, @user_coordinates)*1000).to_i
+    (Geocoder::Calculations.distance_between(@poi_coordinates, @user_coordinates) * 1000).to_i
   end
 
   def score_calculation
-    if @distance < 3000
-      (5000 - @time_to_respond) * @distance
-    else
-      return 0
-    end
+    max_score = 10_000 # per criteria
+    distance_limit = 3_000 # meters
+    time_limit = 10 # seconds
+    max_score - (@distance * max_score / distance_limit) + max_score - (@time_to_respond * max_score / time_limit)
   end
 
   def whats_pois_are_left
@@ -71,12 +71,12 @@ private
     @pois = @theme.theme_pois
     @list_poi_on_going_game = []
     @pois.each do |poi|
-      @list_poi_on_going_game << (poi.poi_id)
+      @list_poi_on_going_game << poi.poi_id
     end
     @pois_already_answered = []
     @list_answers = Answer.where(game_id: @game)
     @list_answers.each do |poi|
-      @pois_already_answered << (poi.poi_id)
+      @pois_already_answered << poi.poi_id
     end
     remaining_poi = @list_poi_on_going_game - @pois_already_answered
   end
