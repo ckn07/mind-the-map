@@ -7,12 +7,13 @@
       </div>
       <div class="scores-array">
 
+        <% @games.each do |game| %>
         <div class="scores">
-          <img class="scores-image" src="<%= cl_image_path Game.first.theme.photo %>">
+          <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
           <div class="scores-body text-center">
-            <p><%= Game.first.theme.city.name %></p>
-            <p><%= Game.first.theme.name %></p>
-            <p><strong><%= Game.first.score_one %></strong></p>
+            <p><%= game.theme.city.name %></p>
+            <p><%= game.theme.name %></p>
+            <p><strong><%= game.score_one %></strong></p>
           </div>
           <ul class="list-inline scores-controls hidden-sm hidden-xs">
             <li><button class="btn btn-primary btn-fw btn-pimp">Play again</button></li>
@@ -20,7 +21,7 @@
             <li><button class="btn btn-primary btn-fw btn-pimp">Share on Facebook</button></li>
           </ul>
         </div>
-
+        <% end %>
       </div>
     </div>
   </div>
