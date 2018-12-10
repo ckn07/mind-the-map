@@ -503,6 +503,60 @@ bataclan_concert.save!
 
 puts "--> 5 pois have been created for concerts_paris !"
 
+puts "generating pois for parks_paris"
+
+buttes_chaumont_park = Poi.new(
+  name: "Parc des Buttes Chaumont",
+  address: "21 Rue Botzaris, 75019 Paris",
+  latitude: 48.8769129,
+  longitude: 2.381104599999958,
+  description: "The Parc des Buttes-Chaumont is a public park situated in northeastern Paris, in the 19th arrondissement. Occupying 24.7 hectares (61 acres), it is the fifth-largest park in Paris, after the Bois de Vincennes, the Bois de Boulogne, the Parc de la Villette and the Tuileries Garden.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Parc_des_Buttes_Chaumont")
+buttes_chaumont_park.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544448888/MtM/Parks_POIs/buttes_chaumont.jpg"
+buttes_chaumont_park.save!
+
+tuileries_park = Poi.new(
+  name: "Jardin des Tuileries",
+  address: "113 Rue de Rivoli, 75001 Paris",
+  latitude: 48.8634916,
+  longitude: 2.327494300000012,
+  description: "The Tuileries Garden is a public garden located between the Louvre and the Place de la Concorde in the 1st arrondissement of Paris, France. Created by Catherine de' Medici as the garden of the Tuileries Palace in 1564, it was eventually opened to the public in 1667 and became a public park after the French Revolution. In the 19th and 20th centuries, it was a place where Parisians celebrated, met, strolled and relaxed.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Tuileries_Garden")
+tuileries_park.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544448888/MtM/Parks_POIs/jardin_tuileries.jpg"
+tuileries_park.save!
+
+jardin_luxembourg_park = Poi.new(
+  name: "Le Jardin du Luxembourg",
+  address: "Le Jardin du Luxembourg, 75006 Paris, France",
+  latitude: 48.8462217,
+  longitude: 2.3371604999999818,
+  description: "The Jardin du Luxembourg, also known in English as the Luxembourg Gardens, is located in the 6th arrondissement of Paris, France. It was created beginning in 1612 by Marie de' Medici, the widow of King Henry IV of France, for a new residence she constructed, the Luxembourg Palace. The garden today is owned by the French Senate, which meets in the Palace. It covers 23 hectares and is known for its lawns, tree-lined promenades, flowerbeds, model sailboats on its circular basin, and picturesque Medici Fountain, built in 1620. The name Luxembourg comes from the Latin Mons Lucotitius, the name of the hill where the garden is located",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Jardin_du_Luxembourg")
+jardin_luxembourg_park.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544448888/MtM/Parks_POIs/luxembourg.jpg"
+jardin_luxembourg_park.save!
+
+champs_de_mars_park = Poi.new(
+  name: "Champs de Mars",
+  address: "Champ de Mars - Tour Eiffel 75015 Paris, France",
+  latitude: 48.8551624,
+  longitude: 2.2892107000000124,
+  description: "The Champ de Mars (English: Field of Mars) is a large public greenspace in Paris, France, located in the seventh arrondissement, between the Eiffel Tower to the northwest and the École Militaire to the southeast. The park is named after the Campus Martius ('Mars Field') in Rome, a tribute to the Latin name of the Roman God of war. The name also alludes to the fact that the lawns here were formerly used as drilling and marching grounds by the French military.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Champ_de_Mars")
+champs_de_mars_park.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544448888/MtM/Parks_POIs/champs_de_mars.jpg"
+champs_de_mars_park.save!
+
+parc_monceau = Poi.new(
+  name: "Parc Monceau",
+  address: "35 Boulevard de Courcelles, 75008 Paris",
+  latitude: 48.863063,
+  longitude: 2.3708149999999932,
+  description: "Parc Monceau is a public park situated in the 8th arrondissement of Paris, France, at the junction of Boulevard de Courcelles, Rue de Prony and Rue Georges Berger. At the main entrance is a rotunda. The park covers an area of 8.2 hectares (20.3 acres).",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Parc_Monceau")
+parc_monceau.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544448888/MtM/Parks_POIs/parc_monceau.jpg"
+parc_monceau.save!
+
+puts "--> 5 pois have been created for parks_paris !"
+
 # ThemePoi seed
 puts "generating theme pois for monuments_paris"
 tp1 = ThemePoi.new(
@@ -701,6 +755,35 @@ tp30 = ThemePoi.new(
 tp30.save!
 
 puts "--> good for concerts_paris POIs!"
+
+puts "go for parks_paris POIs"
+
+tp31 = ThemePoi.new(
+  theme_id: parks_paris.id,
+  poi_id: jardin_luxembourg_park.id)
+tp31.save!
+
+tp32 = ThemePoi.new(
+  theme_id: parks_paris.id,
+  poi_id: tuileries_park.id)
+tp32.save!
+
+tp33 = ThemePoi.new(
+  theme_id: parks_paris.id,
+  poi_id: parc_monceau.id)
+tp33.save!
+
+tp34 = ThemePoi.new(
+  theme_id: parks_paris.id,
+  poi_id: buttes_chaumont_park.id)
+tp34.save!
+
+tp35 = ThemePoi.new(
+  theme_id: parks_paris.id,
+  poi_id: champs_de_mars_park.id)
+tp35.save!
+
+puts "--> good for parks_paris POIs!"
 
 
 # Games seed
