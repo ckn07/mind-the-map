@@ -1,10 +1,10 @@
-class ChallengeController < ApplicationController
+class ChallengesController < ApplicationController
   def new
-    @game = Game.find(params[:id])
+    @game = Game.find(params[:game_id])
   end
 
   def create
-    @game = Game.find(params[:id])
+    @game = Game.find(params[:game_id])
     @game.user_two = current_user
     @poi = pick_a_random_poi_of_the_theme
       if @game.save
