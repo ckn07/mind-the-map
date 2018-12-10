@@ -90,10 +90,10 @@ districts_paris.city = paris
 districts_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544094011/MtM/themes_paris/districts_paris.jpg"
 districts_paris.save!
 
-streets_paris = Theme.new(name: "Streets")
-streets_paris.city = paris
-streets_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544094011/MtM/themes_paris/streets_paris.jpg"
-streets_paris.save!
+places_paris = Theme.new(name: "Places")
+places_paris.city = paris
+places_paris.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544437736/MtM/Places_POIs/main_places.jpg"
+places_paris.save!
 
 shops_paris = Theme.new(name: "Shops")
 shops_paris.city = paris
@@ -129,7 +129,7 @@ puts "--> 9 themes has been created!"
 
 
 # POI seed
-puts "generating pois"
+puts "generating pois for monuments_paris"
 tour_eiffel = Poi.new(
   name: "Tour Eiffel",
   address: "Champ de Mars, 5 Avenue Anatole France, 75007 Paris, France",
@@ -230,6 +230,10 @@ palais_luxembourg = Poi.new(
 palais_luxembourg.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020952/MtM/palais_luxembourg.jpg"
 palais_luxembourg.save!
 
+puts "--> 10 pois for monuments_paris have been created!"
+
+puts "generating pois for districts_paris"
+
 second_district = Poi.new(
   name: "2nd District",
   address: "121-119 Rue Réaumur, 75002 Paris",
@@ -280,11 +284,65 @@ twentieth_district = Poi.new(
 twentieth_district.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544437005/MtM/District_POIs/twentieth_district.gif"
 twentieth_district.save!
 
-puts "--> 14 pois have been created!"
+puts "--> 5 pois have been created for districts_paris !"
 
+puts "generating pois for places_paris"
+
+place_vosges = Poi.new(
+  name: "Place des Vosges",
+  address: "Place des Vosges, 75004 Paris",
+  latitude: 48.85561140000001,
+  longitude: 2.3655266000000665,
+  description: "The Place des Vosges, originally Place Royale, is the oldest planned square in Paris, France. It is located in the Marais district, and it straddles the dividing-line between the 3rd and 4th arrondissements of Paris. It was a fashionable and expensive square to live in during the 17th and 18th centuries, and one of the central reasons of the fashionable nature of Le Marais for the Parisian nobility.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Place_des_Vosges")
+place_vosges.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544437736/MtM/Places_POIs/main_places.jpg"
+place_vosges.save!
+
+place_republique = Poi.new(
+  name: "Place de la République",
+  address: "Place de la République, Paris, France",
+  latitude: 48.86739360000001,
+  longitude: 2.3634144000000106,
+  description: "The Place de la République (formerly known as the Place du Château d'Eau) is a square in Paris, located on the border between the 3rd, 10th and 11th arrondissements. The square has an area of 3.4 ha (8.4 acres).[2] It is named after the French Republic, was called the Place du Château-d'Eau until 1879, and contains a monument which includes a statue of the personification of France, Marianne.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Place_de_la_R%C3%A9publique")
+place_republique.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544438384/MtM/Places_POIs/republique_place.jpg"
+place_republique.save!
+
+place_concorde = Poi.new(
+  name: "Place de la Concorde",
+  address: "Place de la Concorde, 75008 Paris, France",
+  latitude: 48.8655759,
+  longitude: 2.3206268000000136,
+  description: "The Place de la Concorde (French pronunciation: ​[plas də la kɔ̃kɔʁd]) is one of the major public squares in Paris, France. Measuring 18.8 acres (7.6 hectares) in area, it is the largest square in the French capital. It is located in the city's eighth arrondissement, at the eastern end of the Champs-Élysées. It was the site of many notable public executions during the French Revolution.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Place_de_la_Concorde")
+place_concorde.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544438534/MtM/Places_POIs/concorde_place.jpg"
+place_concorde.save!
+
+place_trocadero = Poi.new(
+  name: "Place du Trocadero et du 11 Novembre 1918",
+  address: "Place du Trocadéro et du 11 Novembre 1918, 75016 Paris, France",
+  latitude: 48.8626979,
+  longitude: 2.287502600000039,
+  description: "The Trocadéro is an area of Paris, France, in the 16th arrondissement, across the Seine from the Eiffel Tower. The hill of the Trocadéro is the hill of Chaillot, a former village.The place was named in honour of the Battle of Trocadero, in which the fortified Isla del Trocadero, in southern Spain, was captured by French forces led by the Duc d'Angoulême, son of the future King of France, Charles X, on August 31, 1823.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Trocad%C3%A9ro")
+place_trocadero.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544442517/MtM/Places_POIs/trocadero_place.jpg"
+place_trocadero.save!
+
+
+place_vendome = Poi.new(
+  name: "Place Vendome",
+  address: "Place Vendôme, 75001 Paris",
+  latitude: 48.8675839,
+  longitude: 2.3293456000000106,
+  description: "Place Vendôme is a square in the 1st arrondissement of Paris, France, located to the north of the Tuileries Gardens and east of the Église de la Madeleine. It is the starting point of the rue de la Paix. Its regular architecture by Jules Hardouin-Mansart and pedimented screens canted across the corners give the rectangular place Vendôme the aspect of an octagon. The original Vendôme Column at the centre of the square was erected by Napoleon I to commemorate the Battle of Austerlitz; it was torn down on 16 May 1871, by decree of the Paris Commune, but subsequently re-erected and remains a prominent feature on the square today.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Place_Vend%C3%B4me")
+place_vendome.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544442053/MtM/Places_POIs/vendome_place.jpg"
+place_vendome.save!
+
+puts "--> 5 pois have been created for places_paris !"
 
 # ThemePoi seed
-puts "generating theme pois"
+puts "generating theme pois for monuments_paris"
 tp1 = ThemePoi.new(
   theme_id: monuments_paris.id,
   poi_id: tour_eiffel.id)
@@ -334,6 +392,7 @@ tp10 = ThemePoi.new(
   theme_id: monuments_paris.id,
   poi_id: palais_luxembourg.id)
 tp10.save!
+
 puts "--> 10 theme pois have been created for monuments_paris!"
 
 puts "--> let's start district_paris!"
@@ -364,6 +423,37 @@ tp15 = ThemePoi.new(
 tp15.save!
 
 puts "--> Ok for district_paris!"
+
+puts "go for places_paris"
+
+tp11 = ThemePoi.new(
+  theme_id: places_paris.id,
+  poi_id: place_vosges.id)
+tp11.save!
+
+tp12 = ThemePoi.new(
+  theme_id: places_paris.id,
+  poi_id: place_republique.id)
+tp12.save!
+
+tp13 = ThemePoi.new(
+  theme_id: places_paris.id,
+  poi_id: place_concorde.id)
+tp13.save!
+
+tp14 = ThemePoi.new(
+  theme_id: places_paris.id,
+  poi_id: place_trocadero.id)
+tp14.save!
+
+tp15 = ThemePoi.new(
+  theme_id: places_paris.id,
+  poi_id: place_vendome.id)
+tp15.save!
+
+puts "--> good for district_paris!"
+# puts "go for shops_paris"
+
 
 # Games seed
 puts "generating games"
