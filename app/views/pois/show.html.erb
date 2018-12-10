@@ -11,26 +11,26 @@
     data-game="on">
     <div class="position-right">
       <%= render 'shared/bar_timer' %>
-
     </div>
   </div>
-
-
 </div>
 
- <div style="display: none;">
-     <%= simple_form_for [@game, @poi, @answer] do |f| %>
+ <div style="display:none;">
+     <%= simple_form_for([@game, @poi, @answer], remote: true) do |f| %>
         <%= f.input :latitude %>
         <%= f.input :longitude %>
         <%= f.input :time_to_respond %>
-        <%= f.submit class: "btn btn-primary btn-pimp"%>
+        <%= f.submit id: "answer-button", class: "btn btn-primary btn-pimp"%>
       <% end %>
  </div>
 
-<script type="text/javascript">
+<%# empty container to display the answer %>
+<div class="menu-map-container"></div>
+
+<!-- <script type="text/javascript">
  setTimeout(function() {
    const form = document.getElementById('new_answer');
    form.submit();
  }, 13000);
 </script>
-
+ -->

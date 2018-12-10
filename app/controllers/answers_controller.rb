@@ -16,8 +16,6 @@ class AnswersController < ApplicationController
     @next_poi = @remaining_poi.sample
     @counter_total = @list_poi_on_going_game.count
     @counter_remaining = @counter_total - @remaining_poi.count
-
-
   end
 
   # def index
@@ -43,13 +41,21 @@ class AnswersController < ApplicationController
     @answer.latitude = @latitude_user
     @answer.distance = @distance
     @answer.time_to_respond = @time_to_respond
+
+    @poi_marker = { lng: @poi.longitude, lat: @poi.latitude }
+
     if @answer.save
-      redirect_to game_poi_answer_path(@game.id,@poi.id,@answer.id)
+      respond_to do |format|
+        format.html { redirect_to game_poi_answer_path(@game.id, @poi.id, @answer.id) }
+        format.js
+      end
     else
       @answer = Answer.create(poi: @poi, user: current_user, game: @game, longitude: @poi.longitude, latitude: @poi.latitude, distance: 0, time_to_respond: 10, score: 0)
-      redirect_to game_poi_answer_path(@game.id,@poi.id,@answer.id)
+      respond_to do |format|
+        format.html { redirect_to game_poi_answer_path(@game.id, @poi.id, @answer.id) }
+        format.js
+      end
     end
-
   end
 
   private
