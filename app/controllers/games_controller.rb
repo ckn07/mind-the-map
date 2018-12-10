@@ -48,12 +48,12 @@ class GamesController < ApplicationController
     if @game.user_one == current_user
       @game.score_one = total_score_calculation
       @game.total_time_one = total_time_calculation
-      @distance_one = total_distance_calculation
+      @game.distance_one = total_distance_calculation
       redirect_to game_path(@game)
     else
       @game.score_two = total_score_calculation
       @game.total_time_two = total_time_calculation
-      @distance_two = total_distance_calculation
+      @game.distance_two = total_distance_calculation
       redirect_to game_path(@game)
     end
     @game.save
