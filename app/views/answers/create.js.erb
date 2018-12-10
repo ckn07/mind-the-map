@@ -4,9 +4,11 @@ function addAnswer() {
   timeBar.style.display = 'none';
 
   // display result box
-  const menuMapContainer = document.querySelector('.menu-map-container');
-  const menuMapHTML = '<%= j render "answers/menu_map", game: @game, poi: @poi, next_poi: @next_poi, answer: @answer %>';
-  menuMapContainer.innerHTML = menuMapHTML;
+  const menuScoreContainer = document.querySelector('.menu-score-container');
+  const menuScoreClosed = document.querySelector('.score-card');
+  const menuScoreHTML = '<%= j render "answers/menu_score", game: @game, poi: @poi, next_poi: @next_poi, answer: @answer %>';
+  menuScoreClosed.classList.add("open");
+  menuScoreContainer.innerHTML = menuScoreHTML;
 
   // display correct poi marker
   new window.mapboxgl.Marker({color: "#08c299"})
