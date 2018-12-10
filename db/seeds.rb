@@ -591,6 +591,60 @@ picasso_museum.save!
 
 puts "--> 5 pois have been created for museums_paris !"
 
+puts "generating pois for amelie_poulain_paris"
+
+cafe_amelie_poulain = Poi.new(
+  name: "the café where Amélie works",
+  address: "15, rue Lepic, 75018 Paris",
+  latitude: 48.8849297,
+  longitude: 2.333737700000029,
+  description: "The Café des 2 Moulins is a café in the Montmartre area of Paris, located at the junction of Rue Lepic and Rue Cauchois (the address is 15, rue Lepic, 75018 Paris). It takes its name from the two nearby historical windmills, Moulin Rouge and Moulin de la Galette.[1] The interior consists of a bar area and multiple small tables. The café has gained considerable fame since its appearance in the 2001 film Amélie, in which it is the workplace of the title character. It has since become a popular tourist destination.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Caf%C3%A9_des_2_Moulins")
+cafe_amelie_poulain.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544452611/MtM/Amelie_Poulain_POIs/les_2_moulins.jpg"
+cafe_amelie_poulain.save!
+
+canal_amelie_poulain = Poi.new(
+  name: "the canal where Amélie used to take a walk",
+  address: "47 Quai de Valmy, 75010 Paris",
+  latitude: 48.8699725,
+  longitude: 2.3657894000000397,
+  description: "Amelie loves to walk accross the Canal Saint-Martin. It is a 4.6 km (2.86 mi) long canal in Paris, connecting the Canal de l'Ourcq to the river Seine. Over nearly half its length (2069 m), between the Rue du Faubourg du Temple and the Place de la Bastille, was covered in the mid-19th century to create wide boulevards and public spaces on the surface",
+  scrapping_uri: "https://fr.wikipedia.org/wiki/Canal_Saint-Martin")
+canal_amelie_poulain.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544452611/MtM/Amelie_Poulain_POIs/canal.jpg"
+canal_amelie_poulain.save!
+
+collignon_amelie_poulain = Poi.new(
+  name: "grocery where Lucien works ",
+  address: "56 Rue des Trois Frères, 75018 Paris, France",
+  latitude: 48.88567839999999,
+  longitude: 2.338389300000017,
+  description: "Collignon, crêpe chignon ! Collignon, face de fion ! Collignon, tête à gnons ! ",
+  scrapping_uri: "https://www.tripadvisor.fr/Restaurant_Review-g187147-d10321552-Reviews-Au_Marche_De_La_Butte-Paris_Ile_de_France.html")
+collignon_amelie_poulain.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544452611/MtM/Amelie_Poulain_POIs/epicerie_amelie.jpg"
+collignon_amelie_poulain.save!
+
+abbesses_amelie_poulain = Poi.new(
+  name: "subway station where Amélie lives",
+  address: "15 Rue des Abbesses, 75018 Paris, France",
+  latitude: 48.88414150000001,
+  longitude: 2.338446500000032,
+  description: "Abbesses is a station on Paris Métro Line 12, in the Montmartre district and the 18th arrondissement. Abbesses is the deepest station in the Paris Métro, at 36 metres (118 feet)[1] below ground, it is located on the western side of the butte (hill) of Montmartre.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Abbesses_(Paris_M%C3%A9tro)")
+abbesses_amelie_poulain.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544452611/MtM/Amelie_Poulain_POIs/abbesses.jpg"
+abbesses_amelie_poulain.save!
+
+mask_zorro_amelie_poulain = Poi.new(
+  name: "shop where Amélie bought her zorro mask",
+  address: "11 Boulevard Saint-Martin, 75003 Paris",
+  latitude: 48.8679676,
+  longitude: 2.360940199999959,
+  description: "A simple mask can change some lives.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/mask_zorro_amelie_poulain")
+mask_zorro_amelie_poulain.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544452611/MtM/Amelie_Poulain_POIs/ame%CC%81lie_poulain.gif"
+mask_zorro_amelie_poulain.save!
+
+puts "--> 5 pois have been created for amelie_poulain_paris !"
+
 # ThemePoi seed
 puts "generating theme pois for monuments_paris"
 tp1 = ThemePoi.new(
@@ -837,6 +891,35 @@ tp38 = ThemePoi.new(
 tp38.save!
 
 puts "--> good for museums_paris POIs!"
+
+puts "go for amelie_paris POIs"
+
+tp39 = ThemePoi.new(
+  theme_id: amelie_paris.id,
+  poi_id: cafe_amelie_poulain.id)
+tp39.save!
+
+tp40 = ThemePoi.new(
+  theme_id: amelie_paris.id,
+  poi_id: abbesses_amelie_poulain.id)
+tp40.save!
+
+tp41 = ThemePoi.new(
+  theme_id: amelie_paris.id,
+  poi_id: canal_amelie_poulain.id)
+tp41.save!
+
+tp42 = ThemePoi.new(
+  theme_id: amelie_paris.id,
+  poi_id: mask_zorro_amelie_poulain.id)
+tp42.save!
+
+tp43 = ThemePoi.new(
+  theme_id: amelie_paris.id,
+  poi_id: collignon_amelie_poulain.id)
+tp43.save!
+
+puts "--> good for amelie_paris POIs!"
 
 
 # Games seed
