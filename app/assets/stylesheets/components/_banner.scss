@@ -1,7 +1,8 @@
 .banner {
   color: white;
   text-align: center;
-  height: calc(100vh - 180px);
+  // height: calc(100vh - 180px);
+  padding: 90px 0px;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
