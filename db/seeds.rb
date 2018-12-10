@@ -449,6 +449,59 @@ le_jules_verne_restaurant.save!
 
 puts "--> 5 pois have been created for restaurants_paris !"
 
+puts "generating pois for concerts_paris"
+
+philharmonie_concert = Poi.new(
+  name: "Philharmonie de Paris",
+  address: "221 Avenue Jean Jaurès, 75019 Paris, France",
+  latitude: 48.8893059,
+  longitude: 2.3938068999999587,
+  description: "The Philharmonie de Paris is a cultural institution in Paris, France which combine spaces all dedicated to music. It is composed of concert halls, exhibition spaces, rehearsal rooms, educational services, restaurant and bars. The main buildings are all located in the Parc de la Villette at the northeastern edge of Paris in the 19th arrondissement. At the core of this set of spaces is the symphonic concert hall of 2,400 seats designed by Jean Nouvel and opened in January 2015",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Philharmonie_de_Paris")
+philharmonie_concert.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544447144/MtM/Concerts_POIs/philharmonie_paris.jpg"
+philharmonie_concert.save!
+
+olympia_concert = Poi.new(
+  name: "L'Olympia",
+  address: "28 Boulevard des Capucines, 75009 Paris, France",
+  latitude: 48.8702198,
+  longitude: 2.3283343000000514,
+  description: "The Olympia Bruno Coquatrix (commonly known as Olympia, or in English-speaking world as Olympia Hall and Paris Olympia) is a concert venue in the 9th arrondissement of Paris, France, located at 28 Boulevard des Capucines, equally distancing Madeleine church and Opéra Garnier, 300 metres (980 ft) north of Vendôme square. Its closest métro/RER stations are Madeleine, Opéra, Havre – Caumartin and Auber.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Olympia_(Paris)")
+olympia_concert.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544447285/MtM/Concerts_POIs/olympia.jpg"
+olympia_concert.save!
+
+elysee_montmartre_concert = Poi.new(
+  name: "L'Elysée Montmatre",
+  address: "72 Boulevard de Rochechouart, 75018 Paris",
+  latitude: 48.88301370000001,
+  longitude: 2.3436626999999817,
+  description: "Élysée Montmartre is a music venue located at 72 Boulevard de Rochechouart, Paris, France. It opened in 1807, burned down in 2011, reopened in 2016, and has a capacity of 1,380 patrons. The nearest métro station is Anvers.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/%C3%89lys%C3%A9e_Montmartre")
+elysee_montmartre_concert.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544447473/MtM/Concerts_POIs/elysee_montmartre.jpg"
+elysee_montmartre_concert.save!
+
+pleyel_concert = Poi.new(
+  name: "Salle Pleyel",
+  address: "252 Rue du Faubourg Saint-Honoré, 75008 Paris, France",
+  latitude: 48.8770488,
+  longitude: 2.3009389000000056,
+  description: "The Salle Pleyel (French: Pleyel Hall) is a concert hall in the 8th arrondissement of Paris, France. Its varied programme includes contemporary and popular music. Until 2015, the hall was a major venue for classical orchestral music, with Orchestre de Paris and the Orchestre Philharmonique de Radio France as resident ensembles.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Salle_Pleyel")
+pleyel_concert.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544447537/MtM/Concerts_POIs/pleyel.jpg"
+pleyel_concert.save!
+
+bataclan_concert = Poi.new(
+  name: "Le Bataclan",
+  address: "50 Boulevard Voltaire, 75011 Paris, France",
+  latitude: 48.863063,
+  longitude: 2.3708149999999932,
+  description: "The Bataclan is a theatre located at 50 Boulevard Voltaire in the 11th arrondissement of Paris, France. Designed in 1864 by the architect Charles Duval, its name refers to Ba-ta-clan, an operetta by Jacques Offenbach. Since the early 1970s, it has been a venue for rock music.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Bataclan_(theatre)")
+bataclan_concert.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544447806/MtM/Concerts_POIs/Bataclan.jpg"
+bataclan_concert.save!
+
+puts "--> 5 pois have been created for concerts_paris !"
 
 # ThemePoi seed
 puts "generating theme pois for monuments_paris"
@@ -619,6 +672,35 @@ tp25 = ThemePoi.new(
 tp25.save!
 
 puts "--> good for restaurants_paris POIs!"
+
+puts "go for concerts_paris POIs"
+
+tp26 = ThemePoi.new(
+  theme_id: concerts_paris.id,
+  poi_id: philharmonie_concert.id)
+tp26.save!
+
+tp27 = ThemePoi.new(
+  theme_id: concerts_paris.id,
+  poi_id: pleyel_concert.id)
+tp27.save!
+
+tp28 = ThemePoi.new(
+  theme_id: concerts_paris.id,
+  poi_id: elysee_montmartre_concert.id)
+tp28.save!
+
+tp29 = ThemePoi.new(
+  theme_id: concerts_paris.id,
+  poi_id: olympia_concert.id)
+tp29.save!
+
+tp30 = ThemePoi.new(
+  theme_id: concerts_paris.id,
+  poi_id: bataclan_concert.id)
+tp30.save!
+
+puts "--> good for concerts_paris POIs!"
 
 
 # Games seed
