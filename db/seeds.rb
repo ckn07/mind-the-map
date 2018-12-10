@@ -160,16 +160,6 @@ palais_garnier = Poi.new(
 palais_garnier.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543933607/MtM/palais-garnier.jpg"
 palais_garnier.save!
 
-grand_palais = Poi.new(
-  name: "Grand Palais",
-  address: "3 Avenue du Général Eisenhower, 75008 Paris",
-  latitude: 48.8665777,
-  longitude: 2.311635000000024,
-  description: "The Grand Palais des Champs-Élysées, commonly known as the Grand Palais (English: Great Palace), is a large historic site, exhibition hall and museum complex located at the Champs-Élysées in the 8th arrondissement of Paris, France",
-  scrapping_uri: "https://en.wikipedia.org/wiki/Grand_Palais")
-grand_palais.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020952/MtM/grand-palais.jpg"
-grand_palais.save!
-
 notre_dame = Poi.new(
   name: "Cathédrale Notre-Dame de Paris",
   address: "6 Parvis Notre-Dame - Pl. Jean-Paul II, 75004 Paris",
@@ -210,16 +200,6 @@ pantheon = Poi.new(
 pantheon.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020953/MtM/pantheon.jpg"
 pantheon.save!
 
-louvre = Poi.new(
-  name: "Musée du Louvre",
-  address: "Rue de Rivoli, 75001 Paris",
-  latitude: 48.8606111,
-  longitude: 2.3376439999999548,
-  description: "The Louvre or the Louvre Museum, is the world's largest art museum and a historic monument in Paris, France. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement (district or ward). Approximately 38,000 objects from prehistory to the 21st century are exhibited over an area of 72,735 square metres (782,910 square feet). In 2017, the Louvre was the world's most visited art museum, receiving 8.1 million visitors",
-  scrapping_uri: "https://en.wikipedia.org/wiki/Louvre")
-louvre.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543929617/MtM/louvre.jpg"
-louvre.save!
-
 palais_luxembourg = Poi.new(
   name: "Palais du Luxembourg",
   address: "15 Rue de Vaugirard, 75291 Paris",
@@ -230,7 +210,7 @@ palais_luxembourg = Poi.new(
 palais_luxembourg.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020952/MtM/palais_luxembourg.jpg"
 palais_luxembourg.save!
 
-puts "--> 10 pois for monuments_paris have been created!"
+puts "--> 9 pois for monuments_paris have been created!"
 
 puts "generating pois for districts_paris"
 
@@ -557,6 +537,60 @@ parc_monceau.save!
 
 puts "--> 5 pois have been created for parks_paris !"
 
+puts "generating pois for museums_paris"
+
+louvre_museum = Poi.new(
+  name: "Musée du Louvre",
+  address: "Rue de Rivoli, 75001 Paris",
+  latitude: 48.8606111,
+  longitude: 2.3376439999999548,
+  description: "The Louvre or the Louvre Museum, is the world's largest art museum and a historic monument in Paris, France. A central landmark of the city, it is located on the Right Bank of the Seine in the city's 1st arrondissement (district or ward). Approximately 38,000 objects from prehistory to the 21st century are exhibited over an area of 72,735 square metres (782,910 square feet). In 2017, the Louvre was the world's most visited art museum, receiving 8.1 million visitors",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Louvre")
+louvre_museum.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543929617/MtM/louvre.jpg"
+louvre_museum.save!
+
+grand_palais_museum = Poi.new(
+  name: "Grand Palais",
+  address: "3 Avenue du Général Eisenhower, 75008 Paris",
+  latitude: 48.8665777,
+  longitude: 2.311635000000024,
+  description: "The Grand Palais des Champs-Élysées, commonly known as the Grand Palais (English: Great Palace), is a large historic site, exhibition hall and museum complex located at the Champs-Élysées in the 8th arrondissement of Paris, France",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Grand_Palais")
+grand_palais_museum.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020952/MtM/grand-palais.jpg"
+grand_palais_museum.save!
+
+orsay_museum = Poi.new(
+  name: "Musée d'Orsay",
+  address: "1 Rue de la Légion d'Honneur, 75007 Paris",
+  latitude: 48.8601715,
+  longitude: 2.3260740000000624,
+  description: "The Musée d'Orsay is a museum in Paris, France, on the Left Bank of the Seine. It is housed in the former Gare d'Orsay, a Beaux-Arts railway station built between 1898 and 1900. The museum holds mainly French art dating from 1848 to 1914, including paintings, sculptures, furniture, and photography. It houses the largest collection of impressionist and post-Impressionist masterpieces in the world, by painters including Monet, Manet, Degas, Renoir, Cézanne, Seurat, Sisley, Gauguin, and Van Gogh.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Mus%C3%A9e_d%27Orsay")
+orsay_museum.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544450401/MtM/Museums_POIs/orsay.jpg"
+orsay_museum.save!
+
+pompidou_museum = Poi.new(
+  name: "Centre Georges Pompidou",
+  address: "Place Georges-Pompidou, 75004 Paris",
+  latitude: 48.8608613,
+  longitude: 2.351717000000008,
+  description: "Centre Georges Pompidou, commonly shortened to Centre Pompidou and also known as the Pompidou Centre in English, is a complex building in the Beaubourg area of the 4th arrondissement of Paris, near Les Halles, rue Montorgueil, and the Marais. It was designed in the style of high-tech architecture by the architectural team of Richard Rogers and Renzo Piano, along with Gianfranco Franchini.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Centre_Georges_Pompidou")
+pompidou_museum.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544450401/MtM/Museums_POIs/Pompidou_center.jpg"
+pompidou_museum.save!
+
+picasso_museum = Poi.new(
+  name: "Musée Picasso",
+  address: "5 Rue de Thorigny, 75003 Paris",
+  latitude: 48.8598015,
+  longitude: 2.362448699999959,
+  description: "The Musée Picasso is an art gallery located in the Hôtel Salé in rue de Thorigny, in the Marais district of Paris, France, dedicated to the work of the Spanish artist Pablo Picasso (1881–1973). The museum collection includes more than 5,000 works of art (paintings, sculptures, drawings, ceramics, prints, engravings and notebooks) and tens of thousands of archived pieces from Picasso’s personal repository, including the artist's photographic archive, personal papers, correspondence, and author manuscripts. A large portion of items were donated by Picasso’s family after his death, in accord with the wishes of the artist, who lived in France from 1905 to 1973",
+  scrapping_uri: "https://en.wikipedia.org/wiki/picasso_museum")
+picasso_museum.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544450401/MtM/Museums_POIs/picasso.jpg"
+picasso_museum.save!
+
+puts "--> 5 pois have been created for museums_paris !"
+
 # ThemePoi seed
 puts "generating theme pois for monuments_paris"
 tp1 = ThemePoi.new(
@@ -573,11 +607,6 @@ tp3 = ThemePoi.new(
   theme_id: monuments_paris.id,
   poi_id: palais_garnier.id)
 tp3.save!
-
-tp4 = ThemePoi.new(
-  theme_id: monuments_paris.id,
-  poi_id: grand_palais.id)
-tp4.save!
 
 tp5 = ThemePoi.new(
   theme_id: monuments_paris.id,
@@ -598,11 +627,6 @@ tp8 = ThemePoi.new(
   theme_id: monuments_paris.id,
   poi_id: pantheon.id)
 tp8.save!
-
-tp9 = ThemePoi.new(
-  theme_id: monuments_paris.id,
-  poi_id: louvre.id)
-tp9.save!
 
 tp10 = ThemePoi.new(
   theme_id: monuments_paris.id,
@@ -785,6 +809,35 @@ tp35.save!
 
 puts "--> good for parks_paris POIs!"
 
+puts "go for museums_paris POIs"
+
+tp9 = ThemePoi.new(
+  theme_id: museums_paris.id,
+  poi_id: louvre_museum.id)
+tp9.save!
+
+tp4 = ThemePoi.new(
+  theme_id: museums_paris.id,
+  poi_id: grand_palais_museum.id)
+tp4.save!
+
+tp36 = ThemePoi.new(
+  theme_id: museums_paris.id,
+  poi_id: orsay_museum.id)
+tp36.save!
+
+tp37 = ThemePoi.new(
+  theme_id: museums_paris.id,
+  poi_id: pompidou_museum.id)
+tp37.save!
+
+tp38 = ThemePoi.new(
+  theme_id: museums_paris.id,
+  poi_id: picasso_museum.id)
+tp38.save!
+
+puts "--> good for museums_paris POIs!"
+
 
 # Games seed
 puts "generating games"
@@ -829,16 +882,6 @@ answer3.poi = palais_garnier
 answer3.user = chris
 answer3.save!
 
-answer4 = Answer.new(
-  time_to_respond: 43333,
-  latitude: 48.873423,
-  longitude: 2.342536500331,
-  score: 400)
-answer4.game = game1
-answer4.poi = grand_palais
-answer4.user = chris
-answer4.save!
-
 answer5 = Answer.new(
   time_to_respond: 43533,
   latitude: 48.8712254,
@@ -879,16 +922,6 @@ answer8.poi = pantheon
 answer8.user = chris
 answer8.save!
 
-answer9 = Answer.new(
-  time_to_respond: 56333,
-  latitude: 48.871465,
-  longitude: 2.332453,
-  score: 900)
-answer9.game = game1
-answer9.poi = louvre
-answer9.user = chris
-answer9.save!
-
 answer10 = Answer.new(
   time_to_respond: 347533,
   latitude: 48.874758,
@@ -899,6 +932,6 @@ answer10.poi = palais_luxembourg
 answer10.user = chris
 answer10.save!
 
-puts "--> 10 answers have been created!"
+puts "--> 8 answers have been created!"
 
 
