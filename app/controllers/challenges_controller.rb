@@ -6,6 +6,7 @@ class ChallengesController < ApplicationController
   def create
     @game = Game.find(params[:game_id])
     @game.user_two = current_user
+    @theme = @game.theme
     @poi = pick_a_random_poi_of_the_theme
       if @game.save
         redirect_to game_poi_path(@game,@poi)
