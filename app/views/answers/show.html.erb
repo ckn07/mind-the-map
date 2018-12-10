@@ -2,56 +2,7 @@
   <h2> <%= @counter_remaining %>/<%= @counter_total  %> - <%= "#{@poi.name}" %></h2>
 </div>
 <div class="wrapper_map">
-  <div
-    id="map"
-    style="width: 100vw;
-    height: 100vh;"
-    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
-    data-markers="<%= @markers.to_json %>"
-    data-game="off"
-  >
-  </div>
 
-  <div class="menu-map">
-
-    <div class="score-card" style="background-image: url(<%= image_path("card_score.svg")%>)">
-      <div class="POI_name text-center">
-        <h1><%= @poi.name %></h1>
-      </div>
-      <div class="row-pin">
-        <div class="icon-pin">
-          <%= image_tag("pin_score.svg")%>
-        </div>
-        <div class="score-distance text-center">
-          <p><%= @answer.distance %> meters</p>
-        </div>
-      </div>
-      <div class="row-time">
-        <%= image_tag(("time_score.svg"), class: "icon icon-time" )%>
-        <p><%= @answer.time_to_respond %> s</p>
-      </div>
-      <div class="great-bad">
-        <% if @answer.score >= 200 %>
-          <div class="icon icon-great">
-            <%= image_tag("great.svg")%>
-          </div>
-        <% else %>
-          <div class="icon icon-bad">
-            <%= image_tag("bad.svg")%>
-          </div>
-        <% end %>
-      </div>
-      <div class="score-answer text-center">
-        <h1><%= @answer.score %> points</h1>
-      </div>
-      <div class="button-answer btn-pimp-w btn-fw-2 text-center">
-        <% if @next_poi.nil? %>
-          <%= link_to "> See your score" , game_url(@game), method: :patch %>
-        <% else %>
-          <%= link_to "> Next question" , game_poi_url(@game,@next_poi) %>
-        <% end %>
-      </div>
-    </div>
-  </div>
+  <%= render 'answers/show' %>
 </div>
 
