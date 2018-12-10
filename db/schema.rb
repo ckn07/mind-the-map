@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_102321) do
+ActiveRecord::Schema.define(version: 2018_12_10_165855) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,6 +50,7 @@ ActiveRecord::Schema.define(version: 2018_12_10_102321) do
     t.integer "total_time_two"
     t.integer "distance_one"
     t.integer "distance_two"
+    t.boolean "multi"
     t.index ["theme_id"], name: "index_games_on_theme_id"
   end
 

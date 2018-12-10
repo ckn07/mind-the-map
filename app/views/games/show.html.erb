@@ -1,3 +1,8 @@
+<% content_for :meta_title, "#{@game.user_one.first_name} has challenged you on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "#{@game.theme.name}, #{@game.theme.city.name}" %>
+
+<% content_for :meta_image, @theme.photo %>
+
 <div class="container-banner">
   <div class="title">
     <%= image_tag("rocket.svg") %>
@@ -14,7 +19,7 @@
 <div>
   <div class="results-listing">
 
-    <div id="map" style="height: 100vh;" data-markers="<%= @markers.to_json %>" data-game="off" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-zoom=11>
+    <div id="map" class="map-show";" data-markers="<%= @markers.to_json %>" data-game="off" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-zoom=11>
     </div>
 
 
@@ -27,7 +32,7 @@
             <div class="game-card-col col-sm-6 text-center">
               <!-- Button trigger modal -->
               <div class="game-card" data-toggle="modal" data-target="#poiModal<%= poi.id %>">
-                <div class="game-card-pic" style="background-image: url(<%= cl_image_path(poi.photo)%>)"></div>
+                <div class="game-card-pic" style="background-image: url(<%= cl_image_path(poi.photo, width: 400, height: 175, crop: :fill) %>)"></div>
                 <div class="game-card-title"><%= poi.name %></div> <!-- fin de game-title-->
               </div> <!-- fin de game-card-->
             </div> <!-- fin de game-card-col -->

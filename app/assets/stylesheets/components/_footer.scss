@@ -31,3 +31,10 @@
 .footer .fa-heart {
   color: $purple;
 }
+
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+ .footer-copyright {
+  display: none;
+ }
+}

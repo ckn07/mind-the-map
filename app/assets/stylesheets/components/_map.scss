@@ -1,8 +1,10 @@
 .results-listing {
   display: flex;
   // position: relative;
-  margin-left: 60px;
-  margin-right: 60px;
+  margin-left: 30px;
+  margin-right: 30px;
+  height: 90vh;
+  overflow: scroll;
 }
 
 .toto {
@@ -22,7 +24,7 @@
 
 #map {
   // display: flex;
-  flex: 0 0 50%;
+  flex: 0 0 45%;
   position: sticky !important;
   top: 0 !important;
   left: 0 !important;
@@ -35,6 +37,21 @@
   margin-left: 30px;
   margin-right: 30px;
 }
+
+
+
+@media (max-width: 900px) {
+  /* For a screen < 90px, this CSS will be read */
+  .results-listing {
+  height: 60vh;
+  }
+
+  #map {
+  flex: 0 0 40%;
+  }
+}
+
+
 
 // .hp-listing {
 //   // padding: 20px 20px;
