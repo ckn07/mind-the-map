@@ -341,6 +341,61 @@ place_vendome.save!
 
 puts "--> 5 pois have been created for places_paris !"
 
+puts "generating pois for shops_paris"
+
+galeries_lafayette_shop = Poi.new(
+  name: "Les Galeries Lafayette Haussmann",
+  address: "40 Boulevard Haussmann, Paris, France",
+  latitude: 48.8675839,
+  longitude: 2.3293456000000106,
+  description: "The Galeries Lafayette is an upmarket French department store chain. Its flagship store is on Boulevard Haussmann in the 9th arrondissement of Paris but it now operates in a number of other locations in France and other countries. In 2009, Galeries Lafayette recorded earnings of over one billion euro. It is a part of the company Groupe Galeries Lafayette.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Galeries_Lafayette")
+galeries_lafayette_shop.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544443129/MtM/Shops_POIs/galeries_lafayette.jpg"
+galeries_lafayette_shop.save!
+
+bhv_shop = Poi.new(
+  name: "Le BHV",
+  address: "52 Rue de Rivoli, 75004 Paris",
+  latitude: 48.85731229999999,
+  longitude: 2.3536331000000246,
+  description: "The Bazar de l'Hôtel de Ville or Le BHV Marais is a department store on rue de Rivoli in the 4th arrondissement of Paris, facing the Hôtel de Ville. It is part of the Groupe Galeries Lafayette and served by the Metro station Hôtel de Ville. It occupies four other smaller specialized stores, in the neighborhood, and has also opened several other shops in France and in Beirut, Lebanon. BHV currently operates several stores in the Paris metropolitan area and two in the Lyon metropolitan area.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Bazar_de_l%27H%C3%B4tel_de_Ville")
+bhv_shop.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544443129/MtM/Shops_POIs/bhv.jpg"
+bhv_shop.save!
+
+printemps_haussmann_shop = Poi.new(
+  name: "Printemps Paris Haussmann",
+  address: "64 Boulevard Haussmann, 75009 Paris, France",
+  latitude: 48.8739784,
+  longitude: 2.3280558000000156,
+  description: "Printemps (meaning 'spring' in French) is a French department store chain (French: grand magasin, literally 'big store'). The Printemps stores focus on beauty, lifestyle, fashion, accessories, and men's wear.Printemps was founded in 1865 by Jules Jaluzot and Jean-Alfred Duclos. The original store was designed by noted architects Jules and Paul Sédille and opened at the corner of Le Havre and Boulevard Haussmann in Paris, France, on 3 November 1865. The building was greatly expanded in 1874, and elevators (then a great novelty) from the 1867 Universal Exposition were installed.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Printemps")
+printemps_haussmann_shop.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544443129/MtM/Shops_POIs/printemps.jpg"
+printemps_haussmann_shop.save!
+
+bon_marche_shop = Poi.new(
+  name: "Le Bon Marché",
+  address: "24 Rue de Sèvres, 75007 Paris",
+  latitude: 48.8510258,
+  longitude: 2.324509199999966,
+  description: "Le Bon Marché (lit. 'the good market', or 'the good deal' in French) is a department store in Paris. Founded in 1838 and revamped almost completely by Aristide Boucicaut in 1852, it was the first ever modern department store. Now the property of LVMH, it sells a wide range of high-end goods, including food in an adjacent building at 38, rue de Sèvres, called La Grande Épicerie de Paris.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Le_Bon_March%C3%A9")
+bon_marche_shop.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544443130/MtM/Shops_POIs/bon_marche%CC%81.jpg"
+bon_marche_shop.save!
+
+la_garconniere_shop = Poi.new(
+  name: "La Garçonnière",
+  address: "47 Rue des Archives, 75003 Paris",
+  latitude: 48.86055289999999,
+  longitude: 2.3570899000000054,
+  description: "A casual shop for men made by men.",
+  scrapping_uri: "https://www.la-garconniere.fr/")
+la_garconniere_shop.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544443130/MtM/Shops_POIs/garc%CC%A7onnie%CC%80re_paris.jpg"
+la_garconniere_shop.save!
+
+puts "--> 5 pois have been created for shops_paris !"
+
+
 # ThemePoi seed
 puts "generating theme pois for monuments_paris"
 tp1 = ThemePoi.new(
@@ -395,7 +450,7 @@ tp10.save!
 
 puts "--> 10 theme pois have been created for monuments_paris!"
 
-puts "--> let's start district_paris!"
+puts "--> let's start district_paris POIs!"
 
 tp11 = ThemePoi.new(
   theme_id: districts_paris.id,
@@ -422,9 +477,9 @@ tp15 = ThemePoi.new(
   poi_id: twentieth_district.id)
 tp15.save!
 
-puts "--> Ok for district_paris!"
+puts "--> Ok for district_paris POIs "
 
-puts "go for places_paris"
+puts "go for places_paris POIs"
 
 tp11 = ThemePoi.new(
   theme_id: places_paris.id,
@@ -451,8 +506,36 @@ tp15 = ThemePoi.new(
   poi_id: place_vendome.id)
 tp15.save!
 
-puts "--> good for district_paris!"
-# puts "go for shops_paris"
+puts "--> good for district_paris POIs !"
+
+puts "go for shops_paris POIs"
+
+tp16 = ThemePoi.new(
+  theme_id: shops_paris.id,
+  poi_id: galeries_lafayette_shop.id)
+tp16.save!
+
+tp17 = ThemePoi.new(
+  theme_id: shops_paris.id,
+  poi_id: bhv_shop.id)
+tp17.save!
+
+tp18 = ThemePoi.new(
+  theme_id: shops_paris.id,
+  poi_id: bon_marche_shop.id)
+tp18.save!
+
+tp19 = ThemePoi.new(
+  theme_id: shops_paris.id,
+  poi_id: printemps_haussmann_shop.id)
+tp19.save!
+
+tp20 = ThemePoi.new(
+  theme_id: shops_paris.id,
+  poi_id: la_garconniere_shop.id)
+tp20.save!
+
+puts "--> good for shops_paris POIs!"
 
 
 # Games seed
