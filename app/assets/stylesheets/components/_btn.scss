@@ -1,40 +1,5 @@
-.btn-form {
-  background-color: $purple;
-  border-color: $purple;
-  color: white;
-  margin: 10px;
-  font-size: 22px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.btn-form:hover {
-  background-color: $purple;
-  color: white;
-  margin: 10px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-}
-
-.pending {
-  color: #dc872c;
-  font-size: 20px;
-}
-
 .buttons {
   text-align: center;
-}
-
-.btn-book {
-  background-color: #F4F4F4;
-  color: #2ed3b5;
-  font-size: 22px;
-  border-radius: 5px;
-  margin-top: 20px;
-}
-
-.btn-book:hover {
-  color: #56B4D3;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 }
 
 .btn-delete {
@@ -64,6 +29,8 @@
   outline: 0;
   background-color: rgba(255, 255, 255, 0);
   padding: 10px;
+  margin: 10px;
+  font-size: 22px;
   color: white;
   transition: all 0.7s ease-out;
 }
