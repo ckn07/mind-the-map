@@ -30,10 +30,10 @@
       <h1><%= answer.score %> points</h1>
     </div>
     <div class="button-answer btn-pimp-w btn-fw-2 text-center">
-      <% if @next_poi.nil? %>
+      <% if next_poi.nil? %>
         <%= link_to "> See your score" , game_url(game) %>
       <% else %>
-        <%= link_to "> Next question" , game_poi_url(game, @next_poi) %>
+        <%= link_to "> Next question" , game_poi_url(game, next_poi) %>
       <% end %>
     </div>
   </div>
