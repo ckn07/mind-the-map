@@ -395,6 +395,60 @@ la_garconniere_shop.save!
 
 puts "--> 5 pois have been created for shops_paris !"
 
+puts "generating pois for restaurants_paris"
+
+mokonuts_restaurants = Poi.new(
+  name: "Mokonuts",
+  address: "5 Rue Saint-Bernard, 75011 Paris, France",
+  latitude: 48.8507906,
+  longitude: 2.3813834000000043,
+  description: "Opened in December 2015, Mokonuts is the brainchild of Moko and Omar, partners who previously spent decades working in other fields. Moko, a former lawyer, prepares original and delicious desserts that catch your eye as soon as you walk in, including cookies made with black olives and white chocolate. Her pecan cake is also divine, made with halva (a type of nougat) and muscovado sugar. Meanwhile, Omar handles the savoury side of the business, crafting stunning recipes using the freshest of ingredients, like a parsnip velouté with fiore sardo (an Italian cheese) and artichoke caponata. With its affordable prices and tempting flavours, the café has already become one of the hottest spots in the neighbourhood. ",
+  scrapping_uri: "https://www.timeout.com/paris/en/restaurants/mokonuts")
+mokonuts_restaurants.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544445613/MtM/Restaurants_POIs/mokonuts.jpg"
+mokonuts_restaurants.save!
+
+le_975_restaurant = Poi.new(
+  name: "Le 975",
+  address: "25 Rue Guy Môquet Paris 75017",
+  latitude: 48.8507906,
+  longitude: 2.3813834000000043,
+  description: "Who’s it for? Those who love French cooking, with a penchant for Japanese flavours. What should I order? Iberian confit pork with spices, homemade mashed potatoes and rocket. When should I go? For the unbeatable lunchtime menu – €16 for a mise en bouche, the dish of the day, coffee and sweets.",
+  scrapping_uri: "https://www.timeout.com/paris/en/restaurants/le-975")
+le_975_restaurant.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544445833/MtM/Restaurants_POIs/975.jpg"
+le_975_restaurant.save!
+
+le_tagine_restaurant = Poi.new(
+  name: "Le Tagine",
+  address: "64 Boulevard Haussmann, 75009 Paris, France",
+  latitude: 48.8642046,
+  longitude: 2.36799910000002,
+  description: "Truly the best couscous in Paris.With its pleated fabric ceiling, giant mirrors, mosaic-topped tables, and lanterns and candles throughout, Le Tagine sets the right scene for what we reckon is the best couscous in the city. ",
+  scrapping_uri: "https://www.timeout.com/paris/en/restaurants/le-tagine")
+le_tagine_restaurant.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544446006/MtM/Restaurants_POIs/le_tagine.jpg"
+le_tagine_restaurant.save!
+
+le_meurice_restaurant = Poi.new(
+  name: "Le Meurice",
+  address: "228 Rue de Rivoli, 75001 Paris, France",
+  latitude: 48.86533259999999,
+  longitude: 2.3281374000000596,
+  description: "Anyone wanting a grand-slam experience of Gallic gastronomic grandeur won't do better than the glamorous dining room at the Hotel Meurice in the heart of the city. Though it was redecorated by Philippe Starck several years ago, it's good French bones survived intact – mosaic floor, crystal chandeliers, heavy damask curtains at the windows overlooking the Tuileries Gardens across the street – and the magnificent space is animated by old-school but friendly service that's as precise as a minuette. Chef Yannick Alléno bagged a third Michelin star in 2007, and his brilliantly inventive cooking is based on a deep knowledge of classical Escoffier vintage culinary technique",
+  scrapping_uri: "https://www.theguardian.com/travel/2011/may/06/top-10-paris-restaurants-dining")
+le_meurice_restaurant.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544446256/MtM/Restaurants_POIs/Meurice.jpg"
+le_meurice_restaurant.save!
+
+le_jules_verne_restaurant = Poi.new(
+  name: "Le Jules Verne",
+  address: "Avenue Gustave Eiffel, 75007 Paris",
+  latitude: 48.85796189999999,
+  longitude: 2.2954187000000275,
+  description: "Located at the second level of the Eiffel Tower, Le Jules Verne offers a contemporary cuisine, reuniting all the basics of classic French cuisine. Created from a rigorous selection of quality ingredients from our regions, it reflects the quest of excellence dear to Alain Ducasse. Beyond the spectacular view upon Paris, the elegant space created by interior designer Patrick Jouin, is an invitation to the dream. In daytime, natural light pours throughout the restaurant. In the evening, the atmosphere becomes more muted, more sensual.",
+  scrapping_uri: "https://en.parisinfo.com/paris-restaurant/70615/Le-Jules-Verne")
+le_jules_verne_restaurant.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544446499/MtM/Restaurants_POIs/le-Jules-Verne.jpg"
+le_jules_verne_restaurant.save!
+
+puts "--> 5 pois have been created for restaurants_paris !"
+
 
 # ThemePoi seed
 puts "generating theme pois for monuments_paris"
@@ -536,6 +590,35 @@ tp20 = ThemePoi.new(
 tp20.save!
 
 puts "--> good for shops_paris POIs!"
+
+puts "go for restaurants_paris POIs"
+
+tp21 = ThemePoi.new(
+  theme_id: restaurants_paris.id,
+  poi_id: mokonuts_restaurants.id)
+tp21.save!
+
+tp22 = ThemePoi.new(
+  theme_id: restaurants_paris.id,
+  poi_id: le_975_restaurant.id)
+tp22.save!
+
+tp23 = ThemePoi.new(
+  theme_id: restaurants_paris.id,
+  poi_id: le_tagine_restaurant.id)
+tp23.save!
+
+tp24 = ThemePoi.new(
+  theme_id: restaurants_paris.id,
+  poi_id: le_meurice_restaurant.id)
+tp24.save!
+
+tp25 = ThemePoi.new(
+  theme_id: restaurants_paris.id,
+  poi_id: le_jules_verne_restaurant.id)
+tp25.save!
+
+puts "--> good for restaurants_paris POIs!"
 
 
 # Games seed
