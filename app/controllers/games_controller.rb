@@ -6,8 +6,7 @@ class GamesController < ApplicationController
     @user = current_user
     @theme = @game.theme
     @pois = @theme.pois
-    @answers = Answer.where(game_id: @game)
-    @total_score = total_score_calculation
+    @answers = Answer.where(game_id: @game, user_id: current_user)
     @markers = @pois.map do |poi|
       {
         lng: poi.longitude,
@@ -15,6 +14,15 @@ class GamesController < ApplicationController
         color: "#08c299"
       }
     end
+    # les totales de la game ne doit pas etre calculé
+    # sur une show... cette dernier doit juste chargé des données
+    # le calcul et le storage va se faire dans la requete update
+    if @game.user_one == @user
+      @total_score = @game.score_one
+    else
+      @total_score = @game.score_two
+    end
+
   end
 
   def create
@@ -33,9 +41,24 @@ class GamesController < ApplicationController
   end
 
   def update
-    # check le user id?  si c'est dans user one ou two.
-    if @user ==
+    @game = Game.find(params[:id])
+    @answers = Answer.where(game_id: @game, user_id: current_user)
 
+    # check le user id?  si c'est dans user one ou two.
+    if @game.user_one == current_user
+      @game.score_one = total_score_calculation
+      # udpate total_time_one
+      # udpate distance_one
+      redirect_to game_path(@game)
+    else
+      @game.score_two = total_score_calculation
+      # udpate score_one
+      # udpate total_time_one
+      # udpate distance_one
+      redirect_to game_path(@game)
+
+    end
+    @game.save
   end
 
   private
