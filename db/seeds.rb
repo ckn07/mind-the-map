@@ -230,7 +230,57 @@ palais_luxembourg = Poi.new(
 palais_luxembourg.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020952/MtM/palais_luxembourg.jpg"
 palais_luxembourg.save!
 
-puts "--> 10 pois have been created!"
+second_district = Poi.new(
+  name: "2nd District",
+  address: "121-119 Rue Réaumur, 75002 Paris",
+  latitude: 48.868553,
+  longitude: 2.342026,
+  description: "The 2nd arrondissement of Paris (IIe arrondissement) is one of the 20 arrondissements of the capital city of France. In spoken French, this arrondissement is colloquially referred to as deuxième (second/the second). Also known as Bourse, this arrondissement is located on the right bank of the River Seine. The 2nd arrondissement, together with the adjacent 8th and 9th arrondissements, hosts an important business district, centred on the Paris Opéra, which houses the city's most dense concentration of business activities",
+  scrapping_uri: "https://en.wikipedia.org/wiki/2nd_arrondissement_of_Paris")
+second_district.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544434635/MtM/District_POIs/second_district.gif"
+second_district.save!
+
+ninth_district = Poi.new(
+  name: "9th District",
+  address: "52 Rue Saint-Georges, 75009 Paris",
+  latitude: 48.877628,
+  longitude: 2.337366,
+  description: "The 9th arrondissement of Paris (IXe arrondissement) called Opéra, is located on the right bank of the River Seine. It contains many places of cultural, historical, and architectural interest, including the Palais Garnier, home to the Paris Opera, Boulevard Haussmann, and its large department stores Galeries Lafayette and Printemps. The arrondissement has many theaters including Folies Bergères, Théatre Mogador and Théatre de Paris. Along with the 2nd and 8th arrondissements, it hosts one of the business centers of Paris, located around the Opéra.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/9th_arrondissement_of_Paris")
+ninth_district.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544434721/MtM/District_POIs/ninth_district.gif"
+ninth_district.save!
+
+sixth_district = Poi.new(
+  name: "6th District",
+  address: "2-6 Rue Servandoni, 75006 Paris",
+  latitude: 48.850641,
+  longitude: 2.334805,
+  description: "The 6th arrondissement of Paris (VIe arrondissement)is called Luxembourg. It is situated on the left bank of the River Seine. It includes world-famous educational institutions such as the École des Beaux-Arts de Paris and the Académie française, the seat of the French Senate as well as a concentration of some of Paris's most famous monuments such as Saint-Germain Abbey and square, St. Sulpice Church and square, the Pont des Arts, and the Jardin du Luxembourg.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/6th_arrondissement_of_Paris")
+sixth_district.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544435131/MtM/District_POIs/sixth_district.gif"
+sixth_district.save!
+
+eighteenth_district = Poi.new(
+  name: "18th District",
+  address: "Rue Ordener, 75018 Paris",
+  latitude: 48.891761,
+  longitude: 2.348130,
+  description: "The 18th arrondissement of Paris (XVIIIe arrondissement) known as Butte-Montmartre, is located on the right bank of the River Seine. It is mostly known for hosting the district of Montmartre which contains a hill known for its artistic history, the Bateau-Lavoir where Pablo Picasso, George Braque, and Amedeo Modigliani lived and worked in early 20th century [1], the house of music diva Dalida, the Moulin Rouge cabaret, other historic features, and the prominent Sacré Cœur basilica which sits atop the hill.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/18th_arrondissement_of_Paris")
+eighteenth_district.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544436295/MtM/District_POIs/eighteenth_district.gif"
+eighteenth_district.save!
+
+twentieth_district = Poi.new(
+  name: "20th District",
+  address: "6 Rue du Capitaine Ferber, 75020 Paris",
+  latitude: 48.864617,
+  longitude: 2.404677,
+  description: "The 20th (or XXe or vingtième) arrondissement of Paris is the last of the consecutively numbered arrondissements of that French capital city. Also known as Ménilmontant, it is located on the right bank of the River Seine and contains the city's cosmopolitan districts Ménilmontant and Belleville. The 20th arrondissement is also internationally known for the Père Lachaise Cemetery where one can find the tombs of many famous artists",
+  scrapping_uri: "https://en.wikipedia.org/wiki/20th_arrondissement_of_Paris")
+twentieth_district.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544437005/MtM/District_POIs/twentieth_district.gif"
+twentieth_district.save!
+
+puts "--> 14 pois have been created!"
 
 
 # ThemePoi seed
@@ -284,7 +334,36 @@ tp10 = ThemePoi.new(
   theme_id: monuments_paris.id,
   poi_id: palais_luxembourg.id)
 tp10.save!
-puts "--> 10 theme pois have been created!"
+puts "--> 10 theme pois have been created for monuments_paris!"
+
+puts "--> let's start district_paris!"
+
+tp11 = ThemePoi.new(
+  theme_id: districts_paris.id,
+  poi_id: second_district.id)
+tp11.save!
+
+tp12 = ThemePoi.new(
+  theme_id: districts_paris.id,
+  poi_id: ninth_district.id)
+tp12.save!
+
+tp13 = ThemePoi.new(
+  theme_id: districts_paris.id,
+  poi_id: sixth_district.id)
+tp13.save!
+
+tp14 = ThemePoi.new(
+  theme_id: districts_paris.id,
+  poi_id: eighteenth_district.id)
+tp14.save!
+
+tp15 = ThemePoi.new(
+  theme_id: districts_paris.id,
+  poi_id: twentieth_district.id)
+tp15.save!
+
+puts "--> Ok for district_paris!"
 
 # Games seed
 puts "generating games"
