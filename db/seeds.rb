@@ -171,7 +171,7 @@ notre_dame.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/u
 notre_dame.save!
 
 sacre_coeur = Poi.new(
-  name: "Basilique du Sacré-Cœur de Montmartre",
+  name: "Basilique du Sacré-Cœur",
   address: "35 Rue du Chevalier de la Barre, 75018 Paris",
   latitude: 48.8870069,
   longitude: 2.342536500000051,
