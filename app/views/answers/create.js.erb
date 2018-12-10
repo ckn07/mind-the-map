@@ -1,0 +1,17 @@
+function addAnswer() {
+  // hide time bar
+  const timeBar = document.querySelector('.bar');
+  timeBar.style.display = 'none';
+
+  // display result box
+  const menuMapContainer = document.querySelector('.menu-map-container');
+  const menuMapHTML = '<%= j render "answers/menu_map", game: @game, poi: @poi, next_poi: @next_poi, answer: @answer %>';
+  menuMapContainer.innerHTML = menuMapHTML;
+
+  // display correct poi marker
+  new window.mapboxgl.Marker({color: "#08c299"})
+    .setLngLat([ <%= @poi_marker[:lng] %>, <%= @poi_marker[:lat] %> ])
+    .addTo(window.map);
+}
+
+addAnswer();
