@@ -41,6 +41,8 @@ class AnswersController < ApplicationController
     @answer.latitude = @latitude_user
     @answer.distance = @distance
     @answer.time_to_respond = @time_to_respond
+    @remaining_poi = whats_pois_are_left
+    @next_poi = @remaining_poi.sample
 
     @poi_marker = { lng: @poi.longitude, lat: @poi.latitude }
 
