@@ -16,11 +16,11 @@ Rails.application.routes.draw do
 
   resources :games, only: [] do
     resources :pois, only: [:show] do
-      resources :answers, only: [:create, :show, :update]
+      resources :answers, only: [:create, :show]
     end
   end
 
-  resources :games, only: [ :index, :show ]
+  resources :games, only: [ :index, :show, :update ]
 
 end
 

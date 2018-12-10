@@ -30,6 +30,11 @@ class GamesController < ApplicationController
     else
       redirect_to root_path
     end
+  end
+
+  def update
+    # check le user id?  si c'est dans user one ou two.
+    if @user ==
 
   end
 
@@ -49,6 +54,14 @@ class GamesController < ApplicationController
       total_score += answer.score
     end
     return total_score
+  end
+
+  def total_time_calculation
+    total_time = 0
+    @answers.each do |answer|
+      total_time += answer.time_to_respond
+    end
+    return total_time
   end
 
 
