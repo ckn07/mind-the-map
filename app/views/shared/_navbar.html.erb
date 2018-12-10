@@ -1,4 +1,4 @@
-<div class="navbar-wagon">
+<div class="navbar-wagon navbar-wagon-tranparent">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
     <%= image_tag "logo-big.svg", height: 50 %>
@@ -8,7 +8,6 @@
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
     <% if user_signed_in? %>
-
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
