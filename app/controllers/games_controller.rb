@@ -47,16 +47,14 @@ class GamesController < ApplicationController
     # check le user id?  si c'est dans user one ou two.
     if @game.user_one == current_user
       @game.score_one = total_score_calculation
-      # udpate total_time_one
-      # udpate distance_one
+      @game.total_time_one = total_time_calculation
+      @game.distance_one = total_distance_calculation
       redirect_to game_path(@game)
     else
       @game.score_two = total_score_calculation
-      # udpate score_one
-      # udpate total_time_one
-      # udpate distance_one
+      @game.total_time_two = total_time_calculation
+      @game.distance_two = total_distance_calculation
       redirect_to game_path(@game)
-
     end
     @game.save
   end
@@ -85,6 +83,14 @@ class GamesController < ApplicationController
       total_time += answer.time_to_respond
     end
     return total_time
+  end
+
+  def total_distance_calculation
+    total_distance = 0
+    @answers.each do |answer|
+      total_distance += answer.distance
+    end
+    return total_distance
   end
 
 
