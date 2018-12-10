@@ -6,7 +6,7 @@
   <div
     id="map"
     style="width: 100vw;
-    height: 50vh;"
+    height: 100vh;"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     data-game="on">
     <div class="position-right">
@@ -15,7 +15,7 @@
   </div>
 </div>
 
- <div>
+ <div style="display:none;">
      <%= simple_form_for([@game, @poi, @answer], remote: true) do |f| %>
         <%= f.input :latitude %>
         <%= f.input :longitude %>
