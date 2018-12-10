@@ -4,14 +4,14 @@ class ChallengeController < ApplicationController
   end
 
   def create
-  @game = Game.find(params[:id])
-  @game.user_two = current_user
-  @poi = pick_a_random_poi_of_the_theme
-    if @game.save
-      redirect_to game_poi_path(@game,@poi)
-    else
-      redirect_to root_path
-    end
+    @game = Game.find(params[:id])
+    @game.user_two = current_user
+    @poi = pick_a_random_poi_of_the_theme
+      if @game.save
+        redirect_to game_poi_path(@game,@poi)
+      else
+        redirect_to root_path
+      end
   end
 
 private
