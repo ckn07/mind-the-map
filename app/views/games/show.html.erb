@@ -27,7 +27,7 @@
             <div class="game-card-col col-sm-6 text-center">
               <!-- Button trigger modal -->
               <div class="game-card" data-toggle="modal" data-target="#poiModal<%= poi.id %>">
-                <div class="game-card-pic" style="background-image: url(<%= cl_image_path(poi.photo)%>)"></div>
+                <div class="game-card-pic" style="background-image: url(<%= cl_image_path(poi.photo, width: 400, height: 175, crop: :fill) %>)"></div>
                 <div class="game-card-title"><%= poi.name %></div> <!-- fin de game-title-->
               </div> <!-- fin de game-card-->
             </div> <!-- fin de game-card-col -->
