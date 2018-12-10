@@ -1,3 +1,8 @@
+<% content_for :meta_title, "#{@game.user_one.first_name} has challenged you on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "#{@game.theme.name}, #{@game.theme.city.name}" %>
+
+<% content_for :meta_image, @theme.photo %>
+
 <div class="container-banner">
   <div class="title">
     <%= image_tag("rocket.svg") %>
