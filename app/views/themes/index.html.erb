@@ -49,12 +49,12 @@
           <div class="row">
             <div class="col-xs-12 col-sm-6 text-center">
               <%= link_to "Duo",
-                    theme_games_url(theme.id, game: { multi: true }),
+                    theme_games_url(theme.id, game:{multi: true}),
                     data: { method: :post, remote: true},
                     class: "btn btn-pimp btn-fw text-center"%>
             </div>
             <div class="col-xs-12 col-sm-6 text-center">
-              <%= link_to "Solo", theme_games_url(theme.id, game: { multi: false }) , method: :post,  class: "btn btn-pimp btn-fw text-center" %>
+              <%= link_to "Solo", theme_games_url(theme.id , game: {multi: false})   , method: :post,  class: "btn btn-pimp btn-fw text-center" %>
             </div>
           </div>
         </div>
@@ -82,6 +82,11 @@
                 <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="LinkChallenge" value="">
                 <button class="btn btn-primary" id="button-copy-theme" onclick="copyToClip();">Copy Link</button>
               </form>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12-sm text-center">
+              <button class="btn btn-primary" id="fb" href="#">Share on Facebook</button>
             </div>
           </div>
         </div>

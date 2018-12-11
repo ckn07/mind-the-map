@@ -55,7 +55,7 @@ class AnswersController < ApplicationController
       respond_to do |format|
         format.html { redirect_to game_poi_answer_path(@game.id, @poi.id, @answer.id) }
         format.js do
-          @next_poi = @poi
+          @next_poi = whats_pois_are_left.sample
         end
       end
     end
