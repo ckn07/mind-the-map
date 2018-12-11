@@ -7,10 +7,10 @@
 <!-- drop down cities -->
 
 <%= form_tag leaderboard_path, method: :get do  %>
-  <%= select_tag 'city', options_for_select(@cities.map { |city| city.name },
+  <%= select_tag 'city', options_for_select(@cities.map { |city| [city.name, city.id] },
     params[:city]),
     placeholder: "Choose a city" %>
-    <%= select_tag 'theme', options_for_select(@themes.map { |theme| theme.name },
+    <%= select_tag 'theme', options_for_select(@themes.map { |theme| [theme.name, theme.id] },
     params[:theme]),
     placeholder: "Choose a theme" %>
     <%= submit_tag(value = "View scores") %>
@@ -37,21 +37,22 @@
 
 <!-- list -->
     <%  @games.each_with_index do |game, index| %>
-      <%unless game.score_one.nil?  %>
+      <% unless game.score_one.nil?  %>
         <div class="row vertical-center">
           <div class="col-xs-3 border-column take-space">
             <p><%= "#{index + 1}" %></p>
           </div>
           <div class="col-xs-3 border-column take-space">
-            <p><%= game.user_one.username %></p>
+            <p><%= game.winner.username %></p>
           </div>
           <div class="col-xs-3 border-column take-space">
-            <img class="picture-leaderboard" src="<%= cl_image_path game.user_one.photo %>">
+            <img class="picture-leaderboard" src="<%= cl_image_path game.winner.photo %>">
           </div>
           <div class="col-xs-3 border-column take-space">
-            <p><%= game.score_one %></p>
+            <p><%= game.score %></p>
           </div>
         </div>
+
       <% end %>
     <% end %>
 </div>
