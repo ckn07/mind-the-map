@@ -2,7 +2,7 @@ class UsersController < ApplicationController
   def show
     @user = current_user
     @games = @user.games
-    @games = @games.sort_by { |game| game.score_one }
+    @games = @games.sort_by { |game| game.score_one || game.score_two }
     @games.uniq! { |game| game.theme }
   end
 
