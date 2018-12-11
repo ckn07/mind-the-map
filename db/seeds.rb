@@ -210,7 +210,7 @@ palais_luxembourg = Poi.new(
 palais_luxembourg.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020952/MtM/palais_luxembourg.jpg"
 palais_luxembourg.save!
 
-puts "--> 9 pois for monuments_paris have been created!"
+puts "--> 8 pois for monuments_paris have been created!"
 
 puts "generating pois for districts_paris"
 
@@ -299,7 +299,7 @@ place_concorde.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/ima
 place_concorde.save!
 
 place_trocadero = Poi.new(
-  name: "Place du Trocadero et du 11 Novembre 1918",
+  name: "Place du Trocadero",
   address: "Place du Trocadéro et du 11 Novembre 1918, 75016 Paris, France",
   latitude: 48.8626979,
   longitude: 2.287502600000039,
@@ -662,32 +662,32 @@ tp3 = ThemePoi.new(
   poi_id: palais_garnier.id)
 tp3.save!
 
-tp5 = ThemePoi.new(
+tp4 = ThemePoi.new(
   theme_id: monuments_paris.id,
   poi_id: notre_dame.id)
+tp4.save!
+
+tp5 = ThemePoi.new(
+  theme_id: monuments_paris.id,
+  poi_id: sacre_coeur.id)
 tp5.save!
 
 tp6 = ThemePoi.new(
   theme_id: monuments_paris.id,
-  poi_id: sacre_coeur.id)
+  poi_id: hotel_invalides.id)
 tp6.save!
 
 tp7 = ThemePoi.new(
   theme_id: monuments_paris.id,
-  poi_id: hotel_invalides.id)
+  poi_id: pantheon.id)
 tp7.save!
 
 tp8 = ThemePoi.new(
   theme_id: monuments_paris.id,
-  poi_id: pantheon.id)
+  poi_id: palais_luxembourg.id)
 tp8.save!
 
-tp10 = ThemePoi.new(
-  theme_id: monuments_paris.id,
-  poi_id: palais_luxembourg.id)
-tp10.save!
-
-puts "--> 10 theme pois have been created for monuments_paris!"
+puts "--> 8 theme pois have been created for monuments_paris!"
 
 puts "--> let's start district_paris POIs!"
 
@@ -865,59 +865,59 @@ puts "--> good for parks_paris POIs!"
 
 puts "go for museums_paris POIs"
 
-tp9 = ThemePoi.new(
-  theme_id: museums_paris.id,
-  poi_id: louvre_museum.id)
-tp9.save!
-
-tp4 = ThemePoi.new(
-  theme_id: museums_paris.id,
-  poi_id: grand_palais_museum.id)
-tp4.save!
-
 tp36 = ThemePoi.new(
   theme_id: museums_paris.id,
-  poi_id: orsay_museum.id)
+  poi_id: louvre_museum.id)
 tp36.save!
 
 tp37 = ThemePoi.new(
   theme_id: museums_paris.id,
-  poi_id: pompidou_museum.id)
+  poi_id: grand_palais_museum.id)
 tp37.save!
 
 tp38 = ThemePoi.new(
   theme_id: museums_paris.id,
-  poi_id: picasso_museum.id)
+  poi_id: orsay_museum.id)
 tp38.save!
+
+tp39 = ThemePoi.new(
+  theme_id: museums_paris.id,
+  poi_id: pompidou_museum.id)
+tp39.save!
+
+tp40 = ThemePoi.new(
+  theme_id: museums_paris.id,
+  poi_id: picasso_museum.id)
+tp40.save!
 
 puts "--> good for museums_paris POIs!"
 
 puts "go for amelie_paris POIs"
 
-tp39 = ThemePoi.new(
-  theme_id: amelie_paris.id,
-  poi_id: cafe_amelie_poulain.id)
-tp39.save!
-
-tp40 = ThemePoi.new(
-  theme_id: amelie_paris.id,
-  poi_id: abbesses_amelie_poulain.id)
-tp40.save!
-
 tp41 = ThemePoi.new(
   theme_id: amelie_paris.id,
-  poi_id: canal_amelie_poulain.id)
+  poi_id: cafe_amelie_poulain.id)
 tp41.save!
 
 tp42 = ThemePoi.new(
   theme_id: amelie_paris.id,
-  poi_id: mask_zorro_amelie_poulain.id)
+  poi_id: abbesses_amelie_poulain.id)
 tp42.save!
 
 tp43 = ThemePoi.new(
   theme_id: amelie_paris.id,
-  poi_id: collignon_amelie_poulain.id)
+  poi_id: canal_amelie_poulain.id)
 tp43.save!
+
+tp44 = ThemePoi.new(
+  theme_id: amelie_paris.id,
+  poi_id: mask_zorro_amelie_poulain.id)
+tp44.save!
+
+tp45 = ThemePoi.new(
+  theme_id: amelie_paris.id,
+  poi_id: collignon_amelie_poulain.id)
+tp45.save!
 
 puts "--> good for amelie_paris POIs!"
 
