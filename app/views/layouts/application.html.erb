@@ -29,7 +29,7 @@
     <%# unless (params[:controller] == 'pois' && params[:action] == 'show')|| (params[:controller] == 'answers' && params[:action] == 'show') %>
       <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
-    <% end %>
+    <%# end %>
     <%= yield %>
     <% unless (params[:controller] == 'pois' && params[:action] == 'show')|| (params[:controller] == 'answers' && params[:action] == 'show') %>
     <%= render 'shared/footer' %>
