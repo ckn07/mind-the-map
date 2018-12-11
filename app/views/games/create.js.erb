@@ -1,0 +1,14 @@
+
+  // fermer la modal
+  console.log("createchallenge script sur themeModal<%= @game.theme.id %>")
+     let modalThemeClose = document.querySelector("#themeModal<%= @game.theme.id %> .close");
+     modalThemeClose.click();
+     const hiddenButton = document.getElementById('hidden-button');
+     hiddenButton.click();
+     // $("#themeModal<%= @game.theme.id %>").modal('hide');
+  // afficher la modal game
+    // const modalGame = document.getElementById("#ModalMulti");
+    // $('#ModalMulti').modal('show');
+    // ajouter  le lien du game dans le formulaire
+     const linkToChallenge = document.getElementById('LinkChallenge')
+      linkToChallenge.value = "<%= new_game_challenge_url(@game) %>"

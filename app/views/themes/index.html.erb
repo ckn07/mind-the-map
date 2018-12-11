@@ -48,7 +48,10 @@
           <p class="text-center">Time to play:</p>
           <div class="row">
             <div class="col-xs-12 col-sm-6 text-center">
-              <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#themeModalMulti<%= theme.id %>", class="btn btn-pimp btn-fw text-center">Duo</a>
+              <%= link_to "Duo",
+                    theme_games_url(theme.id),
+                    data: { method: :post, remote: true},
+                    class: "btn btn-pimp btn-fw text-center"%>
             </div>
             <div class="col-xs-12 col-sm-6 text-center">
               <%= link_to "Solo", theme_games_url(theme.id) , method: :post,  class: "btn btn-pimp btn-fw text-center" %>
@@ -59,11 +62,11 @@
     </div>
   </div>
 <% end %>
+<button type="button" class="btn btn-primary" data-toggle="modal" id="hidden-button" data-target="#ModalMulti" style="display: none;">
+</button>
 
-
-<% @themes.each do |theme| %>
-    <!-- Modal -->
-  <div class="modal fade" id="themeModalMulti<%= theme.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- Modal multi-->
+  <div class="modal fade" id="ModalMulti" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content m-c-h">
         <div class="modal-header m-h">
@@ -75,9 +78,9 @@
           <div class="row">
             <div class="col-12-sm offset-3-sm">
               <form class="form-inline text-center">
-                <label class="sr-only" for="inlineFormInput">link</label>
-                <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput<%= theme.id %>" value="lien_value">
-                <button type="submit" class="btn btn-primary" id="button-copy-theme-<%= theme.id %>">Copy Link</button>
+                <label class="sr-only" for="LinkChallenge">link</label>
+                <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="LinkChallenge" value="">
+                <button type="submit" class="btn btn-primary" id="button-copy-theme">Copy Link</button>
               </form>
             </div>
           </div>
@@ -85,4 +88,3 @@
       </div>
     </div>
   </div>
-<% end %>
