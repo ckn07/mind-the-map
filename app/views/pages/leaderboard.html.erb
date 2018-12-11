@@ -37,20 +37,22 @@
 
 <!-- list -->
     <%  @games.each_with_index do |game, index| %>
-      <div class="row vertical-center">
-        <div class="col-xs-3 border-column take-space">
-          <p><%= "#{index + 1}" %></p>
+      <%unless game.score_one.nil?  %>
+        <div class="row vertical-center">
+          <div class="col-xs-3 border-column take-space">
+            <p><%= "#{index + 1}" %></p>
+          </div>
+          <div class="col-xs-3 border-column take-space">
+            <p><%= game.user_one.username %></p>
+          </div>
+          <div class="col-xs-3 border-column take-space">
+            <img class="picture-leaderboard" src="<%= cl_image_path game.user_one.photo %>">
+          </div>
+          <div class="col-xs-3 border-column take-space">
+            <p><%= game.score_one %></p>
+          </div>
         </div>
-        <div class="col-xs-3 border-column take-space">
-          <p><%= game.user_one.username %></p>
-        </div>
-        <div class="col-xs-3 border-column take-space">
-          <img class="picture-leaderboard" src="<%= cl_image_path game.user_one.photo %>">
-        </div>
-        <div class="col-xs-3 border-column take-space">
-          <p><%= game.score_one %></p>
-        </div>
-      </div>
+      <% end %>
     <% end %>
 </div>
 
