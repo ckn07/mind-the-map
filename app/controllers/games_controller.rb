@@ -28,7 +28,7 @@ class GamesController < ApplicationController
   def create
     @user = current_user
     # instanciation par défaut sur Paris (city id 1)
-    @game = Game.new
+    @game = Game.new(game_params)
     @game.user_one = @user
     @theme = Theme.find(params[:theme_id])
     @game.theme = @theme
@@ -66,6 +66,11 @@ class GamesController < ApplicationController
   end
 
   private
+
+  def game_params
+    params.require(:game).permit(:multi)
+  end
+
   def pick_a_random_poi_of_the_theme
     @pois = @theme.theme_pois
     @list_poi_on_going_game = []
