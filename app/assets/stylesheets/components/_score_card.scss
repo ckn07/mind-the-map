@@ -105,3 +105,111 @@
     padding-bottom: 30px;
   }
 }
+
+@media (max-width: 320px) {
+  /* For a screen < 320px, this CSS will be read */
+  .menu-score-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-score {
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    z-index: 3000;
+  }
+
+  .score-card {
+    width: 350px;
+    height: 270px;
+    z-index: 3000;
+    padding: 20px;
+    overflow: hidden;
+  }
+
+  .score-card.open {
+    height: 650px;
+    transition: all 1.5s ease-in-out;
+  }
+
+  .score-card-lvl-2 {
+    height: 650px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .icon-great {
+    text-align: center;
+    width: 100%;
+  }
+
+  .great, .bad {
+    height: 60px;
+  }
+
+  .time {
+    height: 33px;
+    margin-right: 10px;
+  }
+
+  .POI_counter h2 {
+    background-color: white;
+    color: $purple;
+    border-radius: 50%;
+    padding: 10px;
+  }
+
+  .POI_name {
+    padding: 0px 5px;
+  }
+
+  .icon {
+    height :50px;
+    width: 50px;
+
+  }
+  .icon-pin {
+    width: 15px;
+    height: 31px;
+    margin-right: 10px;
+  }
+
+  h1, h2, h3, h4, h5 {
+    color: #fff;
+  }
+  h1 {
+    font-size: 40px;
+  }
+
+  h2 {
+    font-size: 32px
+  }
+
+  p {
+    color: #fff;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+  }
+
+  .row-pin {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .row-time {
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+  }
+
+}

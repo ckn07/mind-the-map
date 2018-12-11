@@ -1,12 +1,14 @@
 .card {
   height: 175px;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  /* text-shadow: 0 1px 3px rgba(0, 0, 0, 0.6); */
   background-size: cover !important;
   background-position: bottom;
   color: white;
   position: relative;
   margin-bottom: 15px;
   border-radius: 4px;
+  transform: rotate(2deg);
+  margin-bottom: 53px;
 }
 .card-user {
   position: absolute;
@@ -42,11 +44,17 @@
   display: flex;
   justify-content: center;
   bottom: 0px;
-  left:0px;
-  width:100%;
-  height: 25px;
+  left: 0px;
+  width: 100%;
+  height: 43px;
   background-color: #860CE6;
   border-radius: 4px;
+  padding: 10px;
+  padding-top: 13px;
+  font-family: "Shadows Into Light Two";
+  transform: rotate(-6deg) translateX(25px);
+  font-size: 24px;
+  letter-spacing: 4px;
 }
 
 .card-link {
