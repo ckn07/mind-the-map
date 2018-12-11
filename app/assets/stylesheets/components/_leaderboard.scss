@@ -1,0 +1,42 @@
+.border-column {
+  border-left: 1px solid black;
+  &:first-child {
+    border-left: none;
+  }
+}
+
+.container-center p {
+  font-family: $body-font;
+  color: white;
+}
+
+.container-center h1 {
+  color:white;
+}
+
+.container-background {
+  background-color: $purple;
+}
+
+.picture-leaderboard {
+  height: 50px;
+  width: 50px;
+}
+
+.container-center {
+  margin: 20px auto;
+  width: 700px;
+  border: 1px solid black;
+}
+
+
+.vertical-center {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+.take-space {
+  height: 100%;
+}
+

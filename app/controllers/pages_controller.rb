@@ -10,10 +10,13 @@ class PagesController < ApplicationController
   def leaderboard
     @cities = City.all
     @themes = Theme.all
-
-    @theme = Theme.find_by(name: params[:theme])
-    @games_unsorted = @theme.games
-    @games = @games_unsorted.sort_by { |game| game.score_one }.reverse
+    # workaround of when the page loads, there is no option selected
+    if params[:query].present?
+      @theme = Theme.find_by(name: params[:theme])
+      @games_unsorted = @theme.games
+      @games = @games_unsorted.sort_by(&:score_one).reverse
+    else
+      @games = Game.all
+    end
   end
 end
-
