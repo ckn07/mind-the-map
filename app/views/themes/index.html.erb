@@ -1,34 +1,37 @@
-<div class="banner" style="background-image: linear-gradient(180.49deg, rgba(0, 0, 0, 0) 1.06%, #FFFFFF 72.86%), url(<%= asset_path 'Banner-mind-the-map.png' %>);">
-  <div class="banner-content">
-    <div class="logo-big">
-      <%= image_tag("logo-big.svg") %>
+<div class="container_homepage">
+
+  <div class="banner" style="background-image: linear-gradient(180.49deg, rgba(0, 0, 0, 0) 1.06%, #FFFFFF 72.86%), url(<%= asset_path 'Banner-mind-the-map.png' %>);">
+    <div class="banner-content">
+      <div class="logo-big">
+        <%= image_tag("logo-big.svg") %>
+      </div>
+      <p>Can you locate places <br> on an unlabeled map ?</p>
+      <!-- Lien du bouton passer sur une URL absolu pour permettre de revenir à une page sans search -->
+      <a class="btn btn-form btn-lg btn-white btn-pimp" href="<%="#{root_path}#cards-from-paris"%>">Play now</a>
     </div>
-    <p>Can you locate places <br> on an unlabeled map ?</p>
-    <!-- Lien du bouton passer sur une URL absolu pour permettre de revenir à une page sans search -->
-    <a class="btn btn-form btn-lg btn-white btn-pimp" href="<%="#{root_path}#cards-from-paris"%>">Play now</a>
   </div>
-</div>
 
-<div class="container" id="cards-from-paris">
+  <div class="container" id="cards-from-paris">
 
-  <h2 align="center">Pick a quiz</h2>
-  <div class="row">
+    <h2 align="center">Pick a quiz</h2>
+    <div class="row">
 
-    <% @themes.each do |theme| %>
-      <div class="col-xs-12 col-sm-4">
-        <div class="game-card" data-toggle="modal" data-target="#themeModal<%= theme.id %>">
-          <div class="card-theme">
+      <% @themes.each do |theme| %>
+        <div class="col-xs-12 col-sm-4">
+          <div class="game-card" data-toggle="modal" data-target="#themeModal<%= theme.id %>">
+            <div class="card-theme">
 
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path theme.photo%>');">
-              <div class="card-footer">
-                <p><%= theme.name %></p>
+              <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path theme.photo%>');">
+                <div class="card-footer">
+                  <p><%= theme.name %></p>
+                </div>
               </div>
-            </div>
 
+            </div>
           </div>
         </div>
-      </div>
-    <% end %>
+      <% end %>
+    </div>
   </div>
 </div>
 
