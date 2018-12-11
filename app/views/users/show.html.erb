@@ -1,29 +1,36 @@
-<div class="container">
+<div class="container" >
+
   <div class="say-hi">
     <h1 align="center">Hello <%= @user.username %></h1>
-    <div class="best-scores">
-      <div class="title-score">
-        <h2> MY SCORES</h2>
-      </div>
-      <div class="scores-array">
+  </div>
 
-        <% @games.each do |game| %>
+  <div class="best-scores">
+
+    <div class="title-score">
+      <h2>MY BEST SCORES</h2>
+    </div>
+
+    <div class="row scores-array">
+      <% @games.each do |game| %>
         <div class="scores">
+
           <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
+
           <div class="scores-body text-center">
             <p><%= game.theme.city.name %></p>
             <p><%= game.theme.name %></p>
             <p><strong><%= game.score_one %></strong></p>
           </div>
-          <ul class="list-inline scores-controls hidden-sm hidden-xs">
-            <li><button class="btn btn-primary btn-fw btn-pimp">Play again</button></li>
-            <li><button class="btn btn-primary btn-fw btn-pimp">Challenge a friend</button></li>
-            <li><button class="btn btn-primary btn-fw btn-pimp">Share on Facebook</button></li>
+
+          <ul class="list-inline scores-controls">
+            <li><button class="btn btn-primary btn-pimp"><%= link_to 'Play again', theme_games_path(game.theme_id), method: :post %></button></li>
+            <li><button class="btn btn-primary btn-pimp">Challenge a friend</button></li>
+            <li><button class="btn btn-primary btn-pimp">Share on Facebook</button></li>
           </ul>
         </div>
-        <% end %>
-      </div>
+      <% end %>
     </div>
+
   </div>
 </div>
 <!--         <div class="row">

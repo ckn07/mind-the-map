@@ -43,16 +43,19 @@
   padding: 0 20px;
   font-size: 17px;
   color: #E6E6E6;
+  text-decoration: none;
 }
-.scores-controls a:hover {
-  color: #D3473C !important
-}
-.scores-controls-hidden a {
-  color: transparent;
-  font-size: 15px;
-  transition: all 0.15s ease;
-  border-color: transparent;
-}
+
+// .scores-controls a:hover {
+//   color: #D3473C !important
+// }
+
+// .scores-controls-hidden a {
+//   color: transparent;
+//   font-size: 15px;
+//   transition: all 0.15s ease;
+//   border-color: transparent;
+// }
 
 .score-title {
   margin-bottom: 40px;
