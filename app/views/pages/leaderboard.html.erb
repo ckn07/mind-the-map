@@ -13,10 +13,11 @@
     <%= select_tag 'theme', options_for_select(@themes.map { |theme| theme.name },
     params[:theme]),
     placeholder: "Choose a theme" %>
-    <%= submit_tag %>
+    <%= submit_tag(value = "View scores") %>
 <% end %>
 
-
+<!-- leaderboard: headers + list  -->
+<!-- headers -->
 <div class="container container-center container-background">
 
   <div class="row">
@@ -34,6 +35,7 @@
     </div>
   </div>
 
+<!-- list -->
     <%  @games.each_with_index do |game, index| %>
       <div class="row vertical-center">
         <div class="col-xs-3 border-column take-space">
