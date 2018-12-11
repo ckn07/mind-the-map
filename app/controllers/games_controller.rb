@@ -34,9 +34,15 @@ class GamesController < ApplicationController
     @game.theme = @theme
     @poi = pick_a_random_poi_of_the_theme
     if @game.save
-      redirect_to game_poi_path(@game,@poi)
+      respond_to do |format|
+        format.html { redirect_to game_poi_path(@game,@poi) }
+        format.js  # <-- will render `app/views/reviews/create.js.erb`
+      end
     else
-      redirect_to root_path
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js  # <-- idem
+      end
     end
   end
 
