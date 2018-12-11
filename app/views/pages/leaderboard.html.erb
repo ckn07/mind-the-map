@@ -5,6 +5,7 @@
 <br>
 
 <!-- drop down cities -->
+
 <%= form_tag leaderboard_path, method: :get do  %>
   <%= select_tag 'city', options_for_select(@cities.map { |city| city.name },
     params[:city]),
@@ -12,38 +13,41 @@
     <%= select_tag 'theme', options_for_select(@themes.map { |theme| theme.name },
     params[:theme]),
     placeholder: "Choose a theme" %>
-    <%= submit_tag %>
+    <%= submit_tag(value = "View scores") %>
 <% end %>
 
-<div class="container">
+<!-- leaderboard: headers + list  -->
+<!-- headers -->
+<div class="container container-center container-background">
 
   <div class="row">
-    <div class="col-xs-3">
-      <p>Rank</p>
+    <div class="col-xs-3 border-column take-space text-center">
+      <h1>Rank</h1>
     </div>
-    <div class="col-xs-3">
-      <p>Username</p>
+    <div class="col-xs-3 border-column take-space text-center">
+      <h1>Username</h1>
     </div>
-    <div class="col-xs-3">
-      <p>toto</p>
+    <div class="col-xs-3 border-column take-space text-center">
+      <h1></h1>
     </div>
-    <div class="col-xs-3">
-      <p>Score</p>
+    <div class="col-xs-3 border-column take-space text-center">
+      <h1>Score</h1>
     </div>
   </div>
 
+<!-- list -->
     <%  @games.each_with_index do |game, index| %>
-      <div class="row">
-        <div class="col-xs-3">
-          <p><%= "#{index}" %></p>
+      <div class="row vertical-center">
+        <div class="col-xs-3 border-column take-space">
+          <p><%= "#{index + 1}" %></p>
         </div>
-        <div class="col-xs-3">
+        <div class="col-xs-3 border-column take-space">
           <p><%= game.user_one.username %></p>
         </div>
-        <div class="col-xs-3">
-          <img class="scores-image" src="<%= cl_image_path game.user_one.photo %>">
+        <div class="col-xs-3 border-column take-space">
+          <img class="picture-leaderboard" src="<%= cl_image_path game.user_one.photo %>">
         </div>
-        <div class="col-xs-3">
+        <div class="col-xs-3 border-column take-space">
           <p><%= game.score_one %></p>
         </div>
       </div>
