@@ -1,10 +1,13 @@
 .menu-score-container {
   margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .menu-score {
   position: absolute;
-  top: 60px;
+  top: 80px;
   right: 40px;
   z-index: 3000;
   // display: flex;
@@ -45,6 +48,7 @@
 
 .time {
   height: 33px;
+  margin-right: 10px;
 }
 
 .POI_counter h2 {

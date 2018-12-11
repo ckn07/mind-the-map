@@ -26,7 +26,7 @@
   </head>
 
   <body>
-    <% unless (params[:controller] == 'pois' && params[:action] == 'show')|| (params[:controller] == 'answers' && params[:action] == 'show') %>
+    <%# unless (params[:controller] == 'pois' && params[:action] == 'show')|| (params[:controller] == 'answers' && params[:action] == 'show') %>
       <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
     <% end %>

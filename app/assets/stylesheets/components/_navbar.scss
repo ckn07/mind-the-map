@@ -9,12 +9,9 @@
   align-items: center;
   justify-content: space-between;
   position: fixed;
+  z-index: 3000;
+  top: 0;
 }
-
-/* Transparent navbar */
-// .navbar-wagon-tranparent {
-//   background: transparent;
-// }
 
 /* Logo */
 .navbar-wagon-brand img {

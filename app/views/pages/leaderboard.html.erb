@@ -1,0 +1,29 @@
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<!-- drop down cities -->
+<%= form_tag leaderboard_path, method: :get do  %>
+  <%= select_tag 'city', options_for_select(@cities.map { |city| city.name },
+    params[:city]),
+    placeholder: "Choose a city" %>
+    <%= select_tag 'theme', options_for_select(@themes.map { |theme| theme.name },
+    params[:theme]),
+    placeholder: "Choose a theme" %>
+    <%= submit_tag %>
+<% end %>
+
+<!-- drop down themes -->
+
+
+<% @game_paris.each do |game| %>
+<%= game.score_one %> - <%= game.user_one.first_name %>
+<% raise %>
+<% end %>
+<!-- ranking container -->
+<div class="container">
+  <div class="row"></div> #list of all user/
+<div class="col-xs-6">
+
