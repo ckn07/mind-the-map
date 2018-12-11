@@ -48,7 +48,7 @@
           <p class="text-center">Time to play:</p>
           <div class="row">
             <div class="col-xs-12 col-sm-6 text-center">
-              <%= link_to "Duo", "#", class: "btn btn-pimp btn-fw text-center" %>
+              <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#themeModalMulti<%= theme.id %>", class="btn btn-pimp btn-fw text-center">Duo</a>
             </div>
             <div class="col-xs-12 col-sm-6 text-center">
               <%= link_to "Solo", theme_games_url(theme.id) , method: :post,  class: "btn btn-pimp btn-fw text-center" %>
@@ -60,3 +60,29 @@
   </div>
 <% end %>
 
+
+<% @themes.each do |theme| %>
+    <!-- Modal -->
+  <div class="modal fade" id="themeModalMulti<%= theme.id %>" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content m-c-h">
+        <div class="modal-header m-h">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <%= image_tag(("close.svg"), class: "btn-close-home") %>
+          </button>
+          <h1 class="modal-title text-center">Challenge ton ami(e)</h1>
+          <p class="text-center">Envoie ce lien</p>
+          <div class="row">
+            <div class="col-12-sm offset-3-sm">
+              <form class="form-inline text-center">
+                <label class="sr-only" for="inlineFormInput">link</label>
+                <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="inlineFormInput<%= theme.id %>" value="lien_value">
+                <button type="submit" class="btn btn-primary" id="button-copy-theme-<%= theme.id %>">Copy Link</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+<% end %>
