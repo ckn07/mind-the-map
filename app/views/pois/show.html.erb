@@ -10,8 +10,7 @@
     </div>
   </div>
 </div>
-
-<div style="display:none;">
+<div style="display: none;">
   <%= simple_form_for([@game, @poi, @answer], remote: true) do |f| %>
     <%= f.input :latitude %>
     <%= f.input :longitude %>
@@ -38,8 +37,10 @@
 </div>
 
 <script type="text/javascript">
- setTimeout(function() {
-   form.submit();
+
+  setTimeout(function() {
+    const answer_button = document.getElementById('answer-button');
+    answer_button.click();
  }, 13000);
 </script>
 
