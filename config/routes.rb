@@ -4,6 +4,8 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'pages#home'
 
+  get 'leaderboard', to: 'pages#leaderboard', as: :leaderboard
+
   resources :users, only: [:show, :index, :edit, :update]
 
   resources :cities, only: [:index] do
