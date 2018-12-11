@@ -82,3 +82,19 @@
 .play-now {
   width: 30px;
 }
+
+.let-play {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 100px;
+}
+
+#btn-play-once {
+  text-decoration: none;
+  color: #ffffff;
+  a {
+    text-decoration: none;
+    color: #ffffff;
+  }
+}
