@@ -5,7 +5,7 @@ class PoisController < ApplicationController
     @answer = Answer.new
     @counter_what_is_left = how_many_pois_are_left
     @counter_total = @list_poi_on_going_game.count
-    @counter_left = @counter_total - @counter_what_is_left
+    @counter_left = @counter_total - @counter_what_is_left + 1
   end
 
   def poi_params

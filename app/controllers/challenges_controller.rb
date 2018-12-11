@@ -1,4 +1,8 @@
 class ChallengesController < ApplicationController
+# creer 2 before action, l'un pour chopper le game
+# l'autre pour vérifié que le game a bien été instancié en multi: true
+
+
   def new
     @game = Game.find(params[:game_id])
   end
@@ -24,5 +28,7 @@ private
     end
     first_poi = @list_poi_on_going_game.sample
   end
+
+
 
 end

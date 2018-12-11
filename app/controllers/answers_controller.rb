@@ -15,7 +15,7 @@ class AnswersController < ApplicationController
     @remaining_poi = whats_pois_are_left
     @next_poi = @remaining_poi.sample
     @counter_total = @list_poi_on_going_game.count
-    @counter_remaining = @counter_total - @remaining_poi.count
+    @counter_remaining = @counter_total - @remaining_poi.count + 1
   end
 
   # def index
@@ -24,16 +24,15 @@ class AnswersController < ApplicationController
   def create
     @answer = Answer.new
     @poi = Poi.find(params[:poi_id])
+    @game = Game.find(params[:game_id])
     @latitude_user = params[:answer][:latitude]
     @longitude_user = params[:answer][:longitude]
     @time_to_respond = params[:answer][:time_to_respond].to_f / 1000
-    # @time_to_respond_formatted = (@time_to_respond / 1000).round(2)
     @poi_coordinates = "[#{@poi.latitude},#{@poi.longitude}]"
     @user_coordinates = "[#{@latitude_user},#{@longitude_user}]"
     @distance = methode_calcul_distance if @latitude_user.present? && @longitude_user.present?
     @score = score_calculation if @distance.present?
     @answer.game_id = @game.id
-    # # a voir au niveau de la view pour remonter les coordonnées
     @answer.poi_id = @poi.id
     @answer.user_id = current_user.id
     @answer.score = @score
@@ -41,21 +40,23 @@ class AnswersController < ApplicationController
     @answer.latitude = @latitude_user
     @answer.distance = @distance
     @answer.time_to_respond = @time_to_respond
-    @remaining_poi = whats_pois_are_left
-    @next_poi = @remaining_poi.sample
 
     @poi_marker = { lng: @poi.longitude, lat: @poi.latitude }
 
     if @answer.save
       respond_to do |format|
         format.html { redirect_to game_poi_answer_path(@game.id, @poi.id, @answer.id) }
-        format.js
+        format.js do
+          @next_poi = whats_pois_are_left.sample
+        end
       end
     else
       @answer = Answer.create(poi: @poi, user: current_user, game: @game, longitude: @poi.longitude, latitude: @poi.latitude, distance: 0, time_to_respond: 10, score: 0)
       respond_to do |format|
         format.html { redirect_to game_poi_answer_path(@game.id, @poi.id, @answer.id) }
-        format.js
+        format.js do
+          @next_poi = @poi
+        end
       end
     end
   end
@@ -93,7 +94,8 @@ class AnswersController < ApplicationController
     @list_answers.each do |poi|
       @pois_already_answered << poi.poi_id
     end
-    remaining_poi = @list_poi_on_going_game - @pois_already_answered
+
+    return @list_poi_on_going_game - @pois_already_answered
   end
 
 
