@@ -15,15 +15,38 @@
     <%= submit_tag %>
 <% end %>
 
-<!-- drop down themes -->
-
-
-<% @game_paris.each do |game| %>
-<%= game.score_one %> - <%= game.user_one.first_name %>
-<% raise %>
-<% end %>
-<!-- ranking container -->
 <div class="container">
-  <div class="row"></div> #list of all user/
-<div class="col-xs-6">
+
+  <div class="row">
+    <div class="col-xs-3">
+      <p>Rank</p>
+    </div>
+    <div class="col-xs-3">
+      <p>Username</p>
+    </div>
+    <div class="col-xs-3">
+      <p>toto</p>
+    </div>
+    <div class="col-xs-3">
+      <p>Score</p>
+    </div>
+  </div>
+
+    <%  @games.each_with_index do |game, index| %>
+      <div class="row">
+        <div class="col-xs-3">
+          <p><%= "#{index}" %></p>
+        </div>
+        <div class="col-xs-3">
+          <p><%= game.user_one.username %></p>
+        </div>
+        <div class="col-xs-3">
+          <img class="scores-image" src="<%= cl_image_path game.user_one.photo %>">
+        </div>
+        <div class="col-xs-3">
+          <p><%= game.score_one %></p>
+        </div>
+      </div>
+    <% end %>
+</div>
 

@@ -8,20 +8,12 @@ class PagesController < ApplicationController
   end
 
   def leaderboard
-    @users = User.all
     @cities = City.all
     @themes = Theme.all
-    @games = Game.all
 
-    # if params[:city_name].present? && params[:theme_name].present?
-    #   @games = Game.where(theme_id:
-
-        # pour un theme , soritr tous les scores
-        @game_paris = Game.where(theme_id: params[:theme])
-        raise
-
-
+    @theme = Theme.find_by(name: params[:theme])
+    @games_unsorted = @theme.games
+    @games = @games_unsorted.sort_by { |game| game.score_one }.reverse
   end
-
 end
 
