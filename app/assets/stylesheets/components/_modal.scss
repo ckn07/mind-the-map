@@ -67,3 +67,31 @@
   padding: 10px;
   margin: 15px 0px;
 }
+
+@media (max-width: 320px) {
+  /* For a screen < 320px, this CSS will be read */
+  .m-c {
+    background-image: image-url("card_modal.svg");
+    background-size: 100% 100%;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    background-clip: padding-box;
+    outline: 0;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 40px;
+  }
+
+  .m-c-h {
+    background-image: image-url("card_modal.svg");
+    background-size: 100% 100%;
+    border: none;
+    border-radius: 0px;
+    box-shadow: none;
+    background-clip: padding-box;
+    outline: 0;
+    background-color: rgba(255, 255, 255, 0);
+    padding: 40px;
+    margin-top: 150px;
+  }
+ }

@@ -90,6 +90,7 @@
   }
   .navbar-wagon {
     position: relative;
+    padding: 0px 30px;
   }
 
   #logo-app {
@@ -106,11 +107,20 @@
   .container {
     width: 600px;
   }
-
+  .navbar-wagon {
+    position: relative;
+    padding: 0px 20px;
+  }
 }
-@media (max-width: 540px) {
-  /* For a screen < 540px, this CSS will be read */
+
+@media (max-width: 320px) {
+  /* For a screen < 320px, this CSS will be read */
   .container {
-    width: 400px;
+    width: 320px;
+  }
+
+  .navbar-wagon {
+    position: relative;
+    padding: 0px 10px;
   }
 }
