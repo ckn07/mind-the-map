@@ -26,12 +26,12 @@
   </head>
 
   <body>
-    <% unless (params[:controller] == 'pois' && params[:action] == 'show')|| (params[:controller] == 'answers' && params[:action] == 'show') %>
+    <%# unless (params[:controller] == 'pois' && params[:action] == 'show')|| (params[:controller] == 'answers' && params[:action] == 'show') %>
       <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
 <!--     <p class="notice"><%= notice %></p> -->
 <!--     <p class="alert"><%= alert %></p> -->
-    <% end %>
+    <%# end %>
     <%= yield %>
     <% unless (params[:controller] == 'pois' && params[:action] == 'show')|| (params[:controller] == 'answers' && params[:action] == 'show') %>
     <%= render 'shared/footer' %>
