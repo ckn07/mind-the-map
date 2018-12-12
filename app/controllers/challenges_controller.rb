@@ -1,17 +1,16 @@
 class ChallengesController < ApplicationController
 # creer 2 before action, l'un pour chopper le game
-# l'autre pour vérifier que le game a bien été instancié en multi: true
+# l'autre pour vérifié que le game a bien été instancié en multi: true
 skip_before_action :authenticate_user!, only: [:new]
+before_action :set_game_and_theme, only: [:new, :create]
 
 
   def new
-    @game = Game.find(params[:game_id])
+    # @opponent = User.find(@game.user_one)
   end
 
   def create
-    @game = Game.find(params[:game_id])
     @game.user_two = current_user
-    @theme = @game.theme
     @poi = pick_a_random_poi_of_the_theme
       if @game.save
         redirect_to game_poi_path(@game,@poi)
@@ -30,6 +29,9 @@ private
     first_poi = @list_poi_on_going_game.sample
   end
 
-
+  def set_game_and_theme
+    @game = Game.find(params[:game_id])
+    @theme = @game.theme
+  end
 
 end
