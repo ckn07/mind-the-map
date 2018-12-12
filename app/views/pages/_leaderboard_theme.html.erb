@@ -4,16 +4,17 @@
 <div class="container container-center container-background">
 
   <div class="row">
-    <div class="col-xs-3 border-column take-space text-center">
+    <div class="col-xs-4 border-column take-space text-center">
       <h1>Rank</h1>
     </div>
-    <div class="col-xs-3 border-column take-space text-center">
+    <div class="col-xs-4 border-column take-space text-center">
       <h1>Username</h1>
     </div>
-    <div class="col-xs-3 border-column take-space text-center">
+    <!-- No user photo for Demo Day -->
+   <!--  <div class="col-xs-3 border-column take-space text-center">
       <h1></h1>
-    </div>
-    <div class="col-xs-3 border-column take-space text-center">
+    </div> -->
+    <div class="col-xs-4 border-column take-space text-center">
       <h1>Score</h1>
     </div>
   </div>
@@ -22,16 +23,17 @@
   <%  games.each_with_index do |game, index| %>
     <% unless game.score_one.nil?  %>
       <div class="row vertical-center">
-        <div class="col-xs-3 border-column take-space">
+        <div class="col-xs-4 border-column take-space">
           <p><%= "#{index + 1}" %></p>
         </div>
-        <div class="col-xs-3 border-column take-space">
+        <div class="col-xs-4 border-column take-space">
           <p><%= game.winner.username %></p>
         </div>
-        <div class="col-xs-3 border-column take-space">
+        <!-- no user photo for Demo Day -->
+        <!-- <div class="col-xs-3 border-column take-space">
           <img class="picture-leaderboard" src="<%= cl_image_path game.winner.photo %>">
-        </div>
-        <div class="col-xs-3 border-column take-space">
+        </div> -->
+        <div class="col-xs-4 border-column take-space">
           <p><%= game.score %></p>
         </div>
       </div>
