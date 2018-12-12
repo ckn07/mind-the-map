@@ -15,7 +15,7 @@
       </div>
     </div>
 
-    <div class="col-xs-12 col-md-8">
+    <div class="col-xs-12 col-md-8 wrapper">
       <div class="container-card" id="cards-from-paris">
 
         <h2 align="center">Pick a quiz</h2>
@@ -26,7 +26,7 @@
               <div class="game-card" data-toggle="modal" data-target="#themeModal<%= theme.id %>">
                 <div class="card-theme">
 
-                  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path theme.photo%>');">
+                  <div class="card" style="background-image: url('<%= cl_image_path theme.photo%>');">
                     <div class="card-footer">
                       <p><%= theme.name %></p>
                     </div>

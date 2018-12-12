@@ -1,1 +1,7 @@
 // Specific CSS for your home-page
+@media (max-width: 320px) {
+  /* For a screen < 320px, this CSS will be read */
+  .wrapper{
+    background-color: rgba(134, 12, 230, 0.1);
+  }
+}

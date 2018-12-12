@@ -53,6 +53,7 @@ GEM
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
+    browser (2.5.3)
     builder (3.2.3)
     byebug (10.0.2)
     carrierwave (1.2.3)
@@ -229,6 +230,7 @@ DEPENDENCIES
   autoprefixer-rails
   bootsnap
   bootstrap-sass (~> 3.3)
+  browser
   carrierwave (~> 1.2)
   cloudinary (~> 1.9.1)
   devise
@@ -255,4 +257,4 @@ RUBY VERSION
    ruby 2.4.5p335
 
 BUNDLED WITH
-   1.17.0
+   1.17.1

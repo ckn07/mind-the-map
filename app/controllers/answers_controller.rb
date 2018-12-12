@@ -18,6 +18,8 @@ class AnswersController < ApplicationController
     @counter_remaining = @counter_total - @remaining_poi.count + 1
   end
 
+  # browser.device.mobile? ? render('the_name_of_your_view', variant: :phone) : render('the_name_of_your_view')
+
   # def index
   # end
 

@@ -18,17 +18,17 @@ end
     #     lng: poi.longitude,
     #     lat: poi.latitude
 def how_many_pois_are_left
-    @theme = @game.theme
-    @pois = @theme.theme_pois
-    @list_poi_on_going_game = []
-    @pois.each do |poi|
-      @list_poi_on_going_game << poi.poi_id
-    end
-    @pois_already_answered = []
-    @list_answers = Answer.where(game_id: @game)
-    @list_answers.each do |poi|
-      @pois_already_answered << poi.poi_id
-    end
-    remaining_poi = @list_poi_on_going_game - @pois_already_answered
-    remaining_poi.count
+  @theme = @game.theme
+  @pois = @theme.theme_pois
+  @list_poi_on_going_game = []
+  @pois.each do |poi|
+    @list_poi_on_going_game << poi.poi_id
   end
+  @pois_already_answered = []
+  @list_answers = Answer.where(game_id: @game)
+  @list_answers.each do |poi|
+    @pois_already_answered << poi.poi_id
+  end
+  remaining_poi = @list_poi_on_going_game - @pois_already_answered
+  remaining_poi.count
+end
