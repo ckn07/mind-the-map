@@ -5,6 +5,16 @@ class ApplicationController < ActionController::Base
 
   def configure_permitted_parameters
     # For additional fields in app/views/devise/registrations/new.html.erb
+
+    # pour la demo uniquement, permet de forcer l'email et le password.
+    # si le user se deconnecte, il ne pourra plus se reconnecter
+    # a commenter post demo
+    if controller_name == "registrations" && action_name == "create"
+      params[:user][:email] = "fake-#{params[:user][:username]}@mail.com"
+      params[:user][:password] = "123456"
+      params[:user][:password_confirmation] = "123456"
+    end
+
     devise_parameter_sanitizer.permit(:sign_up, keys: [:username])
 
     # For additional in app/views/devise/registrations/edit.html.erb
