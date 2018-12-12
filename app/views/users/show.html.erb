@@ -10,6 +10,7 @@
       <h2>MY BEST SCORES</h2>
     </div>
 
+      <!-- SOLO MODE -->
       <% if @games.empty? || nil %>
       <div class="let-play">
         <div class="row">
@@ -43,7 +44,60 @@
       <% end %>
     </div>
 
+  </div> <!-- fin best-scores -->
+  <!-- fin de SOLO MODE -->
+
+
+  <!-- CHALLENGE MODE -->
+  <div class="title-score row">
+    <h2>MY BEST SCORES</h2>
+    <!-- NEVER PLAYED ? -->
+    <% if @games.empty? || nil %>
+      <div class="let-play">
+        <div class="row">
+          <H2>Alors comme ça on se créé un compte et on a peur de challenger les copains ?</H2>
+        </div>
+      </div>
+
+      <div class="let-play">
+        <button class="btn btn-primary btn-pimp" id="btn-play-once"><%= link_to 'Go pick a quiz and challenge a friend', root_path %></button>
+      </div>
+
   </div>
+    <% else %>
+
+    <div class="challenges-won-lost">
+      <h3>CHALLENGES I WON</h3>
+      <div class="scores">
+        <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
+
+        <div class="scores-challenges text-center">
+          <p><%= game.theme.city.name %></p>
+          <p><%= game.theme.name %></p>
+          <p><strong><%= game.score_one %></strong></p>
+        </div>
+      </div>
+
+    </div> <!-- fin challenges-i-won -->
+
+    <div class="challenges-won-lost">
+      <h3>CHALLENGES I LOST</h3>
+      <div class="scores">
+        <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
+
+        <div class="scores-challenges text-center">
+          <p><%= game.theme.city.name %></p>
+          <p><%= game.theme.name %></p>
+          <p><strong><%= game.score_one %></strong></p>
+        </div> <!-- fin de scores-challenges -->
+
+      </div> <!-- fin de scores -->
+
+    </div> <!-- fin challenges-i-lost -->
+
+    <% end %> <!-- fin de games.empty? -->
+  </div> <!-- fin de title-score row -->
+
 </div>
 <!--         <div class="row">
           <div class="col-xs-12 col-md-4 text-center">
