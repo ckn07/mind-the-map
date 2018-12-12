@@ -102,10 +102,10 @@
             <% end %> <!-- fin de challenges[0] -->
           </div> <!-- fin de challenges-won -->
 
-          <% @challenges[1].each do |game| %>
           <div class="scores-array" id="challenges-lost">
-          <div class="challenges-lost">
             <div id="i-lost"> <h4>THE ONE I LOST</h4></div>
+          <% @challenges[1].each do |game| %>
+
             <div class="scores">
               <% if @challenges[1].empty? %>
               <div class="no-defeat text-center">
@@ -123,7 +123,7 @@
             </div> <!-- fin de scores -->
           <% end %> <!-- fin de challenges[1].empty? -->
 
-          </div> <!-- fin challenges-lost -->
+
           <% end %> <!-- fin de challenges[1] -->
         </div> <!-- fin de scores-array -->
 
