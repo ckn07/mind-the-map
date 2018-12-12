@@ -1,0 +1,18 @@
+<i id="burger" class="material-icons">menu</i>
+<div id="links">
+  <% if user_signed_in? %>
+    <%= link_to user_path(current_user), class: 'm-menu' do %>
+      <%= t(".profile", default: "Profile") %>
+    <% end %>
+    <%= link_to edit_user_path(current_user), class: 'm-menu'  do %>
+      <%= t(".settings", default: "Settings") %>
+    <% end %>
+    <%= link_to destroy_user_session_path, class: 'm-menu' , method: :delete do %>
+      <%= t(".sign_out", default: "Log out") %>
+    <% end %>
+  <% else %>
+    <!-- Login link (when logged out) -->
+    <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "m-menu" %>
+  <% end %>
+</div>
+

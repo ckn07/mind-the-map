@@ -106,7 +106,7 @@
   }
 }
 
-@media (max-width: 320px) {
+@media (max-width: 414px) {
   /* For a screen < 320px, this CSS will be read */
   .menu-score-container {
     margin-top: 20px;
@@ -214,14 +214,14 @@
 
 }
 
-.m-menu-score {
-  position: absolute;
-  bottom: 80px;
-  right: 10px;
-  z-index: 3000;
-}
+// .m-menu-score {
+//   position: absolute;
+//   bottom: 80px;
+//   right: 10px;
+//   z-index: 3000;
+// }
 
-.m-score-card {
+.score-card {
   width: 150px;
   height: 100px;
   z-index: 3000;

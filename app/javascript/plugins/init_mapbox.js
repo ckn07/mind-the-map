@@ -58,10 +58,10 @@ const initMapbox = () => {
         }
       });
 
-      if (mapElement) { // only build a map if there's a div#map to inject into
+      if (mapElement.dataset.markers) { // only build a map if there's a div#map to inject into
         mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
-      const markers = JSON.parse(mapElement.dataset.markers);
-      markers.forEach((marker) => {
+        const markers = JSON.parse(mapElement.dataset.markers);
+        markers.forEach((marker) => {
         new mapboxgl.Marker({color: marker.color})
           .setLngLat([ marker.lng, marker.lat ])
           .addTo(map);
