@@ -13,16 +13,20 @@
       <h1>Challenge can you beat on the theme <%= @theme.name  %></h1>
 
       <!-- si c'est le cas regarder si l'utilisateur est loggué -->
+        <% if user_signed_in? %>
       <!-- si l'utilisateur est loggé je regarde si c'est user_one -->
-      <!-- Si c'est user_one je lui dis son score actuelle et le score de user 2 et je l'envoie sur le jeux via un bouton -->
-      <!-- si c'est pas user_one je lui dis qu'elle est le score actuelle du joueur one et d'accepter la challenge -->
-      <%= link_to "Challenge Accepted", game_challenge_url(@game) , method: :post,  class: "btn btn-pimp btn-fw text-center" %>
-      <!-- checker si le jeux est un multi true -->
-      <!-- checker si le jeux est un multi true -->
-      <!-- checker si le jeux est un multi true -->
-      <!-- checker si le jeux est un multi true -->
-      <!-- checker si le jeux est un multi true -->
+            <% if current_user.id == @game.user_one.id  %>
+              <h1> you can challenge yourself moron</h1>
+              <p>Just share this link with the buddy you want to challenge</p>
+            <% else %>
+              <%= link_to "Challenge Accepted", game_challenge_url(@game) , method: :post,  class: "btn btn-pimp btn-fw text-center" %>
+            <% end %>
+        <% else %>
+          <!-- le user est pas loggué... je lui montre le jeux (c'est du multi) mais je dois lui affiché une login form too -->
+          you need to loggin to participate
 
+
+        <% end %>
       <% else  %>
         <h1>Oupsy doupsy!</h1>
         <h2> This game was not created as a challenge. </h2>
