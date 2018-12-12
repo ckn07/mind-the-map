@@ -14,6 +14,7 @@
                 <p>Just share this page address with the buddy you want to challenge</p>
                 <% if @game.score_one.nil? %>
                   <p>Also your score is still empty so maybe you can play too? </p>
+
                 <%= link_to "complete your part", game_poi_url(@game,@poi),  class: "btn btn-pimp btn-fw text-center" %>
                 <% end %>
               <% else %>
