@@ -6,7 +6,8 @@ before_action :set_game_and_theme, only: [:new, :create]
 
 
   def new
-    # @opponent = User.find(@game.user_one)
+       @poi = pick_a_random_poi_of_the_theme
+ # @opponent = User.find(@game.user_one)
   end
 
   def create
