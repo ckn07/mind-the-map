@@ -92,7 +92,7 @@ class AnswersController < ApplicationController
       @list_poi_on_going_game << poi.poi_id
     end
     @pois_already_answered = []
-    @list_answers = Answer.where(game_id: @game)
+    @list_answers = Answer.where(game_id: @game, user: current_user)
     @list_answers.each do |poi|
       @pois_already_answered << poi.poi_id
     end
