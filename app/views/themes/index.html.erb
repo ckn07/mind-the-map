@@ -61,10 +61,16 @@
           <p class="text-center">Time to play:</p>
           <div class="row">
             <div class="col-xs-12 col-sm-6 text-center">
-              <%= link_to "Duo",
-                    theme_games_url(theme.id, game:{multi: true}),
-                    data: { method: :post, remote: true},
+              <% if user_signed_in? %>
+                <%= link_to "Duo",
+                      theme_games_url(theme.id, game:{multi: true}),
+                      data: { method: :post, remote: true},
+                      class: "btn btn-pimp btn-fw text-center"%>
+              <% else %>
+                  <%= link_to "Duo",
+                   user_session_url,
                     class: "btn btn-pimp btn-fw text-center"%>
+              <% end %>
             </div>
             <div class="col-xs-12 col-sm-6 text-center">
               <%= link_to "Solo", theme_games_url(theme.id , game: {multi: false})   , method: :post,  class: "btn btn-pimp btn-fw text-center" %>
