@@ -1,15 +1,18 @@
 <% if browser.device.mobile? %>
-  <%= render 'mobile_show' %>
+  <%= render 'poi_mobile_show' %>
 <% else %>
-  <%= render 'desktop_show' %>
+  <%= render 'poi_desktop_show' %>
 <% end %>
 
+<div id="hidden-div"></div>
 
 <script type="text/javascript">
-
   setTimeout(function() {
+    const hiddenDiv = document.getElementById('hidden-div');
+    hiddenDiv.classList.add('display-div');
     const answer_button = document.getElementById('answer-button');
     answer_button.click();
- }, 13000);
+ }, 18000);
 </script>
+
 

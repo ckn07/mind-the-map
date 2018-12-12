@@ -3,12 +3,13 @@ function addAnswer() {
   const timeBar = document.querySelector('.bar');
   timeBar.style.display = 'none';
 
-  // display result box
-  const menuScoreContainer = document.querySelector('.menu-score-container');
-  const menuScoreClosed = document.querySelector('.score-card');
-  const menuScoreHTML = '<%= j render "answers/menu_score", game: @game, poi: @poi, next_poi: @next_poi, answer: @answer %>';
-  menuScoreClosed.classList.add("open");
-  menuScoreContainer.innerHTML = menuScoreHTML;
+  if (document.querySelector('.score-card')) {
+    const menuScoreContainer = document.querySelector('.menu-score-container');
+    const menuScoreClosed = document.querySelector('.score-card');
+    const menuScoreHTML = '<%= j render "answers/menu_score", game: @game, poi: @poi, next_poi: @next_poi, answer: @answer %>';
+    menuScoreClosed.classList.add("open");
+    menuScoreContainer.innerHTML = menuScoreHTML;
+  }
 
   // display correct poi marker
   new window.mapboxgl.Marker({color: "#08c299"})

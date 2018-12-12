@@ -10,9 +10,12 @@
 
 
     <!-- Social networks OG -->
-    <meta property="og:type" content="game">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="http://www.mindthemapgame.com/">
+
     <meta property="og:title" content="Mind the Map: the first geography game on a city-level!">
     <meta property="og:description" content="Challenge your friends to see who knows the city best.">
+    <meta property="og:image" content="<%= image_url "mindthemap.jpg" %>" >
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
     <meta property="og:site_name" content="Mind the Map">
@@ -22,13 +25,14 @@
     <%= stylesheet_link_tag 'application', media: 'all' %>
     <%= stylesheet_pack_tag 'application', media: 'all' %>
     <link rel="shortcut icon" type="image/png" href="<%= asset_path 'favicon.png' %>" />
-    <link rel="manifest" href="<%= asset_path 'manifest.json.erb' %>">
+    <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
   </head>
 
   <body>
+    <%= browser.device.mobile? ? render('shared/navbar_mobile', variant: :phone) : render('shared/navbar')  %>
     <%# unless (params[:controller] == 'pois' && params[:action] == 'show')|| (params[:controller] == 'answers' && params[:action] == 'show') %>
-      <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
     <%# end %>
     <%= yield %>

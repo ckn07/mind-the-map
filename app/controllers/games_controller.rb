@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  skip_before_action :authenticate_user!, only: :show
 
   # affichage de la page finale du jeu
   def show

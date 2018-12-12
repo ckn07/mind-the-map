@@ -45,16 +45,20 @@
   </div> <!-- fin de result -->
 
 <div class="cta toto">
-  <div class="col-md-4 watch-footer">
+  <div class="col-md-3 watch-footer">
     <%= link_to 'Play again', theme_games_url(@theme.id) , method: :post, class: "btn btn-pimp btn-fw" %>
    </div>
-  <div class="col-md-4 text-center watch-footer">
+  <div class="col-md-3 text-center watch-footer">
     <button class="btn btn-primary btn-fw btn-pimp">Challenge a friend</button>
   </div>
-  <div class="col-md-4 text-center watch-footer">
+  <div class="col-md-3 text-center watch-footer">
     <button class="btn btn-primary btn-fw btn-pimp">Share on Facebook</button>
   </div>
+  <div class="col-md-3 watch-footer">
+    <%= link_to 'Leaderboard', leaderboard_path, class: "btn btn-pimp btn-fw" %>
+  </div>
 </div>
+
 
 
 <!-- MUST STAY AT THE END -->

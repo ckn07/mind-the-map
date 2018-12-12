@@ -61,10 +61,16 @@
           <p class="text-center">Time to play:</p>
           <div class="row">
             <div class="col-xs-12 col-sm-6 text-center">
-              <%= link_to "Duo",
-                    theme_games_url(theme.id, game:{multi: true}),
-                    data: { method: :post, remote: true},
+              <% if user_signed_in? %>
+                <%= link_to "Duo",
+                      theme_games_url(theme.id, game:{multi: true}),
+                      data: { method: :post, remote: true},
+                      class: "btn btn-pimp btn-fw text-center"%>
+              <% else %>
+                  <%= link_to "Duo",
+                   user_session_url,
                     class: "btn btn-pimp btn-fw text-center"%>
+              <% end %>
             </div>
             <div class="col-xs-12 col-sm-6 text-center">
               <%= link_to "Solo", theme_games_url(theme.id , game: {multi: false})   , method: :post,  class: "btn btn-pimp btn-fw text-center" %>
@@ -86,8 +92,8 @@
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <%= image_tag(("close.svg"), class: "btn-close-home") %>
           </button>
-          <h1 class="modal-title text-center">Challenge ton ami(e)</h1>
-          <p class="text-center">Envoie ce lien</p>
+          <h1 class="modal-title text-center">Challenge your friend </h1>
+          <p class="text-center">Copy and share the link below</p>
           <div class="row">
             <div class="col-12-sm offset-3-sm">
               <form class="form-inline text-center">
@@ -99,7 +105,9 @@
           </div>
           <div class="row">
             <div class="col-12-sm text-center">
-              <button class="btn btn-primary" id="fb" href="#">Share on Facebook</button>
+              <!-- bouton facebook qui ne marche pas <button class="btn btn-primary" id="fb" href="#">Share on Facebook</button> -->
+              <br>
+              <a href="" class="btn btn-primary" id="yourGame">Start your game</a>
             </div>
           </div>
         </div>

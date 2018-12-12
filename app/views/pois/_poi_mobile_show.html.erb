@@ -1,0 +1,36 @@
+<div class="POI_counter POI_name text-center">
+  <h2><%= @counter_left %>/<%= @counter_total %> - <%= @poi.name %></h2>
+</div>
+
+<div class="wrapper-map">
+  <div
+    id="map"
+    style="width: 100vw;
+    height: 100vh;"
+    data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+    data-game="on">
+    <div class="position-right">
+      <%= render 'shared/bar_timer' %>
+    </div>
+  </div>
+</div>
+
+<div style="display: none;">
+  <%= simple_form_for([@game, @poi, @answer], remote: true) do |f| %>
+    <%= f.input :latitude %>
+    <%= f.input :longitude %>
+    <%= f.input :time_to_respond %>
+    <%= f.submit id: "answer-button", class: "btn btn-primary btn-pimp"%>
+  <% end %>
+</div>
+
+<!-- <div class="menu-score ">
+  <div class="score-card " style="background-image: url(<%= image_path("card_score.svg")%>)">
+    <div class="score-card-lvl-2">
+
+
+      <%# empty container to display the answer %>
+      <div class="menu-score-container"></div>
+    </div>
+  </div>
+</div> -->
