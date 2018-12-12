@@ -63,42 +63,51 @@
         <button class="btn btn-primary btn-pimp" id="btn-play-once"><%= link_to 'Go pick a quiz and challenge a friend', root_path %></button>
       </div>
 
-  </div>
+  </div> <!-- fin de title-score row -->
+
     <% else %>
 
-    <div class="challenges-won-lost">
-      <h3>CHALLENGES I WON</h3>
-      <div class="scores">
-        <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
+    <div class="row challenges">
+    <% @challenges[0].each do |game| %>
+      <div class="challenges-won-lost">
+        <h3>CHALLENGES I WON</h3>
+        <div class="scores">
+          <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
 
-        <div class="scores-challenges text-center">
-          <p><%= game.theme.city.name %></p>
-          <p><%= game.theme.name %></p>
-          <p><strong><%= game.score_one %></strong></p>
-        </div>
-      </div>
+          <div class="scores-challenges text-center">
+            <p><%= game.theme.city.name %></p>
+            <p><%= game.theme.name %></p>
+            <p><strong><%= game.score_one %></strong></p>
+          </div> <!-- fin scores-challenges -->
+        </div> <!-- scores -->
+    <% end %>
 
-    </div> <!-- fin challenges-i-won -->
+      </div> <!-- fin challenges-won-lost -->
 
-    <div class="challenges-won-lost">
-      <h3>CHALLENGES I LOST</h3>
-      <div class="scores">
-        <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
+      <% @challenges[1].each do |game| %>
+      <div class="challenges-won-lost">
+        <h3>CHALLENGES I LOST</h3>
+        <div class="scores">
+          <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
 
-        <div class="scores-challenges text-center">
-          <p><%= game.theme.city.name %></p>
-          <p><%= game.theme.name %></p>
-          <p><strong><%= game.score_one %></strong></p>
-        </div> <!-- fin de scores-challenges -->
+          <div class="scores-challenges text-center">
+            <p><%= game.theme.city.name %></p>
+            <p><%= game.theme.name %></p>
+            <p><strong><%= game.score_one %></strong></p>
+          </div> <!-- fin de scores-challenges -->
 
-      </div> <!-- fin de scores -->
+        </div> <!-- fin de scores -->
 
-    </div> <!-- fin challenges-i-lost -->
+      </div> <!-- fin challenges-won-lost -->
+      <% end %>
+
+    </div> <!-- fin row challenges -->
 
     <% end %> <!-- fin de games.empty? -->
   </div> <!-- fin de title-score row -->
 
-</div>
+</div> <!-- fin de container -->
+
 <!--         <div class="row">
           <div class="col-xs-12 col-md-4 text-center">
             <button class="btn btn-primary btn-fw btn-pimp">Play again</button>

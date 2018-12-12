@@ -1,7 +1,22 @@
-.challenge-results {
+.challenges {
+display: flex;
+align-items: center;
+justify-content: center;
 
 }
 
-.challenges-won-lost {
+.challenge-results {
+   margin-bottom: 40px;
 
+  h2 {
+    margin-top: 15px;
+  }
+}
+
+.challenges-won-lost {
+ margin-bottom: 40px;
+
+  h2 {
+    margin-top: 15px;
+  }
 }
