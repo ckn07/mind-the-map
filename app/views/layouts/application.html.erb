@@ -28,8 +28,8 @@
   </head>
 
   <body>
+    <%= browser.device.mobile? ? render('shared/navbar_mobile', variant: :phone) : render('shared/navbar')  %>
     <%# unless (params[:controller] == 'pois' && params[:action] == 'show')|| (params[:controller] == 'answers' && params[:action] == 'show') %>
-      <%= render 'shared/navbar' %>
       <%= render 'shared/flashes' %>
     <%# end %>
     <%= yield %>

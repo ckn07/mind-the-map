@@ -1,12 +1,6 @@
-<i id="burger" class="material-icons" onclick="burger()">menu</i>
-<i id="quit" class="material-icons" onclick="quit()">clear</i>
-<div id="links">
-  <a href="">Home</a>
-  <a href="">About</a>
-  <a href="">Contact</a>
+<div class="POI_counter POI_name text-center">
+  <h2><%= @counter_left %>/<%= @counter_total %> - <%= @poi.name %></h2>
 </div>
-
-<div>here is mobile show</div>
 
 <div class="wrapper-map">
   <div
@@ -30,19 +24,13 @@
   <% end %>
 </div>
 
-<div class="m-menu-score">
-  <div class="m-score-card" style="background-image: url(<%= image_path("card_score.svg")%>)">
-    <div class="m-score-card-lvl-2">
+<!-- <div class="menu-score ">
+  <div class="score-card " style="background-image: url(<%= image_path("card_score.svg")%>)">
+    <div class="score-card-lvl-2">
 
-      <div class="POI_counter">
-        <h2><%= @counter_left %>/<%= @counter_total %></h2>
-      </div>
-      <div class="POI_name text-center">
-        <h1><%= @poi.name %></h1>
-      </div>
 
       <%# empty container to display the answer %>
       <div class="menu-score-container"></div>
     </div>
   </div>
-</div>
+</div> -->
