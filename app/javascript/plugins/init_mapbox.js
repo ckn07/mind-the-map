@@ -11,7 +11,7 @@ const initMapbox = () => {
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     // let zoom
-    const zoom = parseInt(mapElement.dataset.zoom) || 11.5;
+    const zoom = parseInt(mapElement.dataset.zoom) || 11.8;
 
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 
