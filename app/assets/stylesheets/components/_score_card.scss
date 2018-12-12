@@ -104,14 +104,42 @@
     flex-direction: row;
     padding-bottom: 30px;
   }
+
+  .btn-play{
+    display: none;
+  }
 }
 
+// ###########################################################################
 @media (max-width: 414px) {
-  /* For a screen < 320px, this CSS will be read */
+  /* For a screen < 414px, this CSS will be read */
+
+  .menu-score-parent{
+    position: relative;
+    bottom: 60px;
+  }
+  .menu-score {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 3000;
+    color: white;
+    background: #860CE6;
+    font-size: 24px;
+    padding: 0px 0px 101px 0px;
+    transition: 1s;
+    cursor: pointer;
+    z-index: 2999;
+    width: 100vw;
+    height: 100px;
+  }
+
   .menu-score-container {
     margin-top: 20px;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
   }
 
@@ -120,6 +148,10 @@
     top: 60px;
     right: 20px;
     z-index: 3000;
+
+    p {
+      font-size: 17px;
+    }
   }
 
   .score-card {
@@ -158,25 +190,46 @@
     margin-right: 10px;
   }
 
-  .POI_counter h2 {
-    background-color: white;
-    color: $purple;
+  .POI_counter {
+    position: absolute;
+    z-index: 3000;
+    top: 10px;
+    left: 10px;
     border-radius: 50%;
+    background-color: $purple;
+  }
+
+  .POI_counter h2 {
+    color: #fff;
     padding: 10px;
+    margin: 0;
   }
 
   .POI_name {
-    padding: 0px 5px;
+    z-index: 3000;
+    position: absolute;
+    top: -3px;
+    left: 60px;
+    // text-align: left;
+    /* margin-left: 15px; */
+    /* padding: 0px 5px; */
+    /* border-radius: 50%; */
+    /* background-color: #860CE6; */
+
+    h2 {
+      color: $purple;
+    }
   }
 
   .icon {
     height :50px;
     width: 50px;
+    display: none;
 
   }
   .icon-pin {
-    width: 15px;
-    height: 31px;
+    width: 12px;
+    height: 25px;
     margin-right: 10px;
   }
 
@@ -188,7 +241,7 @@
   }
 
   h2 {
-    font-size: 32px
+    font-size: 20px;
   }
 
   p {
@@ -201,62 +254,31 @@
   .row-pin {
     display: flex;
     flex-direction: row;
-    padding-bottom: 30px;
-    align-items: center;
-    justify-content: center;
+    padding-bottom: 0px !important;
+    /* align-items: center; */
+    /* justify-content: center; */
   }
 
   .row-time {
     display: flex;
     flex-direction: row;
-    padding-bottom: 30px;
+    padding-bottom: 0px !important;
   }
 
-}
-
-// .m-menu-score {
-//   position: absolute;
-//   bottom: 80px;
-//   right: 10px;
-//   z-index: 3000;
-// }
-
-.score-card {
-  width: 150px;
-  height: 100px;
-  z-index: 3000;
-  padding: 20px;
-  // overflow: hidden;
-
-  h1, h2, h3, h4, h5 {
-    color: #fff;
-  }
-  h1 {
-    font-size: 20px;
+  .score-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 0px 13px;
+    justify-content: center;
   }
 
-  h2 {
-    font-size: 16px
+  .btn-mobile-none{
+    display: none;
   }
 
-  p {
-    color: #fff;
-    font-size: 8px;
-    margin: 0;
-    padding: 0;
+  .score-answer h1{
+    font-size: 24px;
+    margin: 0px 13px;
   }
-}
-
-.m-score-card.open {
-  height: 350px;
-  transition: all 1.5s ease-in-out;
-}
-
-.m-score-card-lvl-2 {
-  height: 350px;
-  // overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
 }
