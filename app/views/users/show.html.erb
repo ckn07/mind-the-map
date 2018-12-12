@@ -39,7 +39,7 @@
             <% @games.each do |game| %>
               <div class="scores">
 
-                <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
+                <img class="scores-image" src="<%= cl_image_path game.theme.photo, width: 175, height: 100 ,crop: :fill %>">
 
                 <div class="scores-body text-center">
                   <p><%= game.theme.city.name %></p>
@@ -90,7 +90,7 @@
             <% @challenges[0].each do |game| %>
             <div class="scores">
 
-              <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
+              <img class="scores-image" src="<%= cl_image_path game.theme.photo,width: 175, height: 100 ,crop: :fill %>">
 
               <div class="scores-challenges text-center">
                 <p><%= game.theme.city.name %></p>
@@ -112,7 +112,7 @@
                 <h4> No defeat ? You're the best </h4>
               </div>
               <% else %>
-              <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
+              <img class="scores-image" src="<%= cl_image_path game.theme.photo, width: 175, height: 100 ,crop: :fill %>">
 
               <div class="scores-challenges text-center">
                 <p><%= game.theme.city.name %></p>
