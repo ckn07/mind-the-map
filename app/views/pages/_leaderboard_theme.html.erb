@@ -1,40 +1,27 @@
-<!-- leaderboard: headers + list  -->
-<!-- headers -->
 
-<div class="container container-center container-background">
-
-  <div class="row">
-    <div class="col-xs-4 border-column take-space text-center">
-      <h1>Rank</h1>
-    </div>
-    <div class="col-xs-4 border-column take-space text-center">
-      <h1>Username</h1>
-    </div>
-    <!-- No user photo for Demo Day -->
-   <!--  <div class="col-xs-3 border-column take-space text-center">
-      <h1></h1>
-    </div> -->
-    <div class="col-xs-4 border-column take-space text-center">
-      <h1>Score</h1>
-    </div>
-  </div>
 
 <!-- list -->
   <%  games.each_with_index do |game, index| %>
     <% unless game.score_one.nil?  %>
-      <div class="row vertical-center">
-        <div class="col-xs-4 border-column take-space">
-          <p><%= "#{index + 1}" %></p>
+      <div class="row vertical-center background-purple score-row flex-center ">
+        <div class="col-xs-4 border-column">
+          <div id="rank" class="white-text flex-center ">
+            <%= "#{index + 1}" %>
+          </div>
         </div>
-        <div class="col-xs-4 border-column take-space">
-          <p><%= game.winner.username %></p>
+        <div class="col-xs-4 border-column ">
+          <div id="leaderboard-username" class="white-text flex-center">
+            <%= game.winner.username %>
+          </div>
         </div>
         <!-- no user photo for Demo Day -->
         <!-- <div class="col-xs-3 border-column take-space">
-          <img class="picture-leaderboard" src="<%= cl_image_path game.winner.photo %>">
+          <img class="picture-leaderboard" src="<%#= cl_image_path game.winner.photo %>">
         </div> -->
-        <div class="col-xs-4 border-column take-space">
-          <p><%= game.score %></p>
+        <div class="col-xs-4 border-column">
+          <div id="leaderboard-score" class="white-text flex-center">
+            <p><%= game.score %> pts</p>
+          </div>
         </div>
       </div>
     <% end %>
