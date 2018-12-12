@@ -6,5 +6,11 @@ import { initMapbox } from '../plugins/init_mapbox';
 
 initMapbox();
 
-import { copyToClipboard } from '../components/copy_to_clipboard'
+import { copyToClipboard } from '../components/copy_to_clipboard';
 window.copyToClip = copyToClipboard
+
+import { hideSolo } from '../components/showChallenges';
+
+if (document.getElementById('show-user')){
+  hideSolo();
+};

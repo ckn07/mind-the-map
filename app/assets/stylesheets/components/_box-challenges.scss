@@ -1,22 +1,32 @@
 .challenges {
 display: flex;
 align-items: center;
-justify-content: center;
-
+justify-content: space-between;
 }
 
-.challenge-results {
-   margin-bottom: 40px;
-
-  h2 {
-    margin-top: 15px;
-  }
+#challenges-won {
+  flex: 0 0 45%;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
-.challenges-won-lost {
- margin-bottom: 40px;
-
-  h2 {
-    margin-top: 15px;
-  }
+#challenges-lost {
+  flex: 0 0 45%;
+  padding-left: 30px;
+  padding-right: 30px;
 }
+// .challenge-results {
+//    margin-bottom: 40px;
+
+//   h2 {
+//     margin-top: 15px;
+//   }
+// }
+
+// .challenges-won-lost {
+//  margin-bottom: 40px;
+
+//   h2 {
+//     margin-top: 15px;
+//   }
+// }

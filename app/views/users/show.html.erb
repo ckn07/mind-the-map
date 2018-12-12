@@ -1,121 +1,137 @@
-<div class="container" >
+<div class="container" id="show-user" >
 
   <div class="say-hi">
     <h1 align="center">Hello <%= @user.username %></h1>
-  </div>
+  </div> <!-- say-hi -->
 
-  <div class="best-scores">
+  <ul class="nav nav-tabs" id="myTab" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" id="solo-tab" data-toggle="tab" href="#solo" role="tab" aria-controls="solo" aria-selected="true">SOLO</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="challenges-tab" data-toggle="tab" href="#challenges" role="tab" aria-controls="challenges" aria-selected="false">CHALLENGES</a>
+  </li>
+</ul>
 
-    <div class="title-score">
-      <h2>MY BEST SCORES</h2>
-    </div>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active in" id="solo" role="tabpanel" aria-labelledby="solo-tab">
+        <!-- SOLO MODE -->
+      <div class="best-scores">
+        <div class="title-score">
+          <h3>MY BEST SCORES</h3>
+        </div> <!-- fin de title-score -->
+          <% if @games.empty? || nil %>
 
-      <!-- SOLO MODE -->
-      <% if @games.empty? || nil %>
-      <div class="let-play">
-        <div class="row">
-          <H2>Alors comme ça on se créé un compte et on veut pas faire sa première partie ?</H2>
-        </div>
-      </div>
-      <div class="let-play">
-          <button class="btn btn-primary btn-pimp" id="btn-play-once"><%= link_to 'Play NOW', root_path %></button><p>
-        </div>
-      </div>
-      <% else %>
-      <div class="row scores-array">
-        <% @games.each do |game| %>
-          <div class="scores">
-
-            <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
-
-            <div class="scores-body text-center">
-              <p><%= game.theme.city.name %></p>
-              <p><%= game.theme.name %></p>
-              <p><strong><%= game.score_one %></strong></p>
-            </div>
-
-            <ul class="list-inline scores-controls">
-              <li><button class="btn btn-primary btn-pimp"><%= link_to 'Play again', theme_games_path(game.theme_id), method: :post %></button></li>
-              <li><button class="btn btn-primary btn-pimp">Challenge a friend</button></li>
-              <li><button class="btn btn-primary btn-pimp">Share on Facebook</button></li>
-            </ul>
-          </div>
-        <% end %>
-      <% end %>
-    </div>
-
-  </div> <!-- fin best-scores -->
-  <!-- fin de SOLO MODE -->
+          <div class="let-play">
+            <div class="row">
+              <H2>Alors comme ça on se créé un compte et on veut pas faire sa première partie ?</H2>
+            </div> <!-- fin row -->
+          </div> <!-- fin de let-play -->
 
 
-  <!-- CHALLENGE MODE -->
-  <div class="title-score row">
-    <h2>MY BEST SCORES</h2>
-    <!-- NEVER PLAYED ? -->
-    <% if @games.empty? || nil %>
-      <div class="let-play">
-        <div class="row">
-          <H2>Alors comme ça on se créé un compte et on a peur de challenger les copains ?</H2>
-        </div>
-      </div>
+          <div class="let-play" >
+            <button class="btn btn-primary btn-pimp" id="btn-play-once"><%= link_to 'Play NOW', root_path %></button>
+          </div> <!-- fin de let-play -->
 
-      <div class="let-play">
-        <button class="btn btn-primary btn-pimp" id="btn-play-once"><%= link_to 'Go pick a quiz and challenge a friend', root_path %></button>
-      </div>
+          <% else %>
 
-  </div> <!-- fin de title-score row -->
+          <div class="row scores-array">
+            <% @games.each do |game| %>
+              <div class="scores">
 
-    <% else %>
+                <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
 
-    <div class="row challenges">
-    <% @challenges[0].each do |game| %>
-      <div class="challenges-won-lost">
-        <h3>CHALLENGES I WON</h3>
-        <div class="scores">
-          <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
+                <div class="scores-body text-center">
+                  <p><%= game.theme.city.name %></p>
+                  <p><%= game.theme.name %></p>
+                  <p><strong><%= game.score_one %></strong></p>
+                </div> <!-- fin scores-body -->
 
-          <div class="scores-challenges text-center">
-            <p><%= game.theme.city.name %></p>
-            <p><%= game.theme.name %></p>
-            <p><strong><%= game.score_one %></strong></p>
-          </div> <!-- fin scores-challenges -->
-        </div> <!-- scores -->
-    <% end %>
+                <ul class="list-inline scores-controls">
+                  <li><button class="btn btn-primary btn-pimp"><%= link_to 'Play again', theme_games_path(game.theme_id, game: {multi: false}), method: :post %></button></li>
+                  <li><button class="btn btn-primary btn-pimp">Challenge a friend</button></li>
+<!--                   <li><button class="btn btn-primary btn-pimp">Share on Facebook</button></li> -->
+                </ul>
+              </div> <!-- fin scores -->
 
-      </div> <!-- fin challenges-won-lost -->
+            <% end %> <!-- fin @games.each -->
+          </div>  <!-- fin de scores-array -->
 
-      <% @challenges[1].each do |game| %>
-      <div class="challenges-won-lost">
-        <h3>CHALLENGES I LOST</h3>
-        <div class="scores">
-          <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
+          <% end %> <!-- fin @games.empty? -->
 
-          <div class="scores-challenges text-center">
-            <p><%= game.theme.city.name %></p>
-            <p><%= game.theme.name %></p>
-            <p><strong><%= game.score_one %></strong></p>
-          </div> <!-- fin de scores-challenges -->
+      </div> <!-- fin best-scores -->
+    </div> <!-- fin id=solo -->
+    <!-- fin de SOLO MODE -->
 
-        </div> <!-- fin de scores -->
 
-      </div> <!-- fin challenges-won-lost -->
-      <% end %>
+    <!-- CHALLENGE MODE -->
+    <div class="tab-pane fade" id="challenges" role="tabpanel" aria-labelledby="challenges-tab">
+      <div class="title-score">
+        <h3>MY CHALLENGES</h3>
+      </div> <!-- fin de title-score -->
 
-    </div> <!-- fin row challenges -->
+        <!-- NEVER PLAYED ? -->
+        <% if @games.empty? || nil %>
+          <div class="let-play">
+            <div class="row">
+              <H2>Alors comme ça on se créé un compte et on a peur de challenger les copains ?</H2>
+            </div><!-- fin de row-->
+          </div> <!-- fin de let-play -->
 
-    <% end %> <!-- fin de games.empty? -->
-  </div> <!-- fin de title-score row -->
+          <div class="let-play">
+            <button class="btn btn-primary btn-pimp" id="btn-play-once"><%= link_to 'Go pick a quiz and challenge a friend', root_path %></button>
+          </div> <!-- fin de let-play -->
+
+        <% else %>
+
+        <div class="row challenges">
+          <div class="scores-array" id="challenges-won">
+            <div id="i-won"> <h4>THE ONES I WON</h4></div>
+            <% @challenges[0].each do |game| %>
+            <div class="scores">
+
+              <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
+
+              <div class="scores-challenges text-center">
+                <p><%= game.theme.city.name %></p>
+                <p><%= game.theme.name %></p>
+                <p><strong><%= game.score_one %></strong></p>
+              </div> <!-- fin scores-challenges -->
+
+            </div> <!-- fin de scores -->
+            <% end %> <!-- fin de challenges[0] -->
+          </div> <!-- fin de challenges-won -->
+
+          <% @challenges[1].each do |game| %>
+          <div class="scores-array" id="challenges-lost">
+          <div class="challenges-lost">
+            <div id="i-lost"> <h4>THE ONE I LOST</h4></div>
+            <div class="scores">
+              <% if @challenges[1].empty? %>
+              <div class="no-defeat text-center">
+                <h4> No defeat ? You're the best </h4>
+              </div>
+              <% else %>
+              <img class="scores-image" src="<%= cl_image_path game.theme.photo %>">
+
+              <div class="scores-challenges text-center">
+                <p><%= game.theme.city.name %></p>
+                <p><%= game.theme.name %></p>
+                <p><strong><%= game.score_one %></strong></p>
+              </div> <!-- fin de scores-challenges -->
+
+            </div> <!-- fin de scores -->
+          <% end %> <!-- fin de challenges[1].empty? -->
+
+          <% end %> <!-- fin de challenges[1] -->
+          </div> <!-- fin challenges-lost -->
+        </div> <!-- fin de challenges-lost -->
+
+        </div> <!-- fin row challenges -->
+
+        <% end %> <!-- fin de games.empty? -->
+      </div> <!-- fin de title-score -->
+    </div> <!-- fin de id=challenges -->
+  </div> <!-- fin de tab-content -->
 
 </div> <!-- fin de container -->
-
-<!--         <div class="row">
-          <div class="col-xs-12 col-md-4 text-center">
-            <button class="btn btn-primary btn-fw btn-pimp">Play again</button>
-          </div>
-          <div class="col-xs-12 col-md-4 text-center ">
-            <button class="btn btn-primary btn-fw btn-pimp">Challenge a friend</button>
-          </div>
-          <div class="col-xs-12 col-md-4 text-center">
-            <button class="btn btn-primary btn-fw btn-pimp">Share on Facebook</button>
-          </div>
-        </div> -->
