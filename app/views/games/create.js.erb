@@ -1,28 +1,28 @@
-
-  // fermer la modal
-    // console.log("createchallenge script sur themeModal<%= @game.theme.id %>")
-     let modalThemeClose = document.querySelector("#themeModal<%= @game.theme.id %> .close");
-     modalThemeClose.click();
-     const hiddenButton = document.getElementById('hidden-button');
-     hiddenButton.click();
-     // $("#themeModal<%= @game.theme.id %>").modal('hide');
-  // afficher la modal game
-    // const modalGame = document.getElementById("#ModalMulti");
-    // $('#ModalMulti').modal('show');
-    // ajouter  le lien du game dans le formulaire
-     const linkToChallenge = document.getElementById('LinkChallenge')
-     linkToChallenge.value = "<%= new_game_challenge_url(@game) %>"
+// close la premiere modale
+let modalThemeClose = document.querySelector("#themeModal<%= @game.theme.id %> .close");
+modalThemeClose.click();
+// ouvre la deuxieme modal en cliquant sur un bouton caché
+const hiddenButton = document.getElementById('hidden-button');
+hiddenButton.click();
+// Selection puis remplis l'input box avec l'address du challenge
+const linkToChallenge = document.getElementById('LinkChallenge')
+linkToChallenge.value = "<%= new_game_challenge_url(@game) %>"
+// selectionne puis change le lien derriere l'id your game
+const linkToGame = document.getElementById('yourGame')
+linkToGame.href = "<%= game_poi_url(@game,@poi) %>"
 
 
-const fbButton = document.getElementById('fb');
-const linkChallenge  = "<%= new_game_challenge_url(@game) %>"
-const fbAppid = "570488603404594";
-const urlGameBegin = "<%= theme_games_url(@game.theme.id)%>";
-const pageName = "<%= current_user.username %> is challenging you on <%= @game.theme.name %>";
-const pageCaption = "Et en plus il parait qu'il va te niquer tes morts";
-const pageDescription = "le sang de ses mort ce jeux est trop bien";
-const finalUrlFb = `https://www.facebook.com/dialog/feed?app_id=${fbAppid}&link=${linkChallenge}&name=${pageName}&caption=${pageCaption}&description=${pageDescription}&redirect_uri=${urlGameBegin}`;
-fbButton.href = link.str(finalUrlFb);
+
+// le bouton facebook dont on s'occupera un jour
+// const fbButton = document.getElementById('fb');
+// const linkChallenge  = "<%= new_game_challenge_url(@game) %>"
+// const fbAppid = "570488603404594";
+// const urlGameBegin = "<%= theme_games_url(@game.theme.id)%>";
+// const pageName = "<%= current_user.username %> is challenging you on <%= @game.theme.name %>";
+// const pageCaption = "Et en plus il parait qu'il va te niquer tes morts";
+// const pageDescription = "le sang de ses mort ce jeux est trop bien";
+// const finalUrlFb = `https://www.facebook.com/dialog/feed?app_id=${fbAppid}&link=${linkChallenge}&name=${pageName}&caption=${pageCaption}&description=${pageDescription}&redirect_uri=${urlGameBegin}`;
+// fbButton.href = link.str(finalUrlFb);
 // &picture={picture}
 // Paramètres :
 
