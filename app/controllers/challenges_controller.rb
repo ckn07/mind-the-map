@@ -1,6 +1,7 @@
 class ChallengesController < ApplicationController
 # creer 2 before action, l'un pour chopper le game
 # l'autre pour vérifié que le game a bien été instancié en multi: true
+skip_before_action :authenticate_user!, only: [:new]
 
 
   def new
