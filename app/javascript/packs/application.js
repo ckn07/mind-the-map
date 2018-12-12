@@ -7,5 +7,11 @@ import '../components/menu_mobile';
 
 initMapbox();
 
-import { copyToClipboard } from '../components/copy_to_clipboard'
+import { copyToClipboard } from '../components/copy_to_clipboard';
 window.copyToClip = copyToClipboard
+
+import { hideSolo } from '../components/showChallenges';
+
+if (document.getElementById('show-user')){
+  hideSolo();
+};
