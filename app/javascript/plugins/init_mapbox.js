@@ -11,7 +11,7 @@ const initMapbox = () => {
 
   if (mapElement) { // only build a map if there's a div#map to inject into
     // let zoom
-    const zoom = parseInt(mapElement.dataset.zoom) || 12;
+    const zoom = parseInt(mapElement.dataset.zoom) || 11.5;
 
     mapboxgl.accessToken = mapElement.dataset.mapboxApiKey;
 
@@ -33,7 +33,7 @@ const initMapbox = () => {
         //fetch click coordinates
         if (mapElement.dataset.game === 'on')
         {
-          map.once('click', function (e) {
+          map.once('click', (e) => {
             const timeClick = Date.now();
             let coordinates = e.lngLat;
             let click_lng = coordinates.lng

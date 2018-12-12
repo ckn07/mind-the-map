@@ -51,7 +51,21 @@
   }
 }
 
+#hidden-div {
+  display: none;
+  z-index: 1500;
+  background-color: black;
+  position: absolute;
+  top: 0px;
+  height: 100%;
+  left: 0px;
+  width:100%;
+  opacity: 0.5;
+}
 
+.display-div {
+  display: block !important;
+}
 
 // .hp-listing {
 //   // padding: 20px 20px;

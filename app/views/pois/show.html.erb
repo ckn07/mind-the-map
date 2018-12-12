@@ -4,12 +4,14 @@
   <%= render 'poi_desktop_show' %>
 <% end %>
 
+<div id="hidden-div"></div>
 
 <script type="text/javascript">
-
   setTimeout(function() {
+    const hiddenDiv = document.getElementById('hidden-div');
+    hiddenDiv.classList.add('display-div');
     const answer_button = document.getElementById('answer-button');
     answer_button.click();
+    console.log('TEST')
  }, 13000);
 </script>
-
