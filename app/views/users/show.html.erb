@@ -98,12 +98,17 @@
                 <p><strong><%= game.score_one %></strong></p>
               </div> <!-- fin scores-challenges -->
 
+              <div class="against-who text-center">
+                <p>against</p>
+                <p><%= game.user_two.username %></p>
+              </div> <!-- fin de against-who -->
+
             </div> <!-- fin de scores -->
             <% end %> <!-- fin de challenges[0] -->
           </div> <!-- fin de challenges-won -->
 
           <div class="scores-array" id="challenges-lost">
-            <div id="i-lost"> <h4>THE ONE I LOST</h4></div>
+            <div id="i-lost"> <h4>THE ONES I LOST</h4></div>
           <% @challenges[1].each do |game| %>
 
             <div class="scores">
@@ -119,6 +124,11 @@
                 <p><%= game.theme.name %></p>
                 <p><strong><%= game.score_one %></strong></p>
               </div> <!-- fin de scores-challenges -->
+
+              <div class="against-who text-center">
+                <p>against</p>
+                <p><%= game.user_two.username %></p>
+              </div> <!-- fin de against-who -->
 
             </div> <!-- fin de scores -->
           <% end %> <!-- fin de challenges[1].empty? -->
