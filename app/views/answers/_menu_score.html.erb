@@ -1,10 +1,12 @@
-<div class="row-pin">
-  <%= image_tag "pin_score.svg", class:"icon-pin"%>
-  <p class="score-distance text-center"><%= answer.distance %> meters</p>
-</div>
-<div class="row-time">
-  <%= image_tag "time_score.svg", class:"time"%>
-  <p><%= answer.time_to_respond %> s</p>
+<div class="score-flex">
+  <div class="row-pin">
+    <%= image_tag "pin_score.svg", class:"icon-pin"%>
+    <p class="score-distance text-center"><%= answer.distance %> meters</p>
+  </div>
+  <div class="row-time">
+    <%= image_tag "time_score.svg", class:"time"%>
+    <p><%= answer.time_to_respond %> s</p>
+  </div>
 </div>
 <div class="great-bad">
   <% if answer.score >= 200 %>
@@ -20,7 +22,16 @@
 <div class="score-answer text-center">
   <h1><%= answer.score %> points</h1>
 </div>
-<div class="button-answer btn-pimp-w btn-fw-2 text-center">
+  <% if next_poi.nil? %>
+    <div class="btn-score-final">
+      <%= link_to " &nbsp; &nbsp; &nbsp;".html_safe , game_url(game), method: :patch %>
+    </div>
+  <% else %>
+    <div class="btn-play">
+      <%= link_to " &nbsp; &nbsp; &nbsp;".html_safe, game_poi_url(game, next_poi)%>
+    </div>
+  <% end %>
+<div class="button-answer btn-pimp-w btn-fw-2 text-center btn-mobile-none">
   <% if next_poi.nil? %>
     <%= link_to "> See your score" , game_url(game), method: :patch %>
   <% else %>
