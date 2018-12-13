@@ -106,8 +106,9 @@
             </div> <!-- fin de against-who -->
 
             <div class="scores">
-
+              <%= link_to game_path(game) do %>
               <img class="scores-image" src="<%= cl_image_path game.theme.photo,width: 175, height: 100 ,crop: :fill %>">
+              <% end %>
 
               <div class="scores-challenges text-center">
                 <p><%= game.theme.city.name %></p>
@@ -132,7 +133,9 @@
                 <h4> No defeat ? You're the best </h4>
               </div>
               <% else %>
+              <%= link_to game_path(game) do %>
               <img class="scores-image" src="<%= cl_image_path game.theme.photo, width: 175, height: 100 ,crop: :fill %>">
+              <% end %>
 
               <div class="scores-challenges text-center">
                 <p><%= game.theme.city.name %></p>
