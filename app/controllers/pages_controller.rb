@@ -12,10 +12,12 @@ class PagesController < ApplicationController
     @games = {}
 
     @themes.each do |theme|
-      games = Game
-              .select("
+                         # WHEN unplayed THEN unplayed
+      games = Game.select("
                     games.*,
-                    CASE WHEN score_two IS NULL THEN score_one
+                    CASE
+                         WHEN score_one IS NULL THEN 0
+                         WHEN score_two IS NULL THEN score_one
                          WHEN score_one >= score_two THEN score_one
                          ELSE score_two
                     END
@@ -25,6 +27,7 @@ class PagesController < ApplicationController
               .order("score DESC")
               .limit(20)
       @games[theme.id] = games
+      # raise
     end
   end
 end
