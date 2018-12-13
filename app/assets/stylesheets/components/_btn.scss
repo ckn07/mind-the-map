@@ -111,21 +111,6 @@
   display: none;
 }
 
-// .btn-pimp-reverse {
-//   background-image: image-url("btn.svg");
-//   background-size: 100% 100%;
-//   border: 1px solid rgba(255, 255, 255, 0);
-//   border-radius: 0px;
-//   box-shadow: none;
-//   background-clip: padding-box;
-//   outline: 0;
-//   background-color: #ffffff;
-//   padding: 10px;
-//   margin: 10px;
-//   font-size: 22px;
-//   color: white;
-//   transition: all 0.7s ease-out;
-// }
 
 .btn-reverse {
   border: 1px solid #8525e2;
@@ -135,8 +120,13 @@
   padding: 10px;
   margin: 10px;
   font-size: 22px;
-  transition: all 0.7s ease-out;
+  // transition: all 0.7s ease-out;
 }
+
+.btn-reverse a:hover {
+    text-decoration: none;
+    color: white;
+  }
 
 @media (max-width: 414px) {
   /* For a screen < 414px, this CSS will be read */
@@ -164,5 +154,42 @@
     a {
       text-decoration: none;
     }
+  }
+
+  .btn-pimp {
+    max-width: 90px;
+    max-height: 30px;
+    // background-image: image-url("btn.svg");
+    // background-size: 100% 100%;
+    // border: none;
+    // border-radius: 0px;
+    // box-shadow: none;
+    // background-clip: padding-box;
+    // outline: 0;
+    // background-color: rgba(255, 255, 255, 0);
+    padding: 5px;
+    margin: 5px;
+    font-size: 14px;
+    // color: white;
+    // transition: all 0.7s ease-out;
+  }
+    .btn-pimp a {
+    padding: 0 5px;
+    font-size: 14px;
+    // color: #E6E6E6;
+    // text-decoration: none;
+  }
+
+  .btn-reverse {
+    max-width: 130px;
+    max-height: 30px;
+    border: 1px solid #8525e2;
+    // border-radius: 20px;
+    background: white;
+    color: #8525e2;
+    padding: 5px;
+    margin: 5px;
+    font-size: 14px;
+    // transition: all 0.7s ease-out;
   }
 }

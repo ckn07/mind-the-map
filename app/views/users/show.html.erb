@@ -38,14 +38,16 @@
           <div class="row scores-array">
             <% @games.each do |game| %>
               <div class="scores">
+                <div class="group-score-img-body">
 
-                <img class="scores-image" src="<%= cl_image_path game.theme.photo,crop: :fill %>">
+                  <img class="scores-image" src="<%= cl_image_path game.theme.photo,crop: :fill %>">
 
-                <div class="scores-body text-center">
-                  <p><%= game.theme.city.name %></p>
-                  <p><%= game.theme.name %></p>
-                  <p><strong><%= game.score_one %></strong></p>
-                </div> <!-- fin scores-body -->
+                  <div class="scores-body text-center">
+                    <p><%= game.theme.city.name %></p>
+                    <p><%= game.theme.name %></p>
+                    <p><strong><%= game.score_one %></strong></p>
+                  </div> <!-- fin scores-body -->
+                </div> <!--  fin group-score-img-body -->
 
                 <ul class="list-inline scores-controls">
                   <li><button class="btn btn-primary btn-pimp"><%= link_to 'Play again',
@@ -60,9 +62,7 @@
                   <!-- hidden modal that we don't use on this page -->
                   <div id="themeModal<%= game.theme.id %>" style="display: none;">
                     <a href="#" class="close"> </a>
-                  </div>
-
-<!--                   <li><button class="btn btn-primary btn-pimp">Share on Facebook</button></li> -->
+                  </div> <!-- fin themeModal-->
                 </ul>
               </div> <!-- fin scores -->
 
