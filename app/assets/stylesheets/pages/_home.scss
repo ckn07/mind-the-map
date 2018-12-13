@@ -1,4 +1,13 @@
 // Specific CSS for your home-page
+.container-homepage {
+  width: 100%;
+}
+
+.wrapper-homepage {
+  background-color: #fff;
+  padding: 74px;
+}
+
 @media (max-width: 320px) {
   /* For a screen < 320px, this CSS will be read */
   .wrapper{
