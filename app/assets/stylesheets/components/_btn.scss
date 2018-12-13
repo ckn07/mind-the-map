@@ -2,6 +2,10 @@
   text-align: center;
 }
 
+.btn-home {
+  display: none;
+}
+
 .btn-delete {
   background-color: #fe5f55;
 }
@@ -200,5 +204,11 @@
     margin: 5px;
     font-size: 14px;
     // transition: all 0.7s ease-out;
+  }
+}
+
+@media (max-width: 990px) {
+  .btn-home {
+    display: block;
   }
 }
