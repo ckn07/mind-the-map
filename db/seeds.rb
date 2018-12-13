@@ -180,7 +180,7 @@ sacre_coeur = Poi.new(
 sacre_coeur.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020952/MtM/sacre-coeur.jpg"
 sacre_coeur.save!
 
-puts "--> 8 pois for monuments_paris have been created!"
+puts "--> 5 pois for monuments_paris have been created!"
 
 puts "generating pois for districts_paris"
 
@@ -920,56 +920,26 @@ answer3.poi = palais_garnier
 answer3.user = chris
 answer3.save!
 
-answer5 = Answer.new(
+answer4 = Answer.new(
   time_to_respond: 43533,
   latitude: 48.8712254,
   longitude: 2.334444,
   score: 500)
-answer5.game = game1
-answer5.poi = notre_dame
-answer5.user = chris
-answer5.save!
+answer4.game = game1
+answer4.poi = notre_dame
+answer4.user = chris
+answer4.save!
 
-answer6 = Answer.new(
+answer5 = Answer.new(
   time_to_respond: 45633,
   latitude: 48.874334,
   longitude: 2.3322222,
   score: 600)
-answer6.game = game1
-answer6.poi = sacre_coeur
-answer6.user = chris
-answer6.save!
+answer5.game = game1
+answer5.poi = sacre_coeur
+answer5.user = chris
+answer5.save!
 
-answer7 = Answer.new(
-  time_to_respond: 123233,
-  latitude: 48.8713454,
-  longitude: 2.3323443,
-  score: 700)
-answer7.game = game1
-answer7.poi = hotel_invalides
-answer7.user = chris
-answer7.save!
-
-answer8 = Answer.new(
-  time_to_respond: 75643,
-  latitude: 48.873274,
-  longitude: 2.333642,
-  score: 800)
-answer8.game = game1
-answer8.poi = pantheon
-answer8.user = chris
-answer8.save!
-
-answer10 = Answer.new(
-  time_to_respond: 347533,
-  latitude: 48.874758,
-  longitude: 2.3322454,
-  score: 1000)
-answer10.game = game1
-answer10.poi = palais_luxembourg
-answer10.user = chris
-answer10.save!
-
-puts "--> 8 answers have been created!"
+puts "--> 5 answers have been created!"
 
 
