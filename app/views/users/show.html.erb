@@ -48,8 +48,11 @@
                 </div> <!-- fin scores-body -->
 
                 <ul class="list-inline scores-controls">
-                  <li><button class="btn btn-primary btn-pimp"><%= link_to 'Play again', theme_games_path(game.theme_id, game: {multi: false}), method: :post, class: "btn btn-primary btn-pimp" %></button></li>
-                  <li><button class="btn btn-primary btn-pimp"><%= link_to "Challenge a friend",
+                  <li><button class="btn btn-primary btn-pimp"><%= link_to 'Play again',
+                          theme_games_path(game.theme_id,
+                          game: {multi: false}),
+                          method: :post %></button></li>
+                  <li><button class="btn btn-primary btn-reverse"><%= link_to "Challenge a friend",
                           theme_games_url(game.theme_id,
                           game:{multi: true}),
                           data: { method: :post, remote: true}%></button> </li>

@@ -35,6 +35,13 @@
   transition: all 0.7s ease-out;
 }
 
+.btn-pimp a {
+  padding: 0 20px;
+  font-size: 17px;
+  color: #E6E6E6;
+  text-decoration: none;
+}
+
 .btn-pimp-w {
   background-image: image-url("btn-w.svg");
   background-size: 100% 100%;
@@ -50,12 +57,6 @@
   font-size: 24px;
 }
 
-.btn-fw-2 {
-  width: 95%;
-  margin-top: 15px;
-  margin-left: 6px;
-  // font-family: "Shadows Into Light Two"
-}
 
 .btn-pimp:hover {
   filter: grayscale(40%);
@@ -70,6 +71,13 @@
   padding: 10px;
   color: white;
   transition: all 0.7s ease-out;
+}
+
+.btn-fw-2 {
+  width: 95%;
+  margin-top: 15px;
+  margin-left: 6px;
+  // font-family: "Shadows Into Light Two"
 }
 
 .btn-center-bottom {
@@ -101,6 +109,33 @@
 
 .btn-play {
   display: none;
+}
+
+// .btn-pimp-reverse {
+//   background-image: image-url("btn.svg");
+//   background-size: 100% 100%;
+//   border: 1px solid rgba(255, 255, 255, 0);
+//   border-radius: 0px;
+//   box-shadow: none;
+//   background-clip: padding-box;
+//   outline: 0;
+//   background-color: #ffffff;
+//   padding: 10px;
+//   margin: 10px;
+//   font-size: 22px;
+//   color: white;
+//   transition: all 0.7s ease-out;
+// }
+
+.btn-reverse {
+  border: 1px solid #8525e2;
+  border-radius: 20px;
+  background: white;
+  color: #8525e2;
+  padding: 10px;
+  margin: 10px;
+  font-size: 22px;
+  transition: all 0.7s ease-out;
 }
 
 @media (max-width: 414px) {
