@@ -11,9 +11,29 @@
   </div>
 
   <div class="score-title text-center">
-    <h2>Your score: <%= @total_score %> points</h2>
-  </div>
+    <h2>Your score: <%= @total_score %> points
+    <% if @game.multi %>
+      <% if @total_score_opponent.nil? %>
+        <div class="score-title text-center">
+          <h2>Your Opponent has not played yet</h2>
+        </div>
+      <% else %>
+        <div class="score-title text-center">
+          <%= @opponent_name %>  score: <%= @total_score_opponent %> points</h2>
+          <% if @total_score > @total_score_opponent %>
+            "You're the best arouuund!!!" karaté kid
+          <% elsif @total_score == @total_score_opponent %>
+             Wow perfect tie...  I would not have taught this would happen
+          <% else %>
+            You lose
+          <% end %>
 
+        </div>
+      <% end %>
+    <%else%>
+    </h2>
+  </div>
+    <%end%>
 </div>
 
 <div>

@@ -20,9 +20,14 @@ class GamesController < ApplicationController
     # le calcul et le storage va se faire dans la requete update
     if @game.user_one == @user
       @total_score = @game.score_one
+      @total_score_opponent = @game.score_two
+      @opponent_name = @game.user_two.username
     else
       @total_score = @game.score_two
+      @total_score_opponent = @game.score_one
+      @opponent_name = @game.user_one.username
     end
+
 
   end
 
