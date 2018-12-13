@@ -150,16 +150,6 @@ arc_triomphe = Poi.new(
 arc_triomphe.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543932861/MtM/arc-triomphe.jpg"
 arc_triomphe.save!
 
-palais_garnier = Poi.new(
-  name: "Palais Garnier",
-  address: "10 Place de l'Opéra, 75009 Paris, France",
-  latitude: 48.8708714,
-  longitude: 2.3322167999999692,
-  description: "The Palais Garnier is a 1,979-seat opera house, which was built from 1861 to 1875 for the Paris Opera. It was called the Salle des Capucines, because of its location on the Boulevard des Capucines in the 9th arrondissement of Paris, but soon became known as the Palais Garnier, in recognition of its opulence and its architect, Charles Garnier.",
-  scrapping_uri: "https://en.wikipedia.org/wiki/Palais_Garnier")
-palais_garnier.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543933607/MtM/palais-garnier.jpg"
-palais_garnier.save!
-
 notre_dame = Poi.new(
   name: "Cathédrale Notre-Dame de Paris",
   address: "6 Parvis Notre-Dame - Pl. Jean-Paul II, 75004 Paris",
@@ -170,6 +160,16 @@ notre_dame = Poi.new(
 notre_dame.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020952/MtM/notre-dame.jpg"
 notre_dame.save!
 
+palais_garnier = Poi.new(
+  name: "Palais Garnier",
+  address: "10 Place de l'Opéra, 75009 Paris, France",
+  latitude: 48.8708714,
+  longitude: 2.3322167999999692,
+  description: "The Palais Garnier is a 1,979-seat opera house, which was built from 1861 to 1875 for the Paris Opera. It was called the Salle des Capucines, because of its location on the Boulevard des Capucines in the 9th arrondissement of Paris, but soon became known as the Palais Garnier, in recognition of its opulence and its architect, Charles Garnier.",
+  scrapping_uri: "https://en.wikipedia.org/wiki/Palais_Garnier")
+palais_garnier.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1543933607/MtM/palais-garnier.jpg"
+palais_garnier.save!
+
 sacre_coeur = Poi.new(
   name: "Basilique du Sacré-Cœur",
   address: "35 Rue du Chevalier de la Barre, 75018 Paris",
@@ -179,36 +179,6 @@ sacre_coeur = Poi.new(
   scrapping_uri: "https://en.wikipedia.org/wiki/Sacr%C3%A9-C%C5%93ur,_Paris")
 sacre_coeur.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020952/MtM/sacre-coeur.jpg"
 sacre_coeur.save!
-
-hotel_invalides = Poi.new(
-  name: "Hôtel des Invalides",
-  address: "Rond-Point du Bleuet de France, 75007 Paris",
-  latitude: 48.8570915,
-  longitude: 2.312811199999942,
-  description: "Les Invalides, formally the Hôtel national des Invalides (The National Residence of the Invalids), or also as Hôtel des Invalides, is a complex of buildings in the 7th arrondissement of Paris, France, containing museums and monuments, all relating to the military history of France, as well as a hospital and a retirement home for war veterans, the building's original purpose",
-  scrapping_uri: "https://en.wikipedia.org/wiki/Les_Invalides")
-hotel_invalides.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020951/MtM/hotel-invalides.jpg"
-hotel_invalides.save!
-
-pantheon = Poi.new(
-  name: "Panthéon",
-  address: "Place du Panthéon, 75005 Paris",
-  latitude: 48.8463836,
-  longitude: 2.3449622000000545,
-  description: "The Panthéon is a building in the Latin Quarter in Paris, France. It was originally built as a church dedicated to St. Genevieve and to house the reliquary châsse containing her relics but, after many changes, now functions as a secular mausoleum containing the remains of distinguished French citizens",
-  scrapping_uri: "https://en.wikipedia.org/wiki/Panth%C3%A9on")
-pantheon.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020953/MtM/pantheon.jpg"
-pantheon.save!
-
-palais_luxembourg = Poi.new(
-  name: "Palais du Luxembourg",
-  address: "15 Rue de Vaugirard, 75291 Paris",
-  latitude: 48.84323500000001,
-  longitude: 2.3136036999999305,
-  description: "The Luxembourg Palace is located at 15 rue de Vaugirard in the 6th arrondissement of Paris. It was originally built (1615–1645) to the designs of the French architect Salomon de Brosse to be the royal residence of the regent Marie de' Medici, mother of Louis XIII of France.",
-  scrapping_uri: "https://en.wikipedia.org/wiki/Louvre")
-palais_luxembourg.remote_photo_url = "https://res.cloudinary.com/cecile-dzy-ncl/image/upload/v1544020952/MtM/palais_luxembourg.jpg"
-palais_luxembourg.save!
 
 puts "--> 8 pois for monuments_paris have been created!"
 
@@ -672,22 +642,7 @@ tp5 = ThemePoi.new(
   poi_id: sacre_coeur.id)
 tp5.save!
 
-tp6 = ThemePoi.new(
-  theme_id: monuments_paris.id,
-  poi_id: hotel_invalides.id)
-tp6.save!
-
-tp7 = ThemePoi.new(
-  theme_id: monuments_paris.id,
-  poi_id: pantheon.id)
-tp7.save!
-
-tp8 = ThemePoi.new(
-  theme_id: monuments_paris.id,
-  poi_id: palais_luxembourg.id)
-tp8.save!
-
-puts "--> 8 theme pois have been created for monuments_paris!"
+puts "--> 5 theme pois have been created for monuments_paris!"
 
 puts "--> let's start district_paris POIs!"
 
