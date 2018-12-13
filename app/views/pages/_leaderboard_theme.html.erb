@@ -3,7 +3,7 @@
 
 <div class="container container-center container-background">
 
-  <div class="row">
+<!--   <div class="row">
     <div class="col-xs-4 border-column take-space text-center">
       <h1>Rank</h1>
     </div>
@@ -14,21 +14,21 @@
     <div class="col-xs-4 border-column take-space text-center">
       <h1>Score</h1>
     </div>
-  </div>
+  </div> -->
 
 <!-- list -->
   <%  games.each_with_index do |game, index| %>
     <% unless game.score_one.nil?  %>
-      <div class="row vertical-center">
-        <div class="col-xs-4 border-column take-space">
-          <p><%= "#{index + 1}" %></p>
+      <div class="row vertical-center row-leaderboard">
+        <div class="col-xs-4 border-column take-space leaderboard-rank">
+          <h3><%= "#{index + 1}" %></h3>
         </div>
-        <div class="col-xs-4 border-column take-space">
-          <p><%= game.winner.username %></p>
+        <div class="col-xs-4 border-column take-space leaderboard-name">
+          <h3><%= game.winner.username %></h3>
         </div>
 
-        <div class="col-xs-4 border-column take-space">
-          <p><%= game.score %></p>
+        <div class="col-xs-4 border-column take-space leaderboard-score">
+          <h3><%= game.score %></h3>
         </div>
       </div>
     <% end %>
