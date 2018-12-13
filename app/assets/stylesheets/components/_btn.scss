@@ -22,6 +22,15 @@
   width: 100%;
   z-index: 3000;
 }
+.btn-mobile-none{
+  text-decoration: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+.btn-mobile-none a:hover {
+  text-decoration: none;
+}
+
 
 .btn-pimp {
   background-image: image-url("btn.svg");
@@ -83,12 +92,12 @@
   transition: all 0.7s ease-out;
 }
 
-.btn-fw-2 {
-  width: 95%;
-  margin-top: 15px;
-  margin-left: 6px;
-  // font-family: "Shadows Into Light Two"
-}
+// .btn-fw-2 {
+//   width: 95%;
+//   margin-top: 15px;
+//   margin-left: 6px;
+//   // font-family: "Shadows Into Light Two"
+// }
 
 .btn-center-bottom {
   position: absolute;
