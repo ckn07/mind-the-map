@@ -4,6 +4,7 @@
 <% content_for :meta_image, @theme.photo %>
 
 <div class="container-banner container-game-show">
+
   <div class="title">
     <%= image_tag("rocket.svg") %>
     <h1>CONGRATS</h1>
@@ -11,7 +12,7 @@
   </div>
 
   <div class="score-title text-center">
-    <h2>Your score: <%= @total_score %> / 100 000
+    <h2>Your score: <%= @total_score %> / 100 000</h2>
     <% if @game.multi %>
       <% if @total_score_opponent.nil? %>
         <div class="score-title text-center">
@@ -22,25 +23,42 @@
           <%= @opponent_name %>  score: <%= @total_score_opponent %> points</h2>
           <% if @total_score > @total_score_opponent %>
             <img src="https://media.giphy.com/media/bVivPTy6pO6ru/giphy.gif" alt="you re the best" tyle="max-height: 150px;">
-            <p>
-              You're the best! arouuund!!!
-            </p>
+            <p>You're the best! arouuund!!!</p>
           <% elsif @total_score == @total_score_opponent %>
              Wow perfect tie...  I would not have taught this would happen
           <% else %>
             <img src="https://media.giphy.com/media/7nMfkppqka9mo/giphy.gif" alt="loser" style="max-height: 150px;">
             <p>Alas... you lost this game!</p>
           <% end %>
-
         </div>
       <% end %>
     <%else%>
-    </h2>
-  </div>
     <%end%>
-</div>
+  </div>
 
-<div>
+  <div class="btn-wrapper row text-center">
+    <div class="col-xs-12 col-md-4">
+      <%= link_to 'Play again',
+        theme_games_url(@theme.id,
+        game:{multi: false}),
+        method: :post,
+        class: "btn btn-pimp btn-fw"
+      %>
+     </div>
+    <div class="col-xs-12 col-md-4 text-center">
+      <%= link_to "Challenge a friend",
+        theme_games_url(@theme.id,
+        game:{multi: true}),
+        data: { method: :post, remote: true},
+        class: "btn btn-primary btn-fw btn-pimp"
+      %>
+    </div>
+    <div class="col-xs-12 col-md-4">
+      <%= link_to 'Leaderboard', leaderboard_path, class: "btn btn-pimp btn-fw" %>
+    </div>
+  </div>
+
+
   <div class="results-listing">
 
     <div id="map" class="map-show";" data-markers="<%= @markers.to_json %>" data-game="off" data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>" data-zoom=11>
@@ -67,28 +85,9 @@
 
 
   </div> <!-- fin de result -->
-
-<div class="btn-wrapper row text-center">
-  <div class="col-xs-12 col-md-4">
-    <%= link_to 'Play again',
-      theme_games_url(@theme.id,
-      game:{multi: false}),
-      method: :post,
-      class: "btn btn-pimp btn-fw"
-    %>
-   </div>
-  <div class="col-xs-12 col-md-4 text-center">
-    <%= link_to "Challenge a friend",
-      theme_games_url(@theme.id,
-      game:{multi: true}),
-      data: { method: :post, remote: true},
-      class: "btn btn-primary btn-fw btn-pimp"
-    %>
-  </div>
-  <div class="col-xs-12 col-md-4">
-    <%= link_to 'Leaderboard', leaderboard_path, class: "btn btn-pimp btn-fw" %>
-  </div>
 </div>
+
+
 
 <!-- hidden modal that we don't use on this page -->
 <div id="themeModal<%= @game.theme.id %>" style="display: none;">
