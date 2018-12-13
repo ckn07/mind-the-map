@@ -8,17 +8,6 @@
     <p><%= answer.time_to_respond %> s</p>
   </div>
 </div>
-<div class="great-bad">
-  <% if answer.score >= 200 %>
-    <div class="icon icon-great">
-      <%= image_tag "great.svg", class:"great"%>
-    </div>
-  <% else %>
-    <div class="icon icon-bad">
-      <%= image_tag "bad.svg", class:"bad"%>
-    </div>
-  <% end %>
-</div>
 <div class="score-answer text-center">
   <h1><%= answer.score %> points</h1>
 </div>
