@@ -4,8 +4,9 @@
 }
 
 .wrapper-homepage {
+  flex-grow: 1;
   background-color: #fff;
-  padding: 74px;
+  padding: 20px 74px;
 }
 
 @media (max-width: 320px) {
