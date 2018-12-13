@@ -141,6 +141,12 @@
     color: white;
   }
 
+@media (max-width: 990px) {
+  .btn-home {
+    display: block;
+  }
+}
+
 @media (max-width: 414px) {
   /* For a screen < 414px, this CSS will be read */
   .btn-play {
@@ -204,11 +210,5 @@
     margin: 5px;
     font-size: 14px;
     // transition: all 0.7s ease-out;
-  }
-}
-
-@media (max-width: 990px) {
-  .btn-home {
-    display: block;
   }
 }
