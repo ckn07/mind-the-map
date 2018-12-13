@@ -1,8 +1,8 @@
 .challenges {
 display: flex;
 flex-wrap: wrap;
-align-items: center;
 justify-content: center;
+align-items: stretch;
 }
 
 #challenges-won {
@@ -35,7 +35,7 @@ justify-content: center;
   /* For a screen < 320px, this CSS will be read */
   #challenges-won {
     flex: 0 1 45%;
-    max-width: 380px;
+    width: 380px;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 10px;
@@ -43,7 +43,7 @@ justify-content: center;
 
   #challenges-lost {
     flex: 0 1 45%;
-    max-width: 380px;
+    width: 380px;
     padding-left: 10px;
     padding-right: 10px;
     margin-bottom: 10px;
