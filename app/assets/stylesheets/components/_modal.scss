@@ -68,8 +68,8 @@
   margin: 15px 0px;
 }
 
-@media (max-width: 320px) {
-  /* For a screen < 320px, this CSS will be read */
+@media (max-width: 414px) {
+  /* For a screen < 414px, this CSS will be read */
   .m-c {
     background-image: image-url("card_modal.svg");
     background-size: 100% 100%;
@@ -92,6 +92,6 @@
     outline: 0;
     background-color: rgba(255, 255, 255, 0);
     padding: 40px;
-    margin-top: 150px;
+    margin-top: 0px !important;
   }
  }

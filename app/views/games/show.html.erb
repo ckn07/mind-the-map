@@ -11,9 +11,29 @@
   </div>
 
   <div class="score-title text-center">
-    <h2>Your score: <%= @total_score %> points</h2>
-  </div>
+    <h2>Your score: <%= @total_score %> points
+    <% if @game.multi %>
+      <% if @total_score_opponent.nil? %>
+        <div class="score-title text-center">
+          <h2>Your Opponent has not played yet</h2>
+        </div>
+      <% else %>
+        <div class="score-title text-center">
+          <%= @opponent_name %>  score: <%= @total_score_opponent %> points</h2>
+          <% if @total_score > @total_score_opponent %>
+            "You're the best arouuund!!!" karaté kid
+          <% elsif @total_score == @total_score_opponent %>
+             Wow perfect tie...  I would not have taught this would happen
+          <% else %>
+            You lose
+          <% end %>
 
+        </div>
+      <% end %>
+    <%else%>
+    </h2>
+  </div>
+    <%end%>
 </div>
 
 <div>
@@ -45,23 +65,36 @@
   </div> <!-- fin de result -->
 
 <div class="cta toto">
-  <div class="col-md-3 watch-footer">
-    <%= link_to 'Play again', theme_games_url(@theme.id) , method: :post, class: "btn btn-pimp btn-fw" %>
+  <div class="col-md-4 watch-footer">
+    <%= link_to 'Play again',
+      theme_games_url(@theme.id,
+      game:{multi: false}),
+      method: :post,
+      class: "btn btn-pimp btn-fw"
+    %>
    </div>
-  <div class="col-md-3 text-center watch-footer">
-    <button class="btn btn-primary btn-fw btn-pimp">Challenge a friend</button>
+  <div class="col-md-4 text-center watch-footer">
+    <%= link_to "Challenge a friend",
+      theme_games_url(@theme.id,
+      game:{multi: true}),
+      data: { method: :post, remote: true},
+      class: "btn btn-primary btn-fw btn-pimp"
+    %>
   </div>
-  <div class="col-md-3 text-center watch-footer">
-    <button class="btn btn-primary btn-fw btn-pimp">Share on Facebook</button>
-  </div>
-  <div class="col-md-3 watch-footer">
+  <div class="col-md-4 watch-footer">
     <%= link_to 'Leaderboard', leaderboard_path, class: "btn btn-pimp btn-fw" %>
   </div>
 </div>
 
+<!-- hidden modal that we don't use on this page -->
+<div id="themeModal<%= @game.theme.id %>" style="display: none;">
+  <a href="#" class="close"> </a>
+</div>
+<!-- hidden button déclenché au clic sur challenge a friend -->
+<button type="button" class="btn btn-primary" data-toggle="modal" id="hidden-button" data-target="#ModalMulti" style="display: none;">
+</button>
 
-
-<!-- MUST STAY AT THE END -->
+<!-- modal city -->
 <div class="modals">
   <% @pois.each do |poi| %>
       <!-- Modal -->
@@ -88,4 +121,35 @@
       </div> <!-- fin de modal-dialog -->
     </div><!-- fin de modal-fade -->
   <% end %>
+</div>
+
+  <!-- Modal multi-->
+<div class="modal fade" id="ModalMulti" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content m-c-h">
+      <div class="modal-header m-h">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <%= image_tag(("close.svg"), class: "btn-close-home") %>
+        </button>
+        <h1 class="modal-title text-center">Challenge your friend </h1>
+        <p class="text-center">Copy and share the link below</p>
+        <div class="row">
+          <div class="col-12-sm offset-3-sm">
+            <form class="form-inline text-center">
+              <label class="sr-only" for="LinkChallenge">link</label>
+              <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="LinkChallenge" value="">
+              <button class="btn btn-primary" id="button-copy-theme" onclick="copyToClip();">Copy Link</button>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12-sm text-center">
+            <!-- bouton facebook qui ne marche pas <button class="btn btn-primary" id="fb" href="#">Share on Facebook</button> -->
+            <br>
+            <a href="" class="btn btn-primary" id="yourGame">Start your game</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
