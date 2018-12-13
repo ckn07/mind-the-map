@@ -77,6 +77,14 @@ class GamesController < ApplicationController
     @game.save
   end
 
+  def updatebis
+    @game = Game.find(params[:game_id])
+    @game.update(multi: params[:game][:multi] == "true")
+    redirect_to game_path(@game)
+
+  end
+
+
   private
 
   def game_params
