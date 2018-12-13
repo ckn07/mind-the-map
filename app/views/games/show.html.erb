@@ -3,7 +3,7 @@
 
 <% content_for :meta_image, @theme.photo %>
 
-<div class="container-banner">
+<div class="container-banner container-game-show">
   <div class="title">
     <%= image_tag("rocket.svg") %>
     <h1>CONGRATS</h1>
@@ -11,11 +11,11 @@
   </div>
 
   <div class="score-title text-center">
-    <h2>Your score: <%= @total_score %> points
+    <h2>Your score: <%= @total_score %> / 100 000
     <% if @game.multi %>
       <% if @total_score_opponent.nil? %>
         <div class="score-title text-center">
-          <h2>Your Opponent has not played yet</h2>
+          <h2>Your opponent has not played yet</h2>
         </div>
       <% else %>
         <div class="score-title text-center">
@@ -53,7 +53,7 @@
         <div class="POI-list-container">
           <% @pois.each do |poi| %>
 
-            <div class="game-card-col col-sm-6 text-center">
+            <div class="game-card-col col-xs-12 col-sm-6 text-center">
               <!-- Button trigger modal -->
               <div class="game-card" data-toggle="modal" data-target="#poiModal<%= poi.id %>">
                 <div class="game-card-pic" style="background-image: url(<%= cl_image_path(poi.photo, width: 400, height: 175, crop: :fill) %>)"></div>
@@ -68,8 +68,8 @@
 
   </div> <!-- fin de result -->
 
-<div class="cta toto">
-  <div class="col-md-4 watch-footer">
+<div class="btn-wrapper row text-center">
+  <div class="col-xs-12 col-md-4">
     <%= link_to 'Play again',
       theme_games_url(@theme.id,
       game:{multi: false}),
@@ -77,7 +77,7 @@
       class: "btn btn-pimp btn-fw"
     %>
    </div>
-  <div class="col-md-4 text-center watch-footer">
+  <div class="col-xs-12 col-md-4 text-center">
     <%= link_to "Challenge a friend",
       theme_games_url(@theme.id,
       game:{multi: true}),
@@ -85,7 +85,7 @@
       class: "btn btn-primary btn-fw btn-pimp"
     %>
   </div>
-  <div class="col-md-4 watch-footer">
+  <div class="col-xs-12 col-md-4">
     <%= link_to 'Leaderboard', leaderboard_path, class: "btn btn-pimp btn-fw" %>
   </div>
 </div>

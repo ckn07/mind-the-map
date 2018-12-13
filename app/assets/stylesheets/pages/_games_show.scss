@@ -19,6 +19,10 @@
   }
 }
 
+.container-game-show {
+  margin-top: 50px;
+}
+
 // .map-container {
 //   height: 150px;
 //   background-color: $gray;
@@ -66,3 +70,15 @@
 .game-card-col {
   padding: 10px;
 }
+
+@media (max-width: 414px) {
+  /* For a screen < 414px, this CSS will be read */
+  .results-listing {
+    display: block;
+    height: 100%;
+  }
+
+  .container-game-show {
+    margin-top: 25px;
+}
+  }

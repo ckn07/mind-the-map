@@ -51,7 +51,7 @@
 }
 
 .btn-fw-2 {
-  width: 95%;
+  width: 190px;
   margin-top: 15px;
   margin-left: 6px;
   // font-family: "Shadows Into Light Two"
@@ -101,6 +101,10 @@
 
 .btn-play {
   display: none;
+}
+
+.btn-wrapper {
+  margin: 30px 0;
 }
 
 @media (max-width: 414px) {

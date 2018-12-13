@@ -27,9 +27,9 @@
       <%= link_to " &nbsp; &nbsp; &nbsp;".html_safe , game_url(game), method: :patch %>
     </div>
   <% else %>
-    <div class="btn-play">
-      <%= link_to " &nbsp; &nbsp; &nbsp;".html_safe, game_poi_url(game, next_poi)%>
-    </div>
+    <%= link_to game_poi_url(game, next_poi) do %>
+      <div class="btn-play"></div>
+    <% end %>
   <% end %>
 <div class="button-answer btn-pimp-w btn-fw-2 text-center btn-mobile-none">
   <% if next_poi.nil? %>
