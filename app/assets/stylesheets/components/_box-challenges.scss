@@ -1,33 +1,51 @@
 .challenges {
 display: flex;
+flex-wrap: wrap;
 align-items: center;
-justify-content: space-between;
+justify-content: center;
 }
 
 #challenges-won {
-  flex: 0 0 45%;
+  flex: 0 1 45%;
   padding-left: 30px;
   padding-right: 30px;
+  margin-left: 30px;
+  margin-bottom: 30px;
 }
 
 #challenges-lost {
-  flex: 0 0 45%;
+  flex: 0 1 45%;
   padding-left: 30px;
   padding-right: 30px;
+  margin-left: 30px;
+  margin-bottom: 30px;
 }
 
-// .challenge-results {
-//    margin-bottom: 40px;
+@media (max-width: 960px) {
+  /* For a screen < 540px, this CSS will be read */
 
-//   h2 {
-//     margin-top: 15px;
-//   }
-// }
+}
 
-// .challenges-won-lost {
-//  margin-bottom: 40px;
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
 
-//   h2 {
-//     margin-top: 15px;
-//   }
-// }
+}
+
+@media (max-width: 414px) {
+  /* For a screen < 320px, this CSS will be read */
+  #challenges-won {
+    flex: 0 1 45%;
+    max-width: 380px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+  }
+
+  #challenges-lost {
+    flex: 0 1 45%;
+    max-width: 380px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+  }
+}
