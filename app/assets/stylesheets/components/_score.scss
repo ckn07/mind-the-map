@@ -30,6 +30,7 @@
   border-radius: 10px;
   margin-right: 20px;
   width: 175px;
+  height: 100px;
 }
 
 /* Controls design */
@@ -74,3 +75,25 @@
   margin-left: 10px;
   margin-right: 10px;
 }
+
+@media (max-width: 960px) {
+  /* For a screen < 540px, this CSS will be read */
+
+}
+
+@media (max-width: 720px) {
+  /* For a screen < 720px, this CSS will be read */
+
+}
+
+@media (max-width: 414px) {
+  /* For a screen < 320px, this CSS will be read */
+  .scores-image {
+    border-radius: 10px;
+    margin-right: 20px;
+    max-width: 100px;
+    max-height: 100px;
+  }
+}
+
+

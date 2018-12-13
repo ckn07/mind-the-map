@@ -39,7 +39,7 @@
             <% @games.each do |game| %>
               <div class="scores">
 
-                <img class="scores-image" src="<%= cl_image_path game.theme.photo, width: 175, height: 100 ,crop: :fill %>">
+                <img class="scores-image" src="<%= cl_image_path game.theme.photo,crop: :fill %>">
 
                 <div class="scores-body text-center">
                   <p><%= game.theme.city.name %></p>
@@ -48,8 +48,17 @@
                 </div> <!-- fin scores-body -->
 
                 <ul class="list-inline scores-controls">
-                  <li><button class="btn btn-primary btn-pimp"><%= link_to 'Play again', theme_games_path(game.theme_id, game: {multi: false}), method: :post %></button></li>
-                  <li><button class="btn btn-primary btn-pimp">Challenge a friend</button></li>
+                  <li><button class="btn btn-primary btn-pimp"><%= link_to 'Play again', theme_games_path(game.theme_id, game: {multi: false}), method: :post, class: "btn btn-primary btn-pimp" %></button></li>
+                  <li><button class="btn btn-primary btn-pimp"><%= link_to "Challenge a friend",
+                          theme_games_url(game.theme_id,
+                          game:{multi: true}),
+                          data: { method: :post, remote: true}%></button> </li>
+
+                  <!-- hidden modal that we don't use on this page -->
+                  <div id="themeModal<%= game.theme.id %>" style="display: none;">
+                    <a href="#" class="close"> </a>
+                  </div>
+
 <!--                   <li><button class="btn btn-primary btn-pimp">Share on Facebook</button></li> -->
                 </ul>
               </div> <!-- fin scores -->
@@ -88,6 +97,10 @@
           <div class="scores-array" id="challenges-won">
             <div id="i-won"> <h4>THE ONES I WON</h4></div>
             <% @challenges[0].each do |game| %>
+            <div class="against-who">
+              <h6>against <%= game.user_two.username %></h6>
+            </div> <!-- fin de against-who -->
+
             <div class="scores">
 
               <img class="scores-image" src="<%= cl_image_path game.theme.photo,width: 175, height: 100 ,crop: :fill %>">
@@ -98,18 +111,16 @@
                 <p><strong><%= game.score_one %></strong></p>
               </div> <!-- fin scores-challenges -->
 
-              <div class="against-who text-center">
-                <p>against</p>
-                <p><%= game.user_two.username %></p>
-              </div> <!-- fin de against-who -->
-
             </div> <!-- fin de scores -->
             <% end %> <!-- fin de challenges[0] -->
           </div> <!-- fin de challenges-won -->
 
           <div class="scores-array" id="challenges-lost">
             <div id="i-lost"> <h4>THE ONES I LOST</h4></div>
-          <% @challenges[1].each do |game| %>
+            <% @challenges[1].each do |game| %>
+            <div class="against-who">
+              <h6>against <%= game.user_two.username %></h6>
+            </div> <!-- fin de against-who -->
 
             <div class="scores">
               <% if @challenges[1].empty? %>
@@ -124,11 +135,6 @@
                 <p><%= game.theme.name %></p>
                 <p><strong><%= game.score_one %></strong></p>
               </div> <!-- fin de scores-challenges -->
-
-              <div class="against-who text-center">
-                <p>against</p>
-                <p><%= game.user_two.username %></p>
-              </div> <!-- fin de against-who -->
 
             </div> <!-- fin de scores -->
           <% end %> <!-- fin de challenges[1].empty? -->
@@ -145,3 +151,37 @@
   </div> <!-- fin de tab-content -->
 
 </div> <!-- fin de container -->
+
+<!-- hidden button déclenché au clic sur challenge a friend -->
+<button type="button" class="btn btn-primary" data-toggle="modal" id="hidden-button" data-target="#ModalMulti" style="display: none;">
+</button>
+ <!-- Modal multi-->
+<div class="modal fade" id="ModalMulti" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content m-c-h">
+      <div class="modal-header m-h">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <%= image_tag(("close.svg"), class: "btn-close-home") %>
+        </button>
+        <h1 class="modal-title text-center">Challenge your friend </h1>
+        <p class="text-center">Copy and share the link below</p>
+        <div class="row">
+          <div class="col-12-sm offset-3-sm">
+            <form class="form-inline text-center">
+              <label class="sr-only" for="LinkChallenge">link</label>
+              <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="LinkChallenge" value="">
+              <button class="btn btn-primary" id="button-copy-theme" onclick="copyToClip();">Copy Link</button>
+            </form>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-12-sm text-center">
+            <!-- bouton facebook qui ne marche pas <button class="btn btn-primary" id="fb" href="#">Share on Facebook</button> -->
+            <br>
+            <a href="" class="btn btn-primary" id="yourGame">Start your game</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
