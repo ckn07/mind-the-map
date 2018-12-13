@@ -17,11 +17,18 @@
   </div> -->
 
 <!-- list -->
+  <%#  games.each_with_index do |game, index| %>
+    <%#= game.user_one.username %>
+    <!-- <h3>score:</h3> -->
+    <%#= game.score %>
+  <%# end  %>
+  <%#=  games.inspect %>
+ <% local = 1 %>
   <%  games.each_with_index do |game, index| %>
-    <% unless game.score_one.nil?  %>
+    <% unless game.score == 0 %>
       <div class="row vertical-center row-leaderboard">
         <div class="col-xs-4 border-column take-space leaderboard-rank">
-          <h3><%= "#{index + 1}" %></h3>
+          <h3><%= "#{local}" %></h3>
         </div>
         <div class="col-xs-4 border-column take-space leaderboard-name">
           <h3><%= game.winner.username %></h3>
@@ -31,6 +38,7 @@
           <h3><%= game.score %></h3>
         </div>
       </div>
+      <% local += 1 %>
     <% end %>
   <% end %>
 </div>

@@ -22,6 +22,7 @@
   <% @games.each do |theme_id, games| %>
     <div class="tab-pane <%= 'active' if theme_id == @themes.first.id %>" id="theme-<%= theme_id %>" role="tabpanel" aria-labelledby="<%= theme_id %>-tab">
       <%= render "leaderboard_theme", games: games %>
+
     </div>
   <% end %>
 </div>
