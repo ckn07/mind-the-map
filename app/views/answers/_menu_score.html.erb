@@ -22,19 +22,21 @@
 <div class="score-answer text-center">
   <h1><%= answer.score %> points</h1>
 </div>
+
   <% if next_poi.nil? %>
-    <div class="btn-score-final">
-      <%= link_to " &nbsp; &nbsp; &nbsp;".html_safe , game_url(game), method: :patch %>
-    </div>
+    <%= link_to game_url(game), method: :patch do %>
+      <div class="btn-score-final"></div>
+    <% end %>
   <% else %>
     <%= link_to game_poi_url(game, next_poi) do %>
       <div class="btn-play"></div>
     <% end %>
   <% end %>
+
 <div class="button-answer btn-pimp-w btn-fw-2 text-center btn-mobile-none">
   <% if next_poi.nil? %>
-    <%= link_to "> See your score" , game_url(game), method: :patch %>
+    <%= link_to "Your score" , game_url(game), method: :patch %>
   <% else %>
-    <%= link_to "> Next question" , game_poi_url(game, next_poi) %>
+    <%= link_to "Next" , game_poi_url(game, next_poi) %>
   <% end %>
 </div>
