@@ -1,3 +1,4 @@
+
 .banner {
   color: white;
   text-align: center;
@@ -35,6 +36,17 @@
   height: 250px;
   margin-bottom: 60px;
 }
+.flexbox-hp {
+  display: flex;
+}
+
+#hp-left {
+  background-color: $purple;
+  height: 100vh;
+  width: 33%;
+  position: sticky;
+  top: 0px;
+}
 
 body {
   background-color: #fff;
@@ -43,6 +55,17 @@ body {
 #full-page {
   height: 90vh;
 }
+
+@media (max-width: 960px) {
+  .flexbox-hp {
+    flex-direction:column;
+  }
+  #hp-left{
+    width: 100vw;
+    position: static;
+  }
+}
+
 @media (max-width: 414px) {
 
   .banner-content {
