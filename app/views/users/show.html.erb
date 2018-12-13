@@ -40,11 +40,12 @@
               <div class="scores">
                 <div class="group-score-img-body">
 
+                  <%= link_to game_path(game) do %>
                   <img class="scores-image" src="<%= cl_image_path game.theme.photo,crop: :fill %>">
-
+                  <% end %>
                   <div class="scores-body text-center">
                     <p><%= game.theme.city.name %></p>
-                    <p><%= game.theme.name %></p>
+                    <p><%= link_to "#{game.theme.name}" ,game_path(game) %></p>
                     <p><strong><%= game.score_one %></strong></p>
                   </div> <!-- fin scores-body -->
                 </div> <!--  fin group-score-img-body -->
@@ -105,12 +106,13 @@
             </div> <!-- fin de against-who -->
 
             <div class="scores">
-
+              <%= link_to game_path(game) do %>
               <img class="scores-image" src="<%= cl_image_path game.theme.photo,width: 175, height: 100 ,crop: :fill %>">
+              <% end %>
 
               <div class="scores-challenges text-center">
                 <p><%= game.theme.city.name %></p>
-                <p><%= game.theme.name %></p>
+                <p> <%= link_to "#{game.theme.name}" ,game_path(game) %></p>
                 <p><strong><%= game.score_one %></strong></p>
               </div> <!-- fin scores-challenges -->
 
@@ -131,11 +133,13 @@
                 <h4> No defeat ? You're the best </h4>
               </div>
               <% else %>
+              <%= link_to game_path(game) do %>
               <img class="scores-image" src="<%= cl_image_path game.theme.photo, width: 175, height: 100 ,crop: :fill %>">
+              <% end %>
 
               <div class="scores-challenges text-center">
                 <p><%= game.theme.city.name %></p>
-                <p><%= game.theme.name %></p>
+                <p> <%= link_to "#{game.theme.name}" ,game_path(game) %></p>
                 <p><strong><%= game.score_one %></strong></p>
               </div> <!-- fin de scores-challenges -->
 
