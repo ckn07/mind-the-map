@@ -1,9 +1,9 @@
-.border-column {
-  border-left: 1px solid black;
-  &:first-child {
-    border-left: none;
-  }
-}
+// .border-column {
+//   border-left: 1px solid black;
+//   &:first-child {
+//     border-left: none;
+//   }
+// }
 
 .container-center p {
   font-family: $body-font;
@@ -15,7 +15,7 @@
 }
 
 .container-background {
-  background-color: $purple;
+  background-color: #fff;
 }
 
 .picture-leaderboard {
@@ -25,8 +25,6 @@
 
 .container-center {
   margin: 20px auto;
-  width: 850px;
-  border: 1px solid black;
 }
 
 
@@ -40,3 +38,30 @@
   height: 100%;
 }
 
+.row-leaderboard {
+  background-color: white;
+  height: 50px;
+  text-align: left;
+
+  h3 {
+    font-size: 30px;
+    color: #000;
+    margin-top: 10px;
+  }
+
+  .leaderboard-rank{
+    background-image: image-url("rank.svg");
+    background-size: 100% 100%;
+    border: none;
+    border-radius: 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    h3 {
+      color: white;
+      margin: 0;
+    }
+  }
+}

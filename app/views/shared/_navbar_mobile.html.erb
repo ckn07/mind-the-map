@@ -2,7 +2,10 @@
 <div id="links">
   <% if user_signed_in? %>
     <%= link_to root_path, class: 'm-menu' do %>
-      <%= t(".profile", default: "Home") %>
+      <%= t(".home", default: "Home") %>
+    <% end %>
+    <%= link_to leaderboard_path, class: 'm-menu' do %>
+      <%= t(".leaderboard", default: "Leaderboard") %>
     <% end %>
     <%= link_to user_path(current_user), class: 'm-menu' do %>
       <%= t(".profile", default: "Profile") %>
@@ -18,7 +21,9 @@
     <%= link_to root_path, class: 'm-menu' do %>
       <%= t(".profile", default: "Home") %>
     <% end %>
+    <%= link_to leaderboard_path, class: 'm-menu' do %>
+      <%= t(".leaderboard", default: "Leaderboard") %>
+    <% end %>
     <%= link_to t(".sign_in", default: "Login"), new_user_session_path, class: "m-menu" %>
   <% end %>
 </div>
-
