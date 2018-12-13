@@ -5,10 +5,10 @@
 <h1 class= 'text-center'>Leaderboard</h1>
 
 <!-- city tabs: only Paris for Demo Day -->
-<h2>Paris</h2>
+<h2 id="leaderboard-city">- Paris -</h2>
 
 <!-- theme tabs -->
-<ul class="nav nav-tabs" role="tablist">
+<ul class="nav nav-tabs leaderboard-nav" role="tablist">
   <% @themes.each do |theme| %>
     <li role="presentation" class="<%= 'active' if theme == @themes.first %>">
       <a href="#theme-<%= theme.id %>" aria-controls="<%= theme.id %>" role="tab" data-toggle="tab">

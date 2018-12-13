@@ -5,6 +5,10 @@
 //   }
 // }
 
+.leaderboard-nav {
+  padding-left: 180px;
+}
+
 .container-center p {
   font-family: $body-font;
   color: white;
@@ -64,4 +68,14 @@
       margin: 0;
     }
   }
+}
+
+#leaderboard-city {
+  text-align: center;
+}
+
+@media (max-width: 414px) {
+  .leaderboard-nav {
+    padding-left: 0px;
+}
 }
