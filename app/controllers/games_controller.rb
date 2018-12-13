@@ -15,19 +15,25 @@ class GamesController < ApplicationController
         color: "#08c299"
       }
     end
-    # les totales de la game ne doit pas etre calculé
-    # sur une show... cette dernier doit juste chargé des données
-    # le calcul et le storage va se faire dans la requete update
-    if @game.user_one == @user
-      @total_score = @game.score_one
-      @total_score_opponent = @game.score_two
-      @opponent_name = @game.user_two.username
-    else
-      @total_score = @game.score_two
-      @total_score_opponent = @game.score_one
-      @opponent_name = @game.user_one.username
-    end
 
+    if @game.multi # c'est y du multiplayer
+      if @game.user_one == @user # qui est le joueur sur la show?
+        @total_score = @game.score_one
+        if @game.user_two.nil?
+          @total_score_opponent = nil
+          @opponent_name = nil
+        else
+          @total_score_opponent = @game.score_two
+          @opponent_name = @game.user_two.username
+        end
+      else
+        @total_score = @game.score_two
+        @total_score_opponent = @game.score_one
+        @opponent_name = @game.user_one.username
+      end
+    else # solo game
+      @total_score = @game.score_one
+    end
 
   end
 
