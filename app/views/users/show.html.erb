@@ -45,7 +45,7 @@
                   <% end %>
                   <div class="scores-body text-center">
                     <p><%= game.theme.city.name %></p>
-                    <p><%= game.theme.name %></p>
+                    <p><%= link_to "#{game.theme.name}" ,game_path(game) %></p>
                     <p><strong><%= game.score_one %></strong></p>
                   </div> <!-- fin scores-body -->
                 </div> <!--  fin group-score-img-body -->
@@ -112,7 +112,7 @@
 
               <div class="scores-challenges text-center">
                 <p><%= game.theme.city.name %></p>
-                <p><%= game.theme.name %></p>
+                <p> <%= link_to "#{game.theme.name}" ,game_path(game) %></p>
                 <p><strong><%= game.score_one %></strong></p>
               </div> <!-- fin scores-challenges -->
 
@@ -139,7 +139,7 @@
 
               <div class="scores-challenges text-center">
                 <p><%= game.theme.city.name %></p>
-                <p><%= game.theme.name %></p>
+                <p> <%= link_to "#{game.theme.name}" ,game_path(game) %></p>
                 <p><strong><%= game.score_one %></strong></p>
               </div> <!-- fin de scores-challenges -->
 
