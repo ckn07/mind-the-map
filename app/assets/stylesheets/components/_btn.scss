@@ -57,6 +57,12 @@
   font-size: 24px;
 }
 
+.btn-fw-2 {
+  width: 190px;
+  margin-top: 15px;
+  margin-left: 6px;
+  // font-family: "Shadows Into Light Two"
+}
 
 .btn-pimp:hover {
   filter: grayscale(40%);
@@ -111,6 +117,9 @@
   display: none;
 }
 
+.btn-wrapper {
+  margin: 30px 0;
+}
 
 .btn-reverse {
   border: 1px solid #8525e2;
