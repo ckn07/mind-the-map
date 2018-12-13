@@ -11,6 +11,15 @@ function addAnswer() {
     menuScoreClosed.classList.add("open");
   }
 
+
+  if (document.getElementById('score')) {
+    const map = document.getElementById('map');
+    map.style.height = "75vh";
+    const menuScoreClosed = document.getElementById('score');
+    menuScoreClosed.style.height = "25vh";
+    menuScoreClosed.classList.remove("display-none");
+  }
+
   menuScoreContainer.innerHTML = menuScoreHTML;
 
   // display correct poi marker

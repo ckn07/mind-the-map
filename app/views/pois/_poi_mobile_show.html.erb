@@ -9,7 +9,7 @@
   <div
     id="map"
     style="width: 100vw;
-    height: 84vh;"
+    height: 100vh;"
     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
     data-game="on">
     <div class="position-right">
@@ -19,7 +19,7 @@
 </div>
 
 <div class="menu-score-parent">
-  <div class="menu-score" id="score">
+  <div class="menu-score display-none" id="score">
     <%# empty container to display the answer %>
     <div class="menu-score-container" id="items"></div>
   </div>
