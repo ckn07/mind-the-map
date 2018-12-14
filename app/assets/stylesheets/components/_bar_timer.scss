@@ -22,7 +22,7 @@
   // border-radius: 0.5em;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 414px), (max-height: 414px) {
   /* For a screen < 320px, this CSS will be read */
   .position-right {
     position: absolute;

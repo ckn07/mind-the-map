@@ -19,6 +19,13 @@
   margin-top: 90px;
 }
 
+.text-banner-homepage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .banner h1 {
   font-size: 50px;
   font-weight: bold;
@@ -26,7 +33,7 @@
 }
 .banner p {
   font-size: 25px;
-  font-weight: bold;
+  font-weight: normal;
   margin-bottom: 30px;
   color: #fff;
 }
@@ -66,9 +73,28 @@ body {
   }
 }
 
+
 @media (max-width: 414px) {
 
   .banner-content {
     margin-top: 0px;
+  }
+}
+
+@media (max-height: 414px) {
+  .banner-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 0;
+  }
+
+  .logo-map-homepage{
+    margin-bottom: 0;
+  }
+
+  .text-banner-homepage {
+  margin-left: 30px;
   }
 }
