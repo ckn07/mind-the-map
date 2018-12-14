@@ -49,7 +49,7 @@
       <%= link_to "Challenge a friend",
         game_updatebis_path(@game,
         game:{multi: true}),
-        data: { method: :patch, toggle: "modal", target: "#ModalMulti" },
+        data: { method: :patch, remote: true },
         class: "btn btn-primary btn-fw btn-pimp"
       %>
     </div>
