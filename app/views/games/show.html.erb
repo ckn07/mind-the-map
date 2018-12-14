@@ -12,7 +12,7 @@
   </div>
 
   <div class="score-title text-center">
-    <h2>Your score: <%= @total_score %>/<%= %></h2>
+    <h2>Your score: <%= @total_score %> / <%= @max_score %></h2>
     <% if @game.multi %>
       <% if @total_score_opponent.nil? %>
         <div class="score-title text-center">
