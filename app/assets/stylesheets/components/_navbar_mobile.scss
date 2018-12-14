@@ -23,18 +23,20 @@
 }
 
 #links{
+  position: fixed;
+  top: 50px;
   display: none;
   flex-direction: column;
   width: 100vw;
   height: 50vh;
   padding: 25vh 0;
   justify-content: space-around;
+  z-index: 4001;
   .m-menu {
     text-align: center;
     text-decoration: none;
     color: white;
     font-size: 2em;
     font-family: 'Shadows Into Light Two';
-    z-index: 4001;
   }
 }

@@ -14,7 +14,7 @@
 
   <% if next_poi.nil? %>
     <%= link_to game_url(game), method: :patch do %>
-      <div class="btn-score-final"></div>
+      <div class="btn-play"></div>
     <% end %>
   <% else %>
     <%= link_to game_poi_url(game, next_poi) do %>
