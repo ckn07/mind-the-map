@@ -124,6 +124,10 @@
 @media (max-width: 414px), (max-height: 414px) {
   /* For a screen < 414px, this CSS will be read */
 
+  .modal-body p{
+    color: black;
+  }
+
   .menu-score-parent{
     position: relative;
     bottom: 60px;
