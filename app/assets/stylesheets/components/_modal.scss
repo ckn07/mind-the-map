@@ -70,6 +70,11 @@
 
 @media (max-width: 414px), (max-height: 414px) {
   /* For a screen < 414px, this CSS will be read */
+
+  .POI-mod-header{
+  height: 200px;
+  }
+
   .m-c {
     background-image: image-url("card_modal.svg");
     background-size: 100% 100%;
