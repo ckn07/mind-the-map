@@ -12,7 +12,7 @@
   </div>
 
   <div class="score-title text-center">
-    <h2>Your score: <%= @total_score %> / 100 000</h2>
+    <h2>Your score: <%= @total_score %> / <%= @max_score %></h2>
     <% if @game.multi %>
       <% if @total_score_opponent.nil? %>
         <div class="score-title text-center">
@@ -37,8 +37,31 @@
   </div>
 
   <div class="btn-wrapper row text-center">
-    <div class="col-xs-12 col-md-4">
-      <%= link_to 'Improve your score: play again',
+    <% if @game.multi %>
+     <!-- si c'est deja un jeu en multi charge juste la modal-->
+      <div class="col-sm-12 col-md-4 text-center">
+        <%= link_to "Challenge a friend",
+          "#",
+          data: { toggle: "modal", target: "#ModalMulti" },
+          class: "btn btn-primary btn-fw btn-pimp-w"
+        %>
+      </div>
+
+    <% else %>
+    <!-- si c'est un jeu en solo, update la base puis charge juste la modal-->
+      <div class="col-sm-12 col-md-4 text-center">
+        <%= link_to "Challenge a friend",
+          game_updatebis_path(@game,
+          game:{multi: true}),
+          data: { method: :patch, remote: true },
+          class: "btn btn-primary btn-fw btn-pimp btn-pimp-w"
+        %>
+      </div>
+    <% end %>
+
+
+    <div class="col-sm-12 col-md-4">
+      <%= link_to "Play again",
         theme_games_url(@theme.id,
         game:{multi: false}),
         method: :post,
@@ -46,29 +69,7 @@
       %>
      </div>
 
-    <% if @game.multi %>
-     <!-- si c'est deja un jeu en multi charge juste la modal-->
-      <div class="col-xs-12 col-md-4 text-center">
-        <%= link_to "Challenge a friend",
-          "#",
-          data: { toggle: "modal", target: "#ModalMulti" },
-          class: "btn btn-primary btn-fw btn-pimp"
-        %>
-      </div>
-
-    <% else %>
-    <!-- si c'est un jeu en solo, update la base puis charge juste la modal-->
-      <div class="col-xs-12 col-md-4 text-center">
-        <%= link_to "Challenge a friend",
-          game_updatebis_path(@game,
-          game:{multi: true}),
-          data: { method: :patch, remote: true },
-          class: "btn btn-primary btn-fw btn-pimp"
-        %>
-      </div>
-    <% end %>
-
-    <div class="col-xs-12 col-md-4">
+    <div class="col-sm-12 col-md-4">
       <%= link_to 'Leaderboard', leaderboard_path(:query => "#{@theme.id}"), class: "btn btn-pimp btn-fw" %>
     </div>
   </div>
