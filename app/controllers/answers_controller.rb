@@ -13,7 +13,7 @@ class AnswersController < ApplicationController
         color:  "#860CE6"
       }]
     @remaining_poi = whats_pois_are_left
-    @next_poi = @remaining_poi.sample
+    @next_poi = @remaining_poi
     @counter_total = @list_poi_on_going_game.count
     @counter_remaining = @counter_total - @remaining_poi.count + 1
   end
