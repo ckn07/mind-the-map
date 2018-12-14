@@ -59,6 +59,7 @@
       </div>
     <% end %>
 
+
     <div class="col-sm-12 col-md-4">
       <%= link_to "Play again",
         theme_games_url(@theme.id,
@@ -69,7 +70,7 @@
      </div>
 
     <div class="col-sm-12 col-md-4">
-      <%= link_to 'Leaderboard', leaderboard_path, class: "btn btn-pimp btn-fw btn-pimp-w" %>
+      <%= link_to 'Leaderboard', leaderboard_path(:query => "#{@theme.id}"), class: "btn btn-pimp btn-fw" %>
     </div>
   </div>
 

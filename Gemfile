@@ -21,6 +21,7 @@ gem 'carrierwave', '~> 1.2'
 gem 'browser'
 gem 'awesome_print'
 gem 'appsignal'
+gem 'jquery-rails'
 
 
 group :development do

@@ -29,5 +29,11 @@ class PagesController < ApplicationController
       @games[theme.id] = games
       # raise
     end
+
+    if params[:query].present?
+      @current_theme = Theme.find(params[:query])
+    else
+      @current_theme = @themes.first
+    end
   end
 end
