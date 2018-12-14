@@ -82,7 +82,7 @@ class GamesController < ApplicationController
 
       if @game.update(multi: params[:game][:multi] == "true")
       respond_to do |format|
-        format.html { redirect_to game_poi_path(@game,@poi) }
+        format.html { redirect_to game_path(@game,@poi) }
         format.js  # <-- will render `app/views/games/updatebis.js.erb`
       end
     else
@@ -91,9 +91,6 @@ class GamesController < ApplicationController
         format.js  # <-- idem
       end
     end
-
-
-    redirect_to game_path(@game)
   end
 
 
