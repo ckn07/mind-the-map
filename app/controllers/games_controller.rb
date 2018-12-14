@@ -7,6 +7,8 @@ class GamesController < ApplicationController
     @user = current_user
     @theme = @game.theme
     @pois = @theme.pois
+    @max_score = @pois.count * 20000
+
     @answers = Answer.where(game_id: @game, user_id: current_user)
     @markers = @pois.map do |poi|
       {
