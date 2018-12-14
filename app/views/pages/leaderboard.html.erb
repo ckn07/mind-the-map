@@ -10,7 +10,7 @@
 <!-- theme tabs -->
 <ul class="nav nav-tabs leaderboard-nav" role="tablist">
   <% @themes.each do |theme| %>
-    <li role="presentation" class="<%= 'active' if theme == @themes.first %>">
+    <li role="presentation" class="<%= 'active' if theme == @current_theme %>">
       <a href="#theme-<%= theme.id %>" aria-controls="<%= theme.id %>" role="tab" data-toggle="tab">
         <%= theme.name %></a>
     </li>
@@ -20,10 +20,9 @@
 <!-- bootstrap js content -->
 <div class="tab-content">
   <% @games.each do |theme_id, games| %>
-    <div class="tab-pane <%= 'active' if theme_id == @themes.first.id %>" id="theme-<%= theme_id %>" role="tabpanel" aria-labelledby="<%= theme_id %>-tab">
+    <div class="tab-pane <%= 'active' if theme_id == @current_theme.id %>" id="theme-<%= theme_id %>" role="tabpanel" aria-labelledby="<%= theme_id %>-tab">
       <%= render "leaderboard_theme", games: games %>
 
     </div>
   <% end %>
 </div>
-
