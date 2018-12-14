@@ -3,18 +3,22 @@
   background-color: rgba(0, 0, 0, 0);
   transition: all 0.3s ease;
   width: 100vw;
-  height: 70px;
-  padding: 0px 30px;
+  height: 0px;
+  padding: 0px 0px;
   display: flex;
   align-items: center;
   justify-content: space-between;
   position: fixed;
   z-index: 3000;
   top: 0;
+  position: relative;
 }
 
 /* Logo */
 .navbar-wagon-brand img {
+  position: absolute;
+  top: 0;
+  left: 30px;
   height: 70px;
   margin-top: 30px;
 }
@@ -34,6 +38,10 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  position: absolute;
+  top: 0;
+  right: 30px;
+  margin-top: 30px;
 }
 
 /* Basic navbar item */
@@ -57,6 +65,7 @@
   margin-top: 15px;
   box-shadow: 1px 1px 4px #E6E6E6;
   border-color: #E6E6E6;
+  // z-index: 4001;
 }
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
