@@ -13,7 +13,7 @@ class AnswersController < ApplicationController
         color:  "#860CE6"
       }]
     @remaining_poi = whats_pois_are_left
-    @next_poi = @remaining_poi.sample
+    @next_poi = @remaining_poi.first
     @counter_total = @list_poi_on_going_game.count
     @counter_remaining = @counter_total - @remaining_poi.count + 1
   end
@@ -49,7 +49,7 @@ class AnswersController < ApplicationController
       respond_to do |format|
         format.html { redirect_to game_poi_answer_path(@game.id, @poi.id, @answer.id) }
         format.js do
-          @next_poi = whats_pois_are_left.sample
+          @next_poi = whats_pois_are_left.first
         end
       end
     else
@@ -57,7 +57,7 @@ class AnswersController < ApplicationController
       respond_to do |format|
         format.html { redirect_to game_poi_answer_path(@game.id, @poi.id, @answer.id) }
         format.js do
-          @next_poi = whats_pois_are_left.sample
+          @next_poi = whats_pois_are_left.first
         end
       end
     end
