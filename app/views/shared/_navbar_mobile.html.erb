@@ -14,9 +14,6 @@
     <%= link_to user_path(current_user), class: 'm-menu' do %>
       <%= t(".profile", default: "Profile") %>
     <% end %>
-    <%= link_to edit_user_path(current_user), class: 'm-menu'  do %>
-      <%= t(".settings", default: "Settings") %>
-    <% end %>
     <%= link_to destroy_user_session_path, class: 'm-menu' , method: :delete do %>
       <%= t(".sign_out", default: "Log out") %>
     <% end %>

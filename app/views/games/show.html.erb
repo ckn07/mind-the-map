@@ -129,7 +129,7 @@
             <div>
               <h2 class="modal-title text-center" id="exampleModalLabel"><%= poi.name  %></h2>
             </div>
-            <div class="POI-mod-header" style="background-image: url(<%= cl_image_path(poi.photo)%>)">
+            <div class="POI-mod-header" style="background-image: url(<%= cl_image_path(poi.photo, crop: :fill)%>)">
             </div> <!-- fin de POI-mod-header -->
           </div> <!-- fin de modal-header -->
 
