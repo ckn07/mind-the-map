@@ -62,7 +62,7 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    @answers = Answer.where(game_id: @game, user_id: current_user)
+    @answers = Answer.where(game_id: @game, user_id: current_user).order("score ASC")
 
     # check le user id?  si c'est dans user one ou two.
     if @game.user_one == current_user
@@ -113,8 +113,13 @@ class GamesController < ApplicationController
 
   def total_score_calculation
     total_score = 0
+    table_poi = []
     @answers.each do |answer|
-      total_score += answer.score
+      unless table_poi.include?(answer.poi)
+        total_score += answer.score
+      end
+      table_poi << answer.poi
+
     end
     return total_score
   end
