@@ -1,3 +1,7 @@
+<%= link_to root_path, class: "navbar-wagon-brand" do %>
+  <%= image_tag "logo-2.svg", id: "logo-app", class: "navbar-mobile" %>
+<% end %>
+
 <i id="burger" class="material-icons">menu</i>
 <div id="links">
   <% if user_signed_in? %>

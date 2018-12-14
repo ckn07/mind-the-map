@@ -65,7 +65,7 @@
   outline: 0;
   background-color: rgba(255, 255, 255, 0);
   padding: 10px;
-  color: white;
+  color: $purple;
   font-family: "Shadows Into Light Two";
   font-size: 24px;
 }
@@ -156,7 +156,7 @@
   }
 }
 
-@media (max-width: 414px) {
+@media (max-width: 414px), (max-height: 414px) {
   /* For a screen < 414px, this CSS will be read */
   .btn-play {
     display: block !important;
@@ -185,7 +185,7 @@
   }
 
   .btn-pimp {
-    max-width: 90px;
+    // max-width: 90px;
     max-height: 30px;
     // background-image: image-url("btn.svg");
     // background-size: 100% 100%;
@@ -196,7 +196,7 @@
     // outline: 0;
     // background-color: rgba(255, 255, 255, 0);
     padding: 5px;
-    margin: 5px;
+    margin: 10px;
     font-size: 14px;
     // color: white;
     // transition: all 0.7s ease-out;

@@ -121,7 +121,7 @@
 }
 
 // ###########################################################################
-@media (max-width: 414px) {
+@media (max-width: 414px), (max-height: 414px) {
   /* For a screen < 414px, this CSS will be read */
 
   .menu-score-parent{
@@ -268,7 +268,7 @@
 
 
   p {
-    color: #000000;
+    color: #fff;
     font-size: 20px;
     margin: 0;
     padding: 0;

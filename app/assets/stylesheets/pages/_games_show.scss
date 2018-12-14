@@ -71,7 +71,7 @@
   padding: 10px;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 414px), (max-height: 414px) {
   /* For a screen < 414px, this CSS will be read */
   .results-listing {
     display: block;
@@ -80,5 +80,9 @@
 
   .container-game-show {
     margin-top: 25px;
-}
   }
+
+  .title {
+    margin-top: 45px;
+  }
+}

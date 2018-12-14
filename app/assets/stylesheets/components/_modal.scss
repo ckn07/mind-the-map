@@ -68,7 +68,7 @@
   margin: 15px 0px;
 }
 
-@media (max-width: 414px) {
+@media (max-width: 414px), (max-height: 414px) {
   /* For a screen < 414px, this CSS will be read */
   .m-c {
     background-image: image-url("card_modal.svg");
