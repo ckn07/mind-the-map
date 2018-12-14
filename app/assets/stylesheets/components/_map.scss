@@ -31,11 +31,13 @@
 }
 
 .POI-list {
-  display: flex;
-  flex: 0 0 50%;
-  flex-wrap: wrap;
   margin-left: 30px;
   margin-right: 30px;
+
+  p {
+    font-weight: lighter;
+    color: #000 !important;
+  }
 }
 
 
@@ -66,6 +68,18 @@
 .display-div {
   display: block !important;
 }
+
+.POI-list {
+  margin-left: 30px;
+  margin-right: 30px;
+
+  p {
+    font-weight: normal;
+    color: #000 !important;
+  }
+}
+
+
 
 // .hp-listing {
 //   // padding: 20px 20px;
