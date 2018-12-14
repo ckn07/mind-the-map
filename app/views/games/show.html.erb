@@ -25,7 +25,7 @@
             <img src="https://media.giphy.com/media/bVivPTy6pO6ru/giphy.gif" alt="you re the best" tyle="max-height: 150px;">
             <p>You're the best! arouuund!!!</p>
           <% elsif @total_score == @total_score_opponent %>
-             Wow perfect tie...  I would not have taught this would happen
+             Wow perfect tie...  I would not have taught this would happened
           <% else %>
             <img src="https://media.giphy.com/media/7nMfkppqka9mo/giphy.gif" alt="loser" style="max-height: 150px;">
             <p>Alas... you lost this game!</p>
@@ -43,7 +43,7 @@
         <%= link_to "Challenge a friend",
           "#",
           data: { toggle: "modal", target: "#ModalMulti" },
-          class: "btn btn-primary btn-fw btn-pimp-w"
+          class: "btn btn-primary btn-fw btn-pimp btn-pimp-w"
         %>
       </div>
 
@@ -70,7 +70,7 @@
      </div>
 
     <div class="col-sm-12 col-md-4">
-      <%= link_to 'Leaderboard', leaderboard_path(:query => "#{@theme.id}"), class: "btn btn-pimp btn-fw" %>
+      <%= link_to 'Leaderboard', leaderboard_path(:query => "#{@theme.id}"), class: "btn btn-fw btn-pimp btn-pimp-w" %>
     </div>
   </div>
 
