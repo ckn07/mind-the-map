@@ -77,6 +77,23 @@ class GamesController < ApplicationController
     @game.save
   end
 
+  def updatebis
+    @game = Game.find(params[:game_id])
+
+      if @game.update(multi: params[:game][:multi] == "true")
+      respond_to do |format|
+        format.html { redirect_to game_path(@game,@poi) }
+        format.js  # <-- will render `app/views/games/updatebis.js.erb`
+      end
+    else
+      respond_to do |format|
+        format.html { redirect_to root_path }
+        format.js  # <-- idem
+      end
+    end
+  end
+
+
   private
 
   def game_params

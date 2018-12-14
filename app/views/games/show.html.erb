@@ -38,21 +38,36 @@
 
   <div class="btn-wrapper row text-center">
     <div class="col-xs-12 col-md-4">
-      <%= link_to 'Play again',
+      <%= link_to 'Improve your score: play again',
         theme_games_url(@theme.id,
         game:{multi: false}),
         method: :post,
         class: "btn btn-pimp btn-fw"
       %>
      </div>
-    <div class="col-xs-12 col-md-4 text-center">
-      <%= link_to "Challenge a friend",
-        theme_games_url(@theme.id,
-        game:{multi: true}),
-        data: { method: :post, remote: true},
-        class: "btn btn-primary btn-fw btn-pimp"
-      %>
-    </div>
+
+    <% if @game.multi %>
+     <!-- si c'est deja un jeu en multi charge juste la modal-->
+      <div class="col-xs-12 col-md-4 text-center">
+        <%= link_to "Challenge a friend",
+          "#",
+          data: { toggle: "modal", target: "#ModalMulti" },
+          class: "btn btn-primary btn-fw btn-pimp"
+        %>
+      </div>
+
+    <% else %>
+    <!-- si c'est un jeu en solo, update la base puis charge juste la modal-->
+      <div class="col-xs-12 col-md-4 text-center">
+        <%= link_to "Challenge a friend",
+          game_updatebis_path(@game,
+          game:{multi: true}),
+          data: { method: :patch, remote: true },
+          class: "btn btn-primary btn-fw btn-pimp"
+        %>
+      </div>
+    <% end %>
+
     <div class="col-xs-12 col-md-4">
       <%= link_to 'Leaderboard', leaderboard_path, class: "btn btn-pimp btn-fw" %>
     </div>
@@ -140,16 +155,9 @@
           <div class="col-12-sm offset-3-sm">
             <form class="form-inline text-center">
               <label class="sr-only" for="LinkChallenge">link</label>
-              <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="LinkChallenge" value="">
+              <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="LinkChallenge" value="<%= new_game_challenge_url(@game) %>">
               <button class="btn btn-primary" id="button-copy-theme" onclick="copyToClip();">Copy Link</button>
             </form>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12-sm text-center">
-            <!-- bouton facebook qui ne marche pas <button class="btn btn-primary" id="fb" href="#">Share on Facebook</button> -->
-            <br>
-            <a href="" class="btn btn-primary" id="yourGame">Start your game</a>
           </div>
         </div>
       </div>

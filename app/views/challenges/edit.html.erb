@@ -1,0 +1,40 @@
+<% content_for :meta_title, "# has challenged you on #{DEFAULT_META["meta_product_name"]}" %>
+<% content_for :meta_description, "Will you accept the challenge #{@game.theme.name}, #{@game.theme.city.name}? See if you can manage to beat your friend" %>
+
+<% content_for :meta_image, @theme.photo %>
+
+<div class="banner" style="background-image:linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url(<%= cl_image_path @theme.photo%>)" >
+  <div class="container container-challenge">
+    <div class="row">
+      <div class="col-sm-6 col-md-offset-3  text-center">
+        <% if @game.multi? %>
+          <% if user_signed_in? %>
+              <% if current_user.id == @game.user_one.id  %>
+                <h1>You can't challenge yourself!</h1>
+                <p>Just share this page address with the buddy you want to challenge</p>
+                <% if @game.score_one.nil? %>
+                  <p>Also your score is still empty so maybe you can play too? </p>
+
+                <%= link_to "complete your part", game_poi_url(@game,@poi),  class: "btn btn-pimp btn-fw text-center" %>
+                <% end %>
+              <% else %>
+              <h1>Can you beat <%=@game.user_one.username%> on the quizz <%=@theme.name%> of <%= @theme.city.name  %> ?</h1>
+                <%= link_to "Yes I can, let's play", game_challenge_url(@game) , method: :post,  class: "btn btn-pimp btn-fw text-center" %>
+              <% end %>
+          <% else %>
+          <h1> Can you beat <%= @game.user_one.username  %>  on the quizz <%= @theme.name  %> <%= @theme.city.name  %> ?</h1>
+            <h2>You first need to login to participate</h2>
+            <%= link_to "Ok let's do this", game_challenge_url(@game) , method: :post,  class: "btn btn-pimp btn-fw text-center" %>
+          <% end %>
+        <% else  %>
+          <h1>Oupsy doupsy!</h1>
+          <h2> This game was not created as a challenge. </h2>
+          <p> Go back to <%= link_to "homepage", root_url %> to pick your own game or try the quizz on <%= @theme.name  %> of <%= @theme.city.name  %></p>
+           <%= link_to "All by myseeeeelf!", theme_games_url(@theme.id , game: {multi: false}), method: :post,  class: "btn btn-pimp btn-fw text-center"   %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+</div>
+

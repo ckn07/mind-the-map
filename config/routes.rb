@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   end
 
   resources :themes, only: [] do
-    resources :games, only: [ :create ]
+    resources :games, only: [ :create, :update ]
   end
 
   resources :games, only: [] do
@@ -23,8 +23,9 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :games, only: [ :index, :show, :update ]
-
+  resources :games, only: [ :index, :show, :update ] do
+    patch 'updatebis', to: 'games#updatebis', as: :updatebis
+  end
 end
 
 

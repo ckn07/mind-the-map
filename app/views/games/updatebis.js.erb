@@ -1,0 +1,10 @@
+// close la premiere modale
+// let modalThemeClose = document.querySelector("#themeModal<%= @game.theme.id %> .close");
+// modalThemeClose.click();
+// ouvre la deuxieme modal en cliquant sur un bouton caché
+const hiddenButton = document.getElementById('hidden-button');
+hiddenButton.click();
+// Selection puis remplis l'input box avec l'address du challenge
+const linkToChallenge = document.getElementById('LinkChallenge')
+linkToChallenge.value = "<%= new_game_challenge_url(@game) %>"
+// selectionne puis change le lien derriere l'id your game
