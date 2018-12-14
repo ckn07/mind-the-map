@@ -108,7 +108,7 @@ class GamesController < ApplicationController
     @pois.each do |poi|
       @list_poi_on_going_game << (poi.poi_id)
     end
-    first_poi = @list_poi_on_going_game.sample
+    first_poi = @list_poi_on_going_game.first
   end
 
   def total_score_calculation
