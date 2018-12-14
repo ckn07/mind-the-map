@@ -62,7 +62,7 @@ class GamesController < ApplicationController
 
   def update
     @game = Game.find(params[:id])
-    @answers = Answer.where(game_id: @game, user_id: current_user)
+    @answers = Answer.where(game_id: @game, user_id: current_user).order("score ASC")
 
     # check le user id?  si c'est dans user one ou two.
     if @game.user_one == current_user
