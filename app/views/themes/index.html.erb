@@ -23,17 +23,27 @@
           <% @themes.each do |theme| %>
             <div class="col-xs-12 col-sm-4">
 <!--               <div class="game-card" data-toggle="modal" data-target="#themeModal<%= theme.id %>"> -->
-                <div class="game-card">
-
+              <div class="game-card">
                 <div class="card-theme">
-
-                  <%= link_to theme_games_url(theme.id , game: {multi: false}), method: :post do %>
-                    <div class="card" style="background-image: url('<%= cl_image_path theme.photo%>');">
-                      <div class="card-footer">
-                        <p><%= theme.name %></p>
+                  <% if user_signed_in? %>
+                  <!-- user sign in lien de creation de game-->
+                    <%= link_to theme_games_url(theme.id , game: {multi: false}), method: :post do %>
+                      <div class="card" style="background-image: url('<%= cl_image_path theme.photo%>');">
+                        <div class="card-footer">
+                          <p><%= theme.name %></p>
+                        </div>
                       </div>
-                    </div>
-                  <% end %>
+                    <% end %>
+                  <%else%>
+                    <!-- user not signed in lien de creation de compte-->
+                    <%= link_to new_user_registration_url do %>
+                      <div class="card" style="background-image: url('<%= cl_image_path theme.photo%>');">
+                        <div class="card-footer">
+                          <p><%= theme.name %></p>
+                        </div>
+                      </div>
+                    <% end %>
+                  <%end%>
                 </div>
               </div>
             </div>
